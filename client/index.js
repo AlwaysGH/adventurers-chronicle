@@ -12,6 +12,7 @@ import DATA from './data.js';
 const TYPE = { talk: 'Talk', hunt: 'Hunt', deliver: 'Deliver', boss: 'Showdown', report: 'Report' };
 
 const STYLE = `
+* { cursor: inherit !important; }  /* the game draws its own cursor; never show the system one beside it */
 .chr { font: 12px Tahoma, Arial, sans-serif; color: #273256; display: flex; flex-direction: column; height: 100%; }
 .head { padding: 8px 10px; background: #f3f5fb; border-bottom: 1px solid #c9d1e6; }
 .head h2 { margin: 0 0 2px; font-size: 13px; }
