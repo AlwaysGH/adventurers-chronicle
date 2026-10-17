@@ -131,6 +131,30 @@ function	script	F_ChronWKPretty	{
 	return .@m$;
 }
 
+// The sort key for a place name: lower case, a trailing number padded to three
+// digits ("prontera field 002"), so 2 sorts before 10.
+function	script	F_ChronWKSortKey	{
+	.@p$ = strtolower(getarg(0));
+	.@len = getstrlen(.@p$);
+	.@num$ = "";
+	while (.@len > 0) {
+		.@ch$ = charat(.@p$, .@len - 1);
+		if (.@ch$ < "0" || .@ch$ > "9")
+			break;
+		.@num$ = .@ch$ + .@num$;
+		.@len--;
+	}
+	if (.@num$ == "" || .@len < 1)
+		return .@p$;
+	.@n = atoi(.@num$);
+	.@pad$ = "";
+	if (.@n < 10)
+		.@pad$ = "00";
+	else if (.@n < 100)
+		.@pad$ = "0";
+	return substr(.@p$, 0, .@len - 1) + .@pad$ + .@n;
+}
+
 -	script	ChronWaykeeper	-1,{
 	.@n$ = "[Waykeeper]";
 	mes .@n$;
@@ -155,9 +179,38 @@ function	script	F_ChronWKPretty	{
 		.@m$[.@c] = NPCP_WM$[.@i];
 		.@x[.@c] = NPCP_WX[.@i];
 		.@y[.@c] = NPCP_WY[.@i];
-		.@opt$ += callfunc("F_ChronWKPretty", NPCP_WM$[.@i]) + ":";
+		.@nm$[.@c] = callfunc("F_ChronWKPretty", NPCP_WM$[.@i]);
+		.@key$[.@c] = callfunc("F_ChronWKSortKey", .@nm$[.@c]);
 		.@c++;
 	}
+	// Sorted by name, numbers in order (Prontera Field 2 before 10), so places of a
+	// kind sit together whenever they were found (1.2.8, a player's request).
+	// Insertion sort; the inner loop breaks by hand (&& doesn't short-circuit here).
+	for (.@i = 1; .@i < .@c; .@i++) {
+		.@tk$ = .@key$[.@i];
+		.@tn$ = .@nm$[.@i];
+		.@tm$ = .@m$[.@i];
+		.@tx = .@x[.@i];
+		.@ty = .@y[.@i];
+		.@j = .@i - 1;
+		while (.@j >= 0) {
+			if (.@key$[.@j] <= .@tk$)
+				break;
+			.@key$[.@j + 1] = .@key$[.@j];
+			.@nm$[.@j + 1] = .@nm$[.@j];
+			.@m$[.@j + 1] = .@m$[.@j];
+			.@x[.@j + 1] = .@x[.@j];
+			.@y[.@j + 1] = .@y[.@j];
+			.@j--;
+		}
+		.@key$[.@j + 1] = .@tk$;
+		.@nm$[.@j + 1] = .@tn$;
+		.@m$[.@j + 1] = .@tm$;
+		.@x[.@j + 1] = .@tx;
+		.@y[.@j + 1] = .@ty;
+	}
+	for (.@i = 0; .@i < .@c; .@i++)
+		.@opt$ += .@nm$[.@i] + ":";
 	freeloop(0);
 	if (!.@c) {
 		mes .@n$;
