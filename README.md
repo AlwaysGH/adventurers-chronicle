@@ -12,8 +12,7 @@ Are you new to Ragnarok, or coming back after years and not sure where to go nex
 - **A costume of your choice** at the end of each chapter.
 - **A journal** (Alt+B, or the button under the minimap). It recaps everything you've done and shows what to do next. Its Route link opens Navigation to the exact spot.
 - **Veterans can skip ahead** to their level.
-
-For travel, pair it with NPC Plus. Its Warper can unlock each place as you set foot in it.
+- **Waykeepers** in every town. Once you set foot on a town, field or dungeon, any Waykeeper can send you back there.
 
 ## Install
 
@@ -29,6 +28,8 @@ To install by hand, download the zip from [Releases](../../releases), then insta
 ## Settings
 
 - **Quest EXP (%)**: 100 gives exactly enough EXP to reach the next quest's level. 0 turns quest EXP off.
+- **Companions share quest EXP**: every companion in your party gets the same quest EXP as you.
+- **Waykeepers**: on by default. Switch off if you use another warper.
 - **Show the Journal button**: Alt+B works either way.
 
 ## Author
