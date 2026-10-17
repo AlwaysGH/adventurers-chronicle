@@ -6,9 +6,10 @@
 //= Rune-Midgard by level. Progress is CHRON_STEP (1..40, 41 = finished;
 //= step g of chapter c is (c-1)*5+s). Each step has a quest-window entry,
 //= quest id 77000+g; hunt steps count kills there (companions' kills count
-//= too: rAthena credits party members in range). Travel (the Waykeepers and
-//= the places you've found) moved to the npc-plus mod's Warper in 1.2.0;
-//= CHRON_WM$/WX/WY stay on characters, and npc-plus picks them up.
+//= too: rAthena credits party members in range). Travel is in
+//= npc/when/waykeepers (setting "waykeepers"): places found live in
+//= NPCP_WM$/WX/WY, shared with npc-plus's Warper (the Waykeepers stand down
+//= when it's on). Old CHRON_WM$/WX/WY are copied over once per character.
 //= Data lives in $@chr_* server arrays so every NPC and function can read
 //= it. The journal window (client/index.js) asks "@chronicle <n> state".
 //===========================================================================
@@ -19,6 +20,7 @@
 OnInit:
 	.mod$ = "adventurers-chronicle";
 	$@chr_exprate = callfunc("F_ModSetting", .mod$, "exp_rate", 100);
+	$@chr_share = callfunc("F_ModSetting", .mod$, "share_exp", 1);
 
 	//@@DATA@@
 
@@ -192,6 +194,8 @@ function	script	F_ChronAdvance	{
 	if (.@g < $@chr_steps)
 		.@target = $@chr_lv[.@g + 1];
 	callfunc "F_ChronReward", .@target;
+	if ($@chr_share)
+		callfunc "F_ChronShare", .@target;
 	specialeffect2 EF_ANGEL2;
 	if (.@g < $@chr_steps) {
 		setquest 77000 + .@g + 1;
@@ -226,39 +230,68 @@ function	script	F_ChronHave	{
 
 // EXP toward level getarg(0): at 100% exactly there, scaled by "Quest EXP".
 // Already there or past it: a quarter of a level. Plus some job EXP.
+// For you, or for character id getarg(1) (a companion, F_ChronShare).
 function	script	F_ChronReward	{
 	.@t = getarg(0);
+	.@c = getarg(1, getcharid(0));
 	.@rate = $@chr_exprate;
 	if (.@rate <= 0)
 		return;
-	.@from = BaseLevel;
+	.@from = readparam(BaseLevel, .@c);
 	if (.@t > .@from) {
 		.@span = (.@t - .@from) * .@rate;	// hundredths of a level
 		.@goal = .@from + .@span / 100;
 		.@frac = .@span % 100;
-		for (.@i = 0; .@i < 400 && BaseLevel < .@goal; .@i++) {
-			if (NextBaseExp <= 0)
+		for (.@i = 0; .@i < 400 && readparam(BaseLevel, .@c) < .@goal; .@i++) {
+			.@next = readparam(NextBaseExp, .@c);
+			if (.@next <= 0)
 				break;
-			.@need = NextBaseExp - BaseExp;
+			.@need = .@next - readparam(BaseExp, .@c);
 			if (.@need <= 0)
 				break;
-			getexp .@need, 0;
+			getexp .@need, 0, .@c;
 		}
-		if (.@frac > 0 && NextBaseExp > 0) {
-			.@e = NextBaseExp * .@frac / 100;
+		.@next = readparam(NextBaseExp, .@c);
+		if (.@frac > 0 && .@next > 0) {
+			.@e = .@next * .@frac / 100;
 			if (.@e > 0)
-				getexp .@e, 0;
+				getexp .@e, 0, .@c;
 		}
-	} else if (NextBaseExp > 0) {
-		.@e = NextBaseExp * .@rate / 400;
+	} else if (readparam(NextBaseExp, .@c) > 0) {
+		.@e = readparam(NextBaseExp, .@c) * .@rate / 400;
 		if (.@e > 0)
-			getexp .@e, 0;
+			getexp .@e, 0, .@c;
 	}
-	if (NextJobExp > 0) {
-		.@e = NextJobExp * .@rate * 6 / 1000;
+	if (readparam(NextJobExp, .@c) > 0) {
+		.@e = readparam(NextJobExp, .@c) * .@rate * 6 / 1000;
 		if (.@e > 0)
-			getexp 0, .@e;
+			getexp 0, .@e, .@c;
 	}
+	return;
+}
+
+// "Companions share quest EXP": every companion in your party gets the same
+// reward, each pulled toward the same level as you, so one that trails
+// catches up. Companions are the party members with char id 95000000 and up
+// (population-engine shells); one that isn't summoned is skipped.
+function	script	F_ChronShare	{
+	.@pid = getcharid(1);
+	if (!.@pid)
+		return;
+	getpartymember .@pid, 1;
+	.@n = $@partymembercount;
+	copyarray .@cid[0], $@partymembercid[0], .@n;
+	.@got = 0;
+	for (.@i = 0; .@i < .@n; .@i++) {
+		if (.@cid[.@i] < 95000000)
+			continue;
+		if (readparam(Hp, .@cid[.@i]) < 0)
+			continue;	// not summoned
+		callfunc "F_ChronReward", getarg(0), .@cid[.@i];
+		.@got++;
+	}
+	if (.@got)
+		dispbottom "[Chronicle] Your companions share the quest EXP.", 0xAADDFF;
 	return;
 }
 

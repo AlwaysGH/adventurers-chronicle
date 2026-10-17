@@ -4,7 +4,7 @@
 // tools/story.ps1); the server only says where you are, answering
 // "@chronicle <n> state" from npc/chronicle.txt with
 //   <step>|<base level>|<places found>|<chapters skipped>|<hunt state>|<items in bag>|<watched monsters>
-// (places found: npc-plus's Warper record, NPCP_WM$; 0 without that mod)
+// (places found: the Waykeepers' record, NPCP_WM$)
 // Open with Alt+B, the Journal button, the Chronicle book, or @chronicle.
 
 import DATA from './data.js';

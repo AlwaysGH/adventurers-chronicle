@@ -1,0 +1,221 @@
+//===== Ragnarok Offline: adventurers-chronicle — Waykeepers =================
+//= Setting "waykeepers" (default on). The first time you set foot on a map,
+//= the spot is saved, and any Waykeeper can send you back there. Waykeepers
+//= stand in front of the Prontera fountain and at the classic warper spots.
+//=
+//= Places are kept in the same list as NPC Plus's Warper (NPCP_WM$/WX/WY), so
+//= a character can switch between the two and keep every place found. When
+//= NPC Plus's Warper is on, it does the travelling and the Waykeepers stand
+//= down (hidden, no second tracker).
+//= Places found with the old Waykeepers (before 1.2.0, CHRON_WM$) carry over.
+//===========================================================================
+
+-	script	ChronWaykeeperCore	-1,{
+	end;
+
+OnInit:
+	// Readable names for maps: towns by name, the rest by prefix + number.
+	setarray $@chrwk_tmap$[0], "prontera", "izlude", "geffen", "payon", "morocc", "alberta", "aldebaran", "yuno", "comodo", "umbala", "amatsu", "gonryun", "louyang", "ayothaya", "jawaii", "xmas", "niflheim", "einbroch", "einbech", "lighthalzen", "hugel", "rachel", "veins", "moscovia", "brasilis", "manuk", "splendide", "pay_arche", "izlu2dun", "moc_ruins", "glast_01", "thor_camp", "alb2trea", "nameless_n", "nameless_i", "mid_camp", "jupe_core";
+	setarray $@chrwk_tname$[0], "Prontera", "Izlude", "Geffen", "Payon", "Morroc", "Alberta", "Al De Baran", "Juno", "Comodo", "Umbala", "Amatsu", "Kunlun", "Luoyang", "Ayothaya", "Jawaii", "Lutie", "Niflheim", "Einbroch", "Einbech", "Lighthalzen", "Hugel", "Rachel", "Veins", "Moscovia", "Brasilis", "Manuk", "Splendide", "Archer Village", "Byalan Island", "Pyramid Oasis", "Glast Heim Outskirts", "Thor Camp", "Alberta Harbor", "Nameless Island", "Nameless Island", "Midgard Camp", "Juperos Core";
+	setarray $@chrwk_pfx$[0], "prt_fild", "prt_sewb", "prt_maze", "pay_fild", "pay_dun", "moc_fild", "moc_pryd", "in_sphinx", "anthell", "gef_fild", "gef_dun", "gef_tower", "orcsdun", "iz_dun", "cmd_fild", "beach_dun", "mjolnir_", "mjo_dun", "c_tower", "alde_dun", "gl_cas", "gl_church", "gl_chyard", "gl_knt", "gl_prison", "gl_sew", "gl_dun", "gl_step", "gl_in", "yuno_fild", "juperos_", "ein_fild", "ein_dun", "lhz_fild", "lhz_dun", "hu_fild", "odin_tem", "abyss_", "tha_t", "ra_fild", "ra_san", "ice_dun", "ve_fild", "thor_v", "um_fild", "um_dun", "tur_dun", "treasure", "ama_dun", "ama_fild", "gon_dun", "gon_fild", "lou_dun", "lou_fild", "ayo_dun", "ayo_fild", "xmas_dun", "xmas_fild", "nif_fild", "kh_dun", "mag_dun", "abbey", "nameless", "mosk_", "bra_", "man_", "spl_", "alb2trea", "iz_ac", "gefenia", "nyd_dun";
+	setarray $@chrwk_pname$[0], "Prontera Field", "Prontera Culvert", "Labyrinth Forest", "Payon Forest", "Payon Cave", "Sograt Desert", "Pyramids", "Sphinx", "Ant Hell", "Geffen Field", "Geffen Dungeon", "Geffen Tower", "Orc Dungeon", "Byalan Dungeon", "Comodo Field", "Comodo Beach Cave", "Mt. Mjolnir", "Mjolnir Dead Pit", "Clock Tower", "Clock Tower Basement", "Glast Heim Castle", "Glast Heim Church", "Glast Heim Churchyard", "Glast Heim Knight Hall", "Glast Heim Prison", "Glast Heim Sewers", "Glast Heim Underground", "Glast Heim Stairs", "Glast Heim Inside", "Juno Field", "Juperos", "Einbroch Field", "Einbroch Mine", "Lighthalzen Field", "Bio Labs", "Hugel Field", "Odin's Temple", "Abyss Lake", "Thanatos Tower", "Rachel Field", "Rachel Sanctuary", "Ice Cave", "Veins Field", "Thor's Volcano", "Umbala Field", "Umbala Dungeon", "Turtle Island", "Sunken Ship", "Amatsu Dungeon", "Amatsu Field", "Kunlun Dungeon", "Kunlun Field", "Luoyang Dungeon", "Luoyang Field", "Ayothaya Dungeon", "Ayothaya Field", "Toy Factory", "Lutie Field", "Niflheim Field", "Kiel Hyre Academy", "Magma Dungeon", "Cursed Abbey", "Nameless Island", "Moscovia", "Brasilis", "Manuk", "Splendide Field", "Alberta Harbor", "Izlude Academy", "Gefenia", "Nidhogg's Nest";
+
+	// NPC Plus fills $@npcp_tmap$ in its own OnInit when its Warper is on.
+	// Every OnInit has run after a second.
+	sleep 1000;
+	if (getarraysize($@npcp_tmap$))
+		end;	// NPC Plus's Warper does the travelling
+	$@chrwk_on = 1;
+	initnpctimer;	// the tick below
+	end;
+
+// One NPC timer for everyone, every 2000 ms. `addrid 0, 1` runs the tick for
+// each player but skips anyone busy in an NPC dialog.
+OnTimer2000:
+	initnpctimer;
+	addrid 0, 1;
+	if (getcharid(3) >= 95000000)
+		end;	// an AI player, not a person
+	getmapxy(.@map$, .@x, .@y);
+	if (.@map$ == @chrwk_lastmap$)
+		end;
+	@chrwk_lastmap$ = .@map$;
+	callfunc "F_ChronWKDiscover", .@map$, .@x, .@y;
+	end;
+
+OnPCLoginEvent:
+	@chrwk_lastmap$ = "";
+	// Places found with the old Waykeepers (before 1.2.0) come along, once per
+	// character. Same flag as NPC Plus, so it happens only once either way.
+	if (!NPCP_WMIG) {
+		NPCP_WMIG = 1;
+		for (.@i = 0; .@i < getarraysize(CHRON_WM$); .@i++) {
+			if (inarray(NPCP_WM$, CHRON_WM$[.@i]) >= 0)
+				continue;
+			.@n = getarraysize(NPCP_WM$);
+			NPCP_WM$[.@n] = CHRON_WM$[.@i];
+			NPCP_WX[.@n] = CHRON_WX[.@i];
+			NPCP_WY[.@n] = CHRON_WY[.@i];
+		}
+	}
+	end;
+}
+
+// First steps on a map: save it.
+function	script	F_ChronWKDiscover	{
+	.@m$ = getarg(0);
+	if (callfunc("F_ChronWKKind", .@m$) == "")
+		return;
+	if (inarray(NPCP_WM$, .@m$) >= 0)
+		return;
+	.@n = getarraysize(NPCP_WM$);
+	NPCP_WM$[.@n] = .@m$;
+	NPCP_WX[.@n] = getarg(1);
+	NPCP_WY[.@n] = getarg(2);
+	dispbottom "[Waykeeper] New place: " + callfunc("F_ChronWKPretty", .@m$) + ". Any Waykeeper can now send you here.", 0x99DDFF;
+	return;
+}
+
+// town / field / dungeon, or "" for maps that are no place to warp to.
+function	script	F_ChronWKKind	{
+	.@m$ = getarg(0);
+	if (compare(.@m$, "@") || compare(.@m$, "#"))
+		return "";
+	// A map that's gone (a temporary copy like "0674#000001", or a removed
+	// mod's map): getmapflag fails on it and kills the whole menu.
+	if (getmapusers(.@m$) < 0)
+		return "";
+	if (getmapflag(.@m$, MF_PVP) || getmapflag(.@m$, MF_GVG) || getmapflag(.@m$, MF_BATTLEGROUND))
+		return "";
+	// The Juperos elevator rooms: empty dead ends outside the lever event.
+	if (.@m$ == "jupe_ele" || .@m$ == "jupe_ele_r")
+		return "";
+	// Towns by name first: Morroc lacks the town flag in pre-renewal.
+	setarray .@towns$, "prontera", "izlude", "geffen", "payon", "morocc", "alberta", "aldebaran", "yuno", "comodo", "umbala", "amatsu", "gonryun", "louyang", "ayothaya", "jawaii", "xmas", "niflheim", "einbroch", "einbech", "lighthalzen", "hugel", "rachel", "veins", "moscovia", "brasilis", "manuk", "splendide";
+	if (inarray(.@towns$, .@m$) >= 0)
+		return "town";
+	if (getmapflag(.@m$, MF_TOWN))
+		return "town";
+	if (.@m$ == "pay_arche" || .@m$ == "izlu2dun" || .@m$ == "moc_ruins" || .@m$ == "thor_camp" || .@m$ == "alb2trea" || .@m$ == "mid_camp")
+		return "town";
+	if (compare(.@m$, "fild") || compare(.@m$, "mjolnir_") || compare(.@m$, "_gld") || .@m$ == "glast_01")
+		return "field";
+	// Glast Heim before the filters below: "_cas" and "church" are meant for
+	// guild castles and town interiors, not gl_cas01 or gl_church.
+	if (compare(.@m$, "sphinx") || compare(.@m$, "gl_"))
+		return "dungeon";
+	if (compare(.@m$, "_in") || compare(.@m$, "in_") || compare(.@m$, "job") || compare(.@m$, "que_") || compare(.@m$, "_cas") || compare(.@m$, "arena") || compare(.@m$, "jail") || compare(.@m$, "sec_") || compare(.@m$, "castle") || compare(.@m$, "church") || compare(.@m$, "_room") || compare(.@m$, "new_") || compare(.@m$, "ordeal") || compare(.@m$, "_tt") || compare(.@m$, "turbo") || compare(.@m$, "quiz") || compare(.@m$, "airplane") || compare(.@m$, "airport") || compare(.@m$, "ship"))
+		return "";
+	return "dungeon";
+}
+
+// A readable map name: "Payon Cave 2", "Prontera".
+function	script	F_ChronWKPretty	{
+	.@m$ = getarg(0);
+	.@i = inarray($@chrwk_tmap$, .@m$);
+	if (.@i >= 0)
+		return $@chrwk_tname$[.@i];
+	.@num$ = "";
+	.@len = getstrlen(.@m$);
+	while (.@len > 0 && charat(.@m$, .@len - 1) >= "0" && charat(.@m$, .@len - 1) <= "9") {
+		.@num$ = charat(.@m$, .@len - 1) + .@num$;
+		.@len--;
+	}
+	for (.@i = 0; .@i < getarraysize($@chrwk_pfx$); .@i++) {
+		if (compare(.@m$, $@chrwk_pfx$[.@i])) {
+			if (.@num$ != "")
+				return $@chrwk_pname$[.@i] + " " + atoi(.@num$);
+			return $@chrwk_pname$[.@i];
+		}
+	}
+	return .@m$;
+}
+
+-	script	ChronWaykeeper	-1,{
+	.@n$ = "[Waykeeper]";
+	mes .@n$;
+	mes "I can send you anywhere you have already set foot. The road remembers you.";
+	next;
+	.@k = select("Towns:Fields:Dungeons:Cancel");
+	if (.@k == 4)
+		close;
+	.@want$ = "dungeon";
+	if (.@k == 1)
+		.@want$ = "town";
+	else if (.@k == 2)
+		.@want$ = "field";
+	.@c = 0;
+	.@opt$ = "";
+	// Each place is named through tables of ~100 entries: a few dozen places
+	// pass rAthena's runaway-loop guard ("infinity loop!") without freeloop.
+	freeloop(1);
+	for (.@i = 0; .@i < getarraysize(NPCP_WM$); .@i++) {
+		if (callfunc("F_ChronWKKind", NPCP_WM$[.@i]) != .@want$)
+			continue;
+		.@m$[.@c] = NPCP_WM$[.@i];
+		.@x[.@c] = NPCP_WX[.@i];
+		.@y[.@c] = NPCP_WY[.@i];
+		.@opt$ += callfunc("F_ChronWKPretty", NPCP_WM$[.@i]) + ":";
+		.@c++;
+	}
+	freeloop(0);
+	if (!.@c) {
+		mes .@n$;
+		mes "You have not set foot in any yet. Go and see the world; I will remember every place you reach.";
+		close;
+	}
+	.@s = select(.@opt$ + "Cancel") - 1;
+	if (.@s >= .@c)
+		close;
+	close2;
+	warp .@m$[.@s], .@x[.@s], .@y[.@s];
+	end;
+
+OnInit:
+	// Stand down when NPC Plus's Warper is on (see ChronWaykeeperCore).
+	sleep 1000;
+	if (getarraysize($@npcp_tmap$))
+		disablenpc strnpcinfo(0);
+	end;
+}
+
+// The Waykeepers: Prontera's in front of the fountain, the rest at the classic
+// warper spots (the same cells NPC Plus's Warper uses, so only one of the two
+// ever stands there).
+prontera,153,193,4	duplicate(ChronWaykeeper)	Waykeeper#chr_prt	4_M_SAGE_A
+alb2trea,57,70,6	duplicate(ChronWaykeeper)	Waykeeper#chr_tre	4_M_SAGE_A
+alberta,28,240,4	duplicate(ChronWaykeeper)	Waykeeper#chr_alb	4_M_SAGE_A
+aldebaran,145,118,4	duplicate(ChronWaykeeper)	Waykeeper#chr_alde	4_M_SAGE_A
+amatsu,203,87,4	duplicate(ChronWaykeeper)	Waykeeper#chr_ama	4_M_SAGE_A
+ayothaya,209,169,6	duplicate(ChronWaykeeper)	Waykeeper#chr_ayo	4_M_SAGE_A
+comodo,194,158,4	duplicate(ChronWaykeeper)	Waykeeper#chr_com	4_M_SAGE_A
+einbech,59,38,6	duplicate(ChronWaykeeper)	Waykeeper#chr_einbe	4_M_SAGE_A
+einbroch,69,202,4	duplicate(ChronWaykeeper)	Waykeeper#chr_einbr	4_M_SAGE_A
+gef_fild10,71,339,4	duplicate(ChronWaykeeper)	Waykeeper#chr_orc	4_M_SAGE_A
+geffen,124,72,4	duplicate(ChronWaykeeper)	Waykeeper#chr_gef	4_M_SAGE_A
+glast_01,372,308,4	duplicate(ChronWaykeeper)	Waykeeper#chr_glh	4_M_SAGE_A
+gonryun,162,122,4	duplicate(ChronWaykeeper)	Waykeeper#chr_gon	4_M_SAGE_A
+hugel,101,151,4	duplicate(ChronWaykeeper)	Waykeeper#chr_hug	4_M_SAGE_A
+izlu2dun,110,92,4	duplicate(ChronWaykeeper)	Waykeeper#chr_izd	4_M_SAGE_A
+izlude,132,120,4	duplicate(ChronWaykeeper)	Waykeeper#chr_izl	4_M_SAGE_A
+jawaii,253,138,4	duplicate(ChronWaykeeper)	Waykeeper#chr_jaw	4_M_SAGE_A
+lighthalzen,162,102,4	duplicate(ChronWaykeeper)	Waykeeper#chr_lhz	4_M_SAGE_A
+louyang,208,103,6	duplicate(ChronWaykeeper)	Waykeeper#chr_lou	4_M_SAGE_A
+manuk,274,146,6	duplicate(ChronWaykeeper)	Waykeeper#chr_man	4_M_SAGE_A
+mid_camp,216,288,4	duplicate(ChronWaykeeper)	Waykeeper#chr_mid	4_M_SAGE_A
+mjolnir_02,85,364,4	duplicate(ChronWaykeeper)	Waykeeper#chr_mjo	4_M_SAGE_A
+moc_ruins,64,164,4	duplicate(ChronWaykeeper)	Waykeeper#chr_moc	4_M_SAGE_A
+morocc,159,97,4	duplicate(ChronWaykeeper)	Waykeeper#chr_mor	4_M_SAGE_A
+moscovia,229,191,4	duplicate(ChronWaykeeper)	Waykeeper#chr_mos	4_M_SAGE_A
+nameless_n,259,213,4	duplicate(ChronWaykeeper)	Waykeeper#chr_nam	4_M_SAGE_A
+niflheim,205,179,4	duplicate(ChronWaykeeper)	Waykeeper#chr_nif	4_M_SAGE_A
+pay_arche,42,134,4	duplicate(ChronWaykeeper)	Waykeeper#chr_arc	4_M_SAGE_A
+payon,182,108,4	duplicate(ChronWaykeeper)	Waykeeper#chr_pay	4_M_SAGE_A
+prt_fild05,279,223,6	duplicate(ChronWaykeeper)	Waykeeper#chr_cul	4_M_SAGE_A
+rachel,135,116,4	duplicate(ChronWaykeeper)	Waykeeper#chr_rac	4_M_SAGE_A
+splendide,205,153,4	duplicate(ChronWaykeeper)	Waykeeper#chr_spl	4_M_SAGE_A
+thor_camp,249,76,4	duplicate(ChronWaykeeper)	Waykeeper#chr_thor	4_M_SAGE_A
+umbala,106,150,3	duplicate(ChronWaykeeper)	Waykeeper#chr_umb	4_M_SAGE_A
+veins,214,123,4	duplicate(ChronWaykeeper)	Waykeeper#chr_ve	4_M_SAGE_A
+xmas,150,136,6	duplicate(ChronWaykeeper)	Waykeeper#chr_xmas	4_M_SAGE_A
+yuno,162,47,4	duplicate(ChronWaykeeper)	Waykeeper#chr_yuno	4_M_SAGE_A

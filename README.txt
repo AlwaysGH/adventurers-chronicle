@@ -1,4 +1,4 @@
-THE ADVENTURER'S CHRONICLE  v1.2.3 (BETA)  by Always
+THE ADVENTURER'S CHRONICLE  v1.2.7 (BETA)  by Always
 For Ragnarok Offline 1.4.8 or newer. Pre-renewal.
 
 A story-driven main quest that walks you across Rune-Midgard at the right
@@ -24,7 +24,8 @@ years and wondering where to go next.
 
   Quest EXP that keeps you on pace
     Each finished quest gives the EXP to reach the next quest's level, so
-    you're always ready for what comes next.
+    you're always ready for what comes next. Your companions get the same
+    quest EXP, so they keep up with you.
 
   Chapter rewards
     Zeny, supplies, and a costume headgear of your choice (3 per chapter).
@@ -43,9 +44,10 @@ years and wondering where to go next.
     brief and start at the chapter for their level.
 
   Travel
-    The Waykeepers moved to the NPC Plus mod in 1.2.0: its Warper can
-    unlock each town, field and dungeon as you set foot in it, the way the
-    Waykeepers did. Places you found before carry over.
+    Waykeepers (setting "Waykeepers", on by default) stand in front of the
+    Prontera fountain and in every town. The first time you set foot on a
+    town, field or dungeon it is remembered, and any Waykeeper can send you
+    back there.
 
 
 ==========================================================================
@@ -87,6 +89,10 @@ years and wondering where to go next.
   Settings: Settings > Mods > adventurers-chronicle
   - Quest EXP (%): 100 = exactly to the next quest's level. Lower it if
     you like to hunt the rest yourself.
+  - Companions share quest EXP (on): every companion in your party gets
+    the same reward, brought toward the same level as you.
+  - Waykeepers (on): the travel NPCs in every town. Switch off if you
+    use another warper.
   - Show the Journal button.
 
 

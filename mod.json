@@ -1,8 +1,8 @@
 {
   "name": "adventurers-chronicle",
-  "version": "1.2.5",
+  "version": "1.2.7",
   "author": "Always",
-  "description": "New to Ragnarok, or coming back after years and not sure where to go next? The Adventurer's Chronicle is a story-driven main quest that walks you across Rune-Midgard at the right pace for your level: from Prontera's fields at level 1 to Odin's Temple past 99, through Payon, Morroc, Geffen, Glast Heim, Juno, Rachel and Hugel. Its 8 chapters retell Rune-Midgard's own lore: the weakening seals, Geffenia, the fall of Glast Heim, Juperos, The Sign. Hunt, gather and face a named boss in every region; quest EXP carries you to the next quest's level, and each chapter ends with a costume of your choice. A built-in journal (Alt+B) recaps everything you've done and shows what to do next, with a Route link that opens Navigation to the exact spot. Veterans can skip ahead to their level. For travel, pair it with NPC Plus: its Warper can unlock each place as you set foot in it. Friendly to new and veteran players alike. Pre-renewal.",
+  "description": "New to Ragnarok, or coming back after years and not sure where to go next? The Adventurer's Chronicle is a story-driven main quest that walks you across Rune-Midgard at the right pace for your level: from Prontera's fields at level 1 to Odin's Temple past 99, through Payon, Morroc, Geffen, Glast Heim, Juno, Rachel and Hugel. Its 8 chapters retell Rune-Midgard's own lore: the weakening seals, Geffenia, the fall of Glast Heim, Juperos, The Sign. Hunt, gather and face a named boss in every region; quest EXP carries you to the next quest's level, and each chapter ends with a costume of your choice. A built-in journal (Alt+B) recaps everything you've done and shows what to do next, with a Route link that opens Navigation to the exact spot. Veterans can skip ahead to their level. Waykeepers in every town send you back to any place you have already set foot in. Friendly to new and veteran players alike. Pre-renewal.",
   "requires": { "app": ">=1.4.8", "era": "pre-renewal" },
   "tags": ["quests", "story", "journal", "costumes"],
   "settings": [
@@ -14,6 +14,20 @@
       "max": 300,
       "label": "Quest EXP (%)",
       "description": "100: each finished quest gives exactly enough EXP to reach the next quest's level. 50: half the way (you hunt the rest). 200: twice as far. If you are already at that level, a quest gives a quarter of a level instead. 0: no EXP from quests."
+    },
+    {
+      "key": "share_exp",
+      "type": "boolean",
+      "default": true,
+      "label": "Companions share quest EXP",
+      "description": "Every companion in your party gets the same quest EXP as you: each is brought toward the same level, so one that trails behind catches up. Off: only you get it."
+    },
+    {
+      "key": "waykeepers",
+      "type": "boolean",
+      "default": true,
+      "label": "Waykeepers",
+      "description": "A Waykeeper in front of the Prontera fountain and in every town. The first time you set foot on a map it is remembered, and any Waykeeper can send you back there. Switch off if you use another warper."
     },
     {
       "key": "show_button",
