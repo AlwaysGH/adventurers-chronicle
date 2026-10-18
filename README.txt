@@ -1,5 +1,5 @@
 THE ADVENTURER'S CHRONICLE  v1.2.7 (BETA)  by Always
-For Ragnarok Offline 1.4.8 or newer. Pre-renewal.
+For Ragnarok Offline 1.4.8 or newer. Pre-renewal and Renewal.
 
 A story-driven main quest that walks you across Rune-Midgard at the right
 pace for your level. For new players, and for anyone coming back after
@@ -54,7 +54,9 @@ years and wondering where to go next.
  NOTES
 ==========================================================================
 
-  - BETA. Pre-renewal only.
+  - BETA. On Renewal the same 8 chapters run on Renewal levels (up to
+    past 140), with the Chapter 3 and 4 hunts moved to monsters of the
+    right level. The Renewal route is new and not yet played through.
   - Tested: Chapters 1 to 3. Chapters 4 to 8, the costume rewards and the
     Journal's Route link are still being tested. If something breaks,
     type @chronicle and send the chapter and step it shows, with what
@@ -63,9 +65,10 @@ years and wondering where to go next.
     1 knight offers higher-level characters a skip ahead.
   - Chapter 8 goes past level 99 with a level cap mod, and still works at
     99 without one.
-  - The Chapter 4 orc hunt (gef_fild14) has a Route link from version
-    1.1.2, with the app's 1.5.5 client data. Older clients' Navigation
-    doesn't know that map: walk west from the orc village (gef_fild10).
+  - Pre-renewal: the Chapter 4 orc hunt (gef_fild14) has a Route link
+    from version 1.1.2, with the app's 1.5.5 client data. Older clients'
+    Navigation doesn't know that map: walk west from the orc village
+    (gef_fild10).
   - Some places can't be walked to, so Navigation can't route there. The
     Chronicle walks you through them instead: the Culvert (volunteer with
     the Recruiter), Morroc (closed by the Continental Guard: the Kafra
