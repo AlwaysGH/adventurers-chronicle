@@ -23,7 +23,7 @@ To install by hand, download the zip from [Releases](../../releases), then insta
 ## Requirements
 
 - Ragnarok Offline 1.4.8 or newer
-- Pre-renewal or Renewal. Renewal has its own route: the same 8 chapters on Renewal levels, with the hunts in Morroc and Geffen moved to monsters of the right level.
+- Pre-renewal or Renewal. Renewal has its own route: 9 chapters on Renewal levels, with a new chapter in Einbech's mine (levels 90-105) between Glast Heim and Juno, and the hunts in Morroc and Geffen moved to monsters of the right level.
 
 ## Settings
 

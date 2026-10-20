@@ -54,9 +54,10 @@ years and wondering where to go next.
  NOTES
 ==========================================================================
 
-  - BETA. On Renewal the same 8 chapters run on Renewal levels (up to
-    past 140), with the Chapter 3 and 4 hunts moved to monsters of the
-    right level. The Renewal route is new and not yet played through.
+  - BETA. On Renewal 9 chapters run on Renewal levels (up to past 140):
+    a new Chapter 6 in Einbech's mine (90-105) between Glast Heim and
+    Juno, and the Chapter 3 and 4 hunts moved to monsters of the right
+    level. The Renewal route is new and not yet played through.
   - Tested: Chapters 1 to 3. Chapters 4 to 8, the costume rewards and the
     Journal's Route link are still being tested. If something breaks,
     type @chronicle and send the chapter and step it shows, with what
@@ -75,7 +76,8 @@ years and wondering where to go next.
     teleports you in and out), Juperos Core (the elevator puzzle) and
     Odin's Temple (the Boatman in Hugel). See "How to get there" in the
     Journal and the quest window.
-  - Uses item IDs 50100-50124 and quest IDs 77001-77040.
+  - Uses item IDs 50100-50124 and quest IDs 77001-77040; Renewal also
+    50125-50127 and 77101-77105.
   - Once the Chronicle is complete, it points you to Rune-Midgard's own
     legends: The Sign, Thanatos Tower, the Abyss Lakes, the Endless Tower.
 

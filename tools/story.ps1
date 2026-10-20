@@ -20,6 +20,9 @@
 # step's or a chapter's re = @{ key = value } replaces those keys on Renewal
 # (levels, monsters, maps, items, text). Renewal's monsters are far higher
 # level and drop about half as often (rAthena db/re), so its steps differ.
+# A chapter with era = 'renewal' is only in the Renewal route; its costumes
+# take three new item ids from its costumeId (50125 on). Chapters are numbered
+# by their place in each era's route (n below is the Pre-renewal number).
 
 $final = 115   # the level the last step fills toward
 $finalRe = 150 # the same on Renewal
@@ -267,10 +270,68 @@ $chapters = @(
           now = 'Travel to Glast Heim, west of Geffen, and enter its churchyard (gl_chyard).'
           done = 'You laid to rest the Wraith of the Fallen Order, once a knight of Aldric''s own order. Before it faded, it spoke of the machines beneath the floating city.' }
        @{ id = 25; type = 'report'; lv = 72; title = 'A Knight''s Salute'
-          re = @{ lv = 88 }
           now = 'Tell Sir Aldric in Al De Baran (142, 63) what the wraith said.'
           done = 'Aldric saluted you as a knight would. The floating city is Juno, capital of the Schwarzwald Republic. He wrote to the Sages there on your behalf.'
-          say = @('He is at peace, then. Thank you. I could never have raised my sword against him.', 'The machines beneath the floating city... he means Juno, the capital of the Schwarzwald Republic, and the ruins of Juperos below it.', 'I have written to the Sages of Juno. Ask for Sage Elisha. And... it was an honor, friend.') }
+          say = @('He is at peace, then. Thank you. I could never have raised my sword against him.', 'The machines beneath the floating city... he means Juno, the capital of the Schwarzwald Republic, and the ruins of Juperos below it.', 'I have written to the Sages of Juno. Ask for Sage Elisha. And... it was an honor, friend.')
+          # Renewal: Chapter 6 (Einbech) comes first.
+          re = @{ lv = 88
+             done = 'Aldric saluted you as a knight would. The machines the wraith spoke of lie in the Schwarzwald Republic, and an old friend of his, the foreman of the Einbech mine, has written of crystals that hum in the dark. Aldric sent you to him.'
+             say = @('He is at peace, then. Thank you. I could never have raised my sword against him.', 'The machines beneath the floating city... that is the Schwarzwald Republic. Juno, and the ruins of Juperos below it.', 'But there is a closer road. An old friend of mine, Gustav, is foreman of the mine in Einbech. His last letter spoke of black crystals that hum in the dark, and of dead miners walking.', 'Go to him first. I have written to the Sages of Juno as well. And... it was an honor, friend.') } }
+     ) }
+
+  # Renewal only: the Schwarzwald's mining town, between Glast Heim and Juno.
+  @{ era = 'renewal'; title = 'Smoke over the Schwarzwald'; range = '90-105'
+     town = 'einbech'; townName = 'Einbech'; npc = 'Foreman Gustav'; sprite = '4_M_EINMINER'; x = 142; y = 244
+     costumes = @(5031, 5009, 5679); costumeId = 50125; gift = @(@(504, 50), @(505, 20)); zeny = 50000
+     intro = 'Einbech is the mining town of the Schwarzwald Republic, a short train ride from Einbroch, the city of steel and smoke. Its mine runs deep beneath the town.'
+     # From Al De Baran: a Kafra to Juno, the airship to Einbroch, the train
+     # to Einbech. Shown on every step, for anyone who is still on the way.
+     spots = @(
+       @{ map = 'aldebaran'; x = 143; y = 119; name = 'Kafra: Teleport to Juno (1,200 zeny)' }
+       @{ map = 'yuno'; x = 53; y = 214; name = 'Juno Airport' }
+       @{ map = 'y_airport'; x = 143; y = 43; name = 'Airport Staff: board the airship (1,200 zeny)' }
+       @{ map = 'y_airport'; x = 145; y = 63; name = 'Domestic Boarding: Einbroch, Lighthalzen, Hugel' }
+       @{ map = 'einbroch'; x = 232; y = 272; name = 'Train Station Staff: to Einbech (200 zeny)' }
+     )
+     away = 'Far from Einbech? From Al De Baran, a Kafra Employee (143, 119) teleports you to Juno (1,200 zeny). Juno''s airship stops in Einbroch, and Einbroch''s train (232, 272) runs to Einbech (200 zeny).'
+     steps = @(
+       @{ id = 101; type = 'talk'; lv = 90; title = 'The Foreman of Einbech'
+          now = 'Travel to Einbech, the mining town of the Schwarzwald Republic, and find Foreman Gustav by the mine entrance (142, 244).'
+          hint = @(
+            'From Al De Baran, a Kafra Employee (143, 119) can teleport you to Juno (1,200 zeny).'
+            'In Juno, enter the airport in the west of the city (53, 214). Pay the Airport Staff (1,200 zeny), go through Domestic Boarding and ride the airship until it lands in Einbroch.'
+            'In Einbroch, the Train Station Staff (232, 272) takes you to Einbech for 200 zeny. Gustav stands by the mine entrance in the north of the town (142, 244) and is marked on your minimap when you arrive.'
+          )
+          done = 'Gustav runs the Einbech mine. His miners broke into a seam of black crystal deep under the town; since then poison fills the tunnels and the miners who died there long ago walk again.'
+          say = @('Aldric sent you? Then you are welcome here, smoke and all.', 'Three weeks ago my miners broke into a seam of black crystal, deep under the town. It hums at night. Since then the tunnels have filled with poison, and the miners who died down there long ago have started walking again.', 'Nobody will go down any more. Clear the first level of the mine for me, and we can find out what we woke up.') }
+       @{ id = 102; type = 'hunt'; lv = 92; title = 'The Restless Mine'; where = 'ein_dun01'
+          mobs = @(@(1616, 'Pitman', 30), @(1620, 'Noxious', 20))
+          now = 'Hunt 30 Pitmen and 20 Noxious on the first level of the Einbech Mine (ein_dun01). Its entrance is in the north of Einbech (138, 252).'
+          hint = @(, 'The mine entrance is in the north of Einbech (138, 252), next to Foreman Gustav. Pitmen and Noxious fill its first level.')
+          spots = @(
+            @{ map = 'einbech'; x = 138; y = 249; name = 'Entrance to the mine' }
+          )
+          done = 'You drove back the dead miners and the poison that drifts with them, for now.' }
+       @{ id = 103; type = 'deliver'; lv = 95; title = 'Samples for the Foreman'
+          items = @(@(7318, 'Old Pick', 5), @(7320, 'Dust Pollutant', 8))
+          now = 'Gustav wants to know what is poisoning his mine. Bring him 5 Old Picks from the Pitmen and 8 Dust Pollutants from the Noxious, in Einbech (142, 244).'
+          done = 'The picks were black with crystal dust, and the poison came off the crystal itself. Gustav sent you down to its source, on the second level of the mine.'
+          say = @('These picks... look at the dust on them. Black, and warm to the touch.', 'And this poison is not from the coal. It comes off the crystal itself, like breath. Something down there is alive, or wants to be.', 'The seam is on the second level of the mine. Whatever guards it, put it down.') }
+       @{ id = 104; type = 'boss'; lv = 98; title = 'The Black Seam'; map = 'ein_dun02'; mob = 1615; boss = 'Warden of the Black Crystal'; hp = 10
+          now = 'Descend to the second level of the Einbech Mine (ein_dun02). The way down is at the far north-east end of the first level (261, 255).'
+          hint = @(
+            'Enter the mine in the north of Einbech (138, 252).'
+            'Mine level 1: cross to its north-east corner (261, 255) and take the way down to level 2. The Warden of the Black Crystal appears a few seconds after you arrive.'
+          )
+          spots = @(
+            @{ map = 'einbech'; x = 138; y = 249; name = 'Entrance to the mine' }
+            @{ map = 'ein_dun01'; x = 261; y = 258; name = 'Way down to level 2' }
+          )
+          done = 'You shattered the Warden of the Black Crystal, a living shard of the seam. At its heart was the same crystal the old seals were made of.' }
+       @{ id = 105; type = 'report'; lv = 101; title = 'Crystal and Steel'
+          now = 'Bring Foreman Gustav in Einbech (142, 244) news of the Warden.'
+          done = 'Gustav knew the crystal at once: the ruins of Juperos beneath Juno are built of it, and their machines are waking too. He sent you on to Sage Elisha in Juno.'
+          say = @('A living crystal. My grandfather told stories like that, and I laughed at him.', 'Seal crystal, Aldric would call it. The ruins of Juperos beneath Juno are built from the same stone, and the sages say its old machines are waking.', 'Go to Juno, to Sage Elisha. Aldric has written to her already, and I will send word that you are coming. The airship from Einbroch will take you there.', 'And take this. Every miner in Einbech owes you a drink.') }
      ) }
 
   @{ n = 6; title = 'The Floating City'; range = '75-90'
@@ -280,9 +341,14 @@ $chapters = @(
      intro = 'Juno floats above the clouds as the capital of the Schwarzwald Republic, a land of sages and machines.'
      steps = @(
        @{ id = 26; type = 'talk'; lv = 75; title = 'The Sage of Juno'
-          re = @{ lv = 105 }
           now = 'Travel to Juno, the floating capital of the Schwarzwald Republic, and meet Sage Elisha near the southern entrance (156, 47).'
           done = 'Elisha studies Juperos, the ruins of an ancient civilization beneath the Republic. Its machines have begun to wake on their own.'
+          re = @{ lv = 105
+             hint = @(
+               'From Einbech, the Train Station Staff (39, 215) takes you back to Einbroch (200 zeny).'
+               'In Einbroch, enter the airport (64, 207), pay the Airport Staff (1,200 zeny) and ride the airship until it lands in Juno. Sage Elisha stands near Juno''s southern entrance (156, 47).'
+             )
+             say = @('Aldric wrote to me, and Gustav''s message came on the morning airship. Welcome to Juno.', 'Beneath the Republic lie the ruins of Juperos, a civilization older than any kingdom. Their machines have slept for ages.', 'Now they are waking on their own. Thin them out in the ruins, and I will learn what I can from what they leave behind.') }
           say = @('Aldric''s letter arrived yesterday. Welcome to Juno.', 'Beneath the Republic lie the ruins of Juperos, a civilization older than any kingdom. Their machines have slept for ages.', 'Now they are waking on their own. Thin them out in the ruins, and I will learn what I can from what they leave behind.') }
        @{ id = 27; type = 'hunt'; lv = 76; title = 'The Waking Machines'; where = 'juperos_01'
           re = @{ lv = 107 }

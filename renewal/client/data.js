@@ -1088,7 +1088,7 @@ export default {
                                            "lv":  88,
                                            "title":  "A Knight\u0027s Salute",
                                            "now":  "Tell Sir Aldric in Al De Baran (142, 63) what the wraith said.",
-                                           "done":  "Aldric saluted you as a knight would. The floating city is Juno, capital of the Schwarzwald Republic. He wrote to the Sages there on your behalf.",
+                                           "done":  "Aldric saluted you as a knight would. The machines the wraith spoke of lie in the Schwarzwald Republic, and an old friend of his, the foreman of the Einbech mine, has written of crystals that hum in the dark. Aldric sent you to him.",
                                            "map":  null,
                                            "boss":  null,
                                            "route":  {
@@ -1114,6 +1114,371 @@ export default {
                      },
                      {
                          "n":  6,
+                         "title":  "Smoke over the Schwarzwald",
+                         "range":  "90-105",
+                         "town":  "einbech",
+                         "townName":  "Einbech",
+                         "npc":  "Foreman Gustav",
+                         "x":  142,
+                         "y":  244,
+                         "intro":  "Einbech is the mining town of the Schwarzwald Republic, a short train ride from Einbroch, the city of steel and smoke. Its mine runs deep beneath the town.",
+                         "steps":  [
+                                       {
+                                           "g":  26,
+                                           "type":  "talk",
+                                           "lv":  90,
+                                           "title":  "The Foreman of Einbech",
+                                           "now":  "Travel to Einbech, the mining town of the Schwarzwald Republic, and find Foreman Gustav by the mine entrance (142, 244).",
+                                           "done":  "Gustav runs the Einbech mine. His miners broke into a seam of black crystal deep under the town; since then poison fills the tunnels and the miners who died there long ago walk again.",
+                                           "map":  null,
+                                           "boss":  null,
+                                           "route":  {
+                                                         "map":  "einbech",
+                                                         "x":  142,
+                                                         "y":  244,
+                                                         "name":  "Foreman Gustav"
+                                                     },
+                                           "mobs":  [
+
+                                                    ],
+                                           "items":  [
+
+                                                     ],
+                                           "hint":  [
+                                                        "From Al De Baran, a Kafra Employee (143, 119) can teleport you to Juno (1,200 zeny).",
+                                                        "In Juno, enter the airport in the west of the city (53, 214). Pay the Airport Staff (1,200 zeny), go through Domestic Boarding and ride the airship until it lands in Einbroch.",
+                                                        "In Einbroch, the Train Station Staff (232, 272) takes you to Einbech for 200 zeny. Gustav stands by the mine entrance in the north of the town (142, 244) and is marked on your minimap when you arrive."
+                                                    ],
+                                           "spots":  [
+                                                         {
+                                                             "map":  "aldebaran",
+                                                             "x":  143,
+                                                             "y":  119,
+                                                             "name":  "Kafra: Teleport to Juno (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "yuno",
+                                                             "x":  53,
+                                                             "y":  214,
+                                                             "name":  "Juno Airport",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  143,
+                                                             "y":  43,
+                                                             "name":  "Airport Staff: board the airship (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  145,
+                                                             "y":  63,
+                                                             "name":  "Domestic Boarding: Einbroch, Lighthalzen, Hugel",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "einbroch",
+                                                             "x":  232,
+                                                             "y":  272,
+                                                             "name":  "Train Station Staff: to Einbech (200 zeny)",
+                                                             "sw":  null
+                                                         }
+                                                     ]
+                                       },
+                                       {
+                                           "g":  27,
+                                           "type":  "hunt",
+                                           "lv":  92,
+                                           "title":  "The Restless Mine",
+                                           "now":  "Hunt 30 Pitmen and 20 Noxious on the first level of the Einbech Mine (ein_dun01). Its entrance is in the north of Einbech (138, 252).",
+                                           "done":  "You drove back the dead miners and the poison that drifts with them, for now.",
+                                           "map":  "ein_dun01",
+                                           "boss":  null,
+                                           "route":  {
+                                                         "map":  "ein_dun01",
+                                                         "x":  22,
+                                                         "y":  14,
+                                                         "name":  "Hunting ground: ein_dun01"
+                                                     },
+                                           "mobs":  [
+                                                        {
+                                                            "name":  "Pitman",
+                                                            "id":  1616,
+                                                            "count":  30
+                                                        },
+                                                        {
+                                                            "name":  "Noxious",
+                                                            "id":  1620,
+                                                            "count":  20
+                                                        }
+                                                    ],
+                                           "items":  [
+
+                                                     ],
+                                           "hint":  [
+                                                        "The mine entrance is in the north of Einbech (138, 252), next to Foreman Gustav. Pitmen and Noxious fill its first level."
+                                                    ],
+                                           "spots":  [
+                                                         {
+                                                             "map":  "einbech",
+                                                             "x":  138,
+                                                             "y":  249,
+                                                             "name":  "Entrance to the mine",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "aldebaran",
+                                                             "x":  143,
+                                                             "y":  119,
+                                                             "name":  "Kafra: Teleport to Juno (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "yuno",
+                                                             "x":  53,
+                                                             "y":  214,
+                                                             "name":  "Juno Airport",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  143,
+                                                             "y":  43,
+                                                             "name":  "Airport Staff: board the airship (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  145,
+                                                             "y":  63,
+                                                             "name":  "Domestic Boarding: Einbroch, Lighthalzen, Hugel",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "einbroch",
+                                                             "x":  232,
+                                                             "y":  272,
+                                                             "name":  "Train Station Staff: to Einbech (200 zeny)",
+                                                             "sw":  null
+                                                         }
+                                                     ]
+                                       },
+                                       {
+                                           "g":  28,
+                                           "type":  "deliver",
+                                           "lv":  95,
+                                           "title":  "Samples for the Foreman",
+                                           "now":  "Gustav wants to know what is poisoning his mine. Bring him 5 Old Picks from the Pitmen and 8 Dust Pollutants from the Noxious, in Einbech (142, 244).",
+                                           "done":  "The picks were black with crystal dust, and the poison came off the crystal itself. Gustav sent you down to its source, on the second level of the mine.",
+                                           "map":  null,
+                                           "boss":  null,
+                                           "route":  {
+                                                         "map":  "einbech",
+                                                         "x":  142,
+                                                         "y":  244,
+                                                         "name":  "Foreman Gustav"
+                                                     },
+                                           "mobs":  [
+
+                                                    ],
+                                           "items":  [
+                                                         {
+                                                             "name":  "Old Pick",
+                                                             "id":  7318,
+                                                             "count":  5
+                                                         },
+                                                         {
+                                                             "name":  "Dust Pollutant",
+                                                             "id":  7320,
+                                                             "count":  8
+                                                         }
+                                                     ],
+                                           "hint":  [
+                                                        "Far from Einbech? From Al De Baran, a Kafra Employee (143, 119) teleports you to Juno (1,200 zeny). Juno\u0027s airship stops in Einbroch, and Einbroch\u0027s train (232, 272) runs to Einbech (200 zeny)."
+                                                    ],
+                                           "spots":  [
+                                                         {
+                                                             "map":  "aldebaran",
+                                                             "x":  143,
+                                                             "y":  119,
+                                                             "name":  "Kafra: Teleport to Juno (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "yuno",
+                                                             "x":  53,
+                                                             "y":  214,
+                                                             "name":  "Juno Airport",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  143,
+                                                             "y":  43,
+                                                             "name":  "Airport Staff: board the airship (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  145,
+                                                             "y":  63,
+                                                             "name":  "Domestic Boarding: Einbroch, Lighthalzen, Hugel",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "einbroch",
+                                                             "x":  232,
+                                                             "y":  272,
+                                                             "name":  "Train Station Staff: to Einbech (200 zeny)",
+                                                             "sw":  null
+                                                         }
+                                                     ]
+                                       },
+                                       {
+                                           "g":  29,
+                                           "type":  "boss",
+                                           "lv":  98,
+                                           "title":  "The Black Seam",
+                                           "now":  "Descend to the second level of the Einbech Mine (ein_dun02). The way down is at the far north-east end of the first level (261, 255).",
+                                           "done":  "You shattered the Warden of the Black Crystal, a living shard of the seam. At its heart was the same crystal the old seals were made of.",
+                                           "map":  "ein_dun02",
+                                           "boss":  "Warden of the Black Crystal",
+                                           "route":  {
+                                                         "map":  "ein_dun02",
+                                                         "x":  291,
+                                                         "y":  292,
+                                                         "name":  "Warden of the Black Crystal: ein_dun02"
+                                                     },
+                                           "mobs":  [
+
+                                                    ],
+                                           "items":  [
+
+                                                     ],
+                                           "hint":  [
+                                                        "Enter the mine in the north of Einbech (138, 252).",
+                                                        "Mine level 1: cross to its north-east corner (261, 255) and take the way down to level 2. The Warden of the Black Crystal appears a few seconds after you arrive."
+                                                    ],
+                                           "spots":  [
+                                                         {
+                                                             "map":  "einbech",
+                                                             "x":  138,
+                                                             "y":  249,
+                                                             "name":  "Entrance to the mine",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "ein_dun01",
+                                                             "x":  261,
+                                                             "y":  258,
+                                                             "name":  "Way down to level 2",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "aldebaran",
+                                                             "x":  143,
+                                                             "y":  119,
+                                                             "name":  "Kafra: Teleport to Juno (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "yuno",
+                                                             "x":  53,
+                                                             "y":  214,
+                                                             "name":  "Juno Airport",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  143,
+                                                             "y":  43,
+                                                             "name":  "Airport Staff: board the airship (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  145,
+                                                             "y":  63,
+                                                             "name":  "Domestic Boarding: Einbroch, Lighthalzen, Hugel",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "einbroch",
+                                                             "x":  232,
+                                                             "y":  272,
+                                                             "name":  "Train Station Staff: to Einbech (200 zeny)",
+                                                             "sw":  null
+                                                         }
+                                                     ]
+                                       },
+                                       {
+                                           "g":  30,
+                                           "type":  "report",
+                                           "lv":  101,
+                                           "title":  "Crystal and Steel",
+                                           "now":  "Bring Foreman Gustav in Einbech (142, 244) news of the Warden.",
+                                           "done":  "Gustav knew the crystal at once: the ruins of Juperos beneath Juno are built of it, and their machines are waking too. He sent you on to Sage Elisha in Juno.",
+                                           "map":  null,
+                                           "boss":  null,
+                                           "route":  {
+                                                         "map":  "einbech",
+                                                         "x":  142,
+                                                         "y":  244,
+                                                         "name":  "Foreman Gustav"
+                                                     },
+                                           "mobs":  [
+
+                                                    ],
+                                           "items":  [
+
+                                                     ],
+                                           "hint":  [
+                                                        "Far from Einbech? From Al De Baran, a Kafra Employee (143, 119) teleports you to Juno (1,200 zeny). Juno\u0027s airship stops in Einbroch, and Einbroch\u0027s train (232, 272) runs to Einbech (200 zeny)."
+                                                    ],
+                                           "spots":  [
+                                                         {
+                                                             "map":  "aldebaran",
+                                                             "x":  143,
+                                                             "y":  119,
+                                                             "name":  "Kafra: Teleport to Juno (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "yuno",
+                                                             "x":  53,
+                                                             "y":  214,
+                                                             "name":  "Juno Airport",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  143,
+                                                             "y":  43,
+                                                             "name":  "Airport Staff: board the airship (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "y_airport",
+                                                             "x":  145,
+                                                             "y":  63,
+                                                             "name":  "Domestic Boarding: Einbroch, Lighthalzen, Hugel",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "einbroch",
+                                                             "x":  232,
+                                                             "y":  272,
+                                                             "name":  "Train Station Staff: to Einbech (200 zeny)",
+                                                             "sw":  null
+                                                         }
+                                                     ]
+                                       }
+                                   ]
+                     },
+                     {
+                         "n":  7,
                          "title":  "The Floating City",
                          "range":  "105-120",
                          "town":  "yuno",
@@ -1124,7 +1489,7 @@ export default {
                          "intro":  "Juno floats above the clouds as the capital of the Schwarzwald Republic, a land of sages and machines.",
                          "steps":  [
                                        {
-                                           "g":  26,
+                                           "g":  31,
                                            "type":  "talk",
                                            "lv":  105,
                                            "title":  "The Sage of Juno",
@@ -1145,14 +1510,15 @@ export default {
 
                                                      ],
                                            "hint":  [
-
+                                                        "From Einbech, the Train Station Staff (39, 215) takes you back to Einbroch (200 zeny).",
+                                                        "In Einbroch, enter the airport (64, 207), pay the Airport Staff (1,200 zeny) and ride the airship until it lands in Juno. Sage Elisha stands near Juno\u0027s southern entrance (156, 47)."
                                                     ],
                                            "spots":  [
 
                                                      ]
                                        },
                                        {
-                                           "g":  27,
+                                           "g":  32,
                                            "type":  "hunt",
                                            "lv":  107,
                                            "title":  "The Waking Machines",
@@ -1184,7 +1550,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  28,
+                                           "g":  33,
                                            "type":  "deliver",
                                            "lv":  110,
                                            "title":  "Salvage",
@@ -1221,7 +1587,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  29,
+                                           "g":  34,
                                            "type":  "boss",
                                            "lv":  114,
                                            "title":  "The Core",
@@ -1413,7 +1779,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  30,
+                                           "g":  35,
                                            "type":  "report",
                                            "lv":  117,
                                            "title":  "The Guardians\u0027 Purpose",
@@ -1443,7 +1809,7 @@ export default {
                                    ]
                      },
                      {
-                         "n":  7,
+                         "n":  8,
                          "title":  "Fire and Faith",
                          "range":  "130-140",
                          "town":  "rachel",
@@ -1454,7 +1820,7 @@ export default {
                          "intro":  "Rachel is the holy city of the Arunafeltz States, seat of the Church of the goddess Freya.",
                          "steps":  [
                                        {
-                                           "g":  31,
+                                           "g":  36,
                                            "type":  "talk",
                                            "lv":  130,
                                            "title":  "The Church of Freya",
@@ -1482,7 +1848,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  32,
+                                           "g":  37,
                                            "type":  "hunt",
                                            "lv":  131,
                                            "title":  "Under the Mountain",
@@ -1519,7 +1885,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  33,
+                                           "g":  38,
                                            "type":  "deliver",
                                            "lv":  133,
                                            "title":  "Embers for the Oracles",
@@ -1556,7 +1922,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  34,
+                                           "g":  39,
                                            "type":  "boss",
                                            "lv":  136,
                                            "title":  "The Ember Herald",
@@ -1584,7 +1950,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  35,
+                                           "g":  40,
                                            "type":  "report",
                                            "lv":  138,
                                            "title":  "The Sign",
@@ -1614,7 +1980,7 @@ export default {
                                    ]
                      },
                      {
-                         "n":  8,
+                         "n":  9,
                          "title":  "Twilight of the Gods",
                          "range":  "140+",
                          "town":  "hugel",
@@ -1625,7 +1991,7 @@ export default {
                          "intro":  "Hugel is a quiet seaside village in the far north, where boats leave for the temple of Odin.",
                          "steps":  [
                                        {
-                                           "g":  36,
+                                           "g":  41,
                                            "type":  "talk",
                                            "lv":  140,
                                            "title":  "The Valkyrie\u0027s Herald",
@@ -1653,7 +2019,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  37,
+                                           "g":  42,
                                            "type":  "hunt",
                                            "lv":  141,
                                            "title":  "Fallen Spirits",
@@ -1705,7 +2071,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  38,
+                                           "g":  43,
                                            "type":  "deliver",
                                            "lv":  142,
                                            "title":  "Runes of the Gods",
@@ -1757,7 +2123,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  39,
+                                           "g":  44,
                                            "type":  "boss",
                                            "lv":  144,
                                            "title":  "The Fallen Valkyrie",
@@ -1814,7 +2180,7 @@ export default {
                                                      ]
                                        },
                                        {
-                                           "g":  40,
+                                           "g":  45,
                                            "type":  "report",
                                            "lv":  146,
                                            "title":  "Champion of Rune-Midgard",
