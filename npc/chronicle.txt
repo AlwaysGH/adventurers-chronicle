@@ -197,7 +197,7 @@ OnCmd:
 		.@have$ = "";
 		if (.@g >= 1 && .@g <= $@chr_steps && $@chr_items$[.@g] != "" && ($@chr_type[.@g] == 3 || $@chr_type[.@g] == 4))
 			.@have$ = callfunc("F_ChronHave", .@g);
-		dispbottom "@@reply " + .@atcmd_parameters$[0] + " 1/1 " + .@g + "|" + BaseLevel + "|" + getarraysize(NPCP_WM$) + "|" + CHRON_SKIP + "|" + .@hunt + "|" + .@have$ + "|" + @chr_watch$;
+		dispbottom "@@reply " + .@atcmd_parameters$[0] + " 1/1 " + .@g + "|" + BaseLevel + "|" + getarraysize(NPCP_WM$) + "|" + CHRON_SKIP + "|" + .@hunt + "|" + .@have$ + "|" + @chr_watch$ + "|" + callfunc("F_ChronCapped");
 		end;
 	}
 	dispbottom "@@event chronicle open";
@@ -300,6 +300,13 @@ function	script	F_ChronHave	{
 	return .@s$;
 }
 
+// 1 when you (or character id getarg(0)) stand at the server's level cap.
+// rAthena's NextBaseExp there is MAX_LEVEL_BASE_EXP (99,999,999), not 0.
+function	script	F_ChronCapped	{
+	.@next = readparam(NextBaseExp, getarg(0, getcharid(0)));
+	return (.@next <= 0 || .@next == 99999999);
+}
+
 // EXP toward level getarg(0): at 100% exactly there, scaled by "Quest EXP".
 // Already there or past it: a quarter of a level. Plus some job EXP.
 // For you, or for character id getarg(1) (a companion, F_ChronShare).
@@ -310,21 +317,23 @@ function	script	F_ChronReward	{
 	if (.@rate <= 0)
 		return;
 	.@from = readparam(BaseLevel, .@c);
-	if (.@t > .@from) {
+	if (callfunc("F_ChronCapped", .@c)) {
+		// at the cap base EXP has nowhere to go
+	} else if (.@t > .@from) {
 		.@span = (.@t - .@from) * .@rate;	// hundredths of a level
 		.@goal = .@from + .@span / 100;
 		.@frac = .@span % 100;
 		for (.@i = 0; .@i < 400 && readparam(BaseLevel, .@c) < .@goal; .@i++) {
-			.@next = readparam(NextBaseExp, .@c);
-			if (.@next <= 0)
+			if (callfunc("F_ChronCapped", .@c))
 				break;
+			.@next = readparam(NextBaseExp, .@c);
 			.@need = .@next - readparam(BaseExp, .@c);
 			if (.@need <= 0)
 				break;
 			getexp .@need, 0, .@c;
 		}
 		.@next = readparam(NextBaseExp, .@c);
-		if (.@frac > 0 && .@next > 0) {
+		if (.@frac > 0 && !callfunc("F_ChronCapped", .@c)) {
 			.@e = .@next * .@frac / 100;
 			if (.@e > 0)
 				getexp .@e, 0, .@c;
@@ -426,9 +435,9 @@ function	script	F_ChronTalk	{
 		mes "You have done more for us than I can repay. Your road goes on without me now. Check your Chronicle (Alt+B) for where it leads.";
 		close;
 	}
-	// At the server's level cap (NextBaseExp 0) nothing is out of reach:
-	// chapter 8 asks for 99-110, which a server capped at 99 never reaches.
-	if (BaseLevel < $@chr_lv[.@g] && NextBaseExp > 0) {
+	// At the server's level cap nothing is out of reach: chapter 8 asks
+	// for 99-110, which a server capped at 99 never reaches.
+	if (BaseLevel < $@chr_lv[.@g] && !callfunc("F_ChronCapped")) {
 		mes .@n$;
 		mes "You are not ready for this yet. Come back when you reach level " + $@chr_lv[.@g] + ".";
 		close;

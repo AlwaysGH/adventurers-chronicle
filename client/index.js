@@ -72,7 +72,7 @@ export function parseState(text) {
     const raw = String(text || '').trim().split('|');
     const f = raw.map(Number);
     if (f.length < 5 || !Number.isFinite(f[0])) return null;
-    return { step: Math.max(1, f[0]), level: f[1], waypoints: f[2], skip: f[3] || 0, hunt: f[4], have: parseHave(raw[5]), watch: parseWatch(raw[6]) };
+    return { step: Math.max(1, f[0]), level: f[1], waypoints: f[2], skip: f[3] || 0, hunt: f[4], have: parseHave(raw[5]), watch: parseWatch(raw[6]), capped: f[7] === 1 };
 }
 
 /** "juperos_02 1,3" -> { map, alive: [1, 3] }: watched monsters still standing ("0": none). */
@@ -227,7 +227,7 @@ export default function init(parameters, api) {
         if (finished) {
             now.innerHTML = `<h3>Champion of Rune-Midgard</h3><p>Every chapter is told. Legends still wait: The Sign and Geffenia, Thanatos Tower, the Abyss Lakes and the Endless Tower.</p>`;
         } else {
-            const low = state && state.level < cur.lv;
+            const low = state && !state.capped && state.level < cur.lv;
             const howOpen = now.querySelector('.how')?.open;	// stays open across count updates
             const spots = here(cur);
             const there = cur.type === 'boss' && curMap === cur.map;
