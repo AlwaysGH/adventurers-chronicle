@@ -446,26 +446,26 @@ export default {
                                            "g":  12,
                                            "type":  "hunt",
                                            "lv":  40,
-                                           "title":  "Restless Sands",
-                                           "now":  "Hunt 25 Wolves and 10 Argos in the Sograt Desert west of Payon (moc_fild03). No open road leads there from Morroc: its Kafra Employee (160, 258) can teleport you to Payon (1,200 zeny).",
-                                           "done":  "The desert creatures were fleeing something deeper in the sand. You turned them back.",
-                                           "map":  "moc_fild03",
+                                           "title":  "Beneath the Sphinx",
+                                           "now":  "Hunt 30 Drainliars and 10 Matyrs on the first level of the Sphinx (in_sphinx1), a short walk west of Morroc.",
+                                           "done":  "The creatures of the sand were fleeing the Sphinx, and the things inside it were restless too. You thinned them out.",
+                                           "map":  "in_sphinx1",
                                            "boss":  null,
                                            "route":  {
-                                                         "map":  "moc_fild03",
-                                                         "x":  299,
-                                                         "y":  170,
-                                                         "name":  "Hunting ground: moc_fild03"
+                                                         "map":  "in_sphinx1",
+                                                         "x":  288,
+                                                         "y":  10,
+                                                         "name":  "Hunting ground: in_sphinx1"
                                                      },
                                            "mobs":  [
                                                         {
-                                                            "name":  "Wolf",
-                                                            "id":  1013,
-                                                            "count":  25
+                                                            "name":  "Drainliar",
+                                                            "id":  1111,
+                                                            "count":  30
                                                         },
                                                         {
-                                                            "name":  "Argos",
-                                                            "id":  1100,
+                                                            "name":  "Matyr",
+                                                            "id":  1146,
                                                             "count":  10
                                                         }
                                                     ],
@@ -473,15 +473,43 @@ export default {
 
                                                      ],
                                            "hint":  [
-                                                        "No open road leads from Morroc to the northern desert. Talk to the Kafra Employee in the north of Morroc (160, 258), choose Teleport Service, then Payon (1,200 zeny).",
-                                                        "From Payon, the Route link leads out of the south gate (122, 27) and through the field\u0027s west edge (13, 152) into the desert (moc_fild03)."
+                                                        "Leave Morroc by its west gate (24, 164). In the desert beyond (moc_fild19), the entrance to the Sphinx stands near the middle of the map (98, 99).",
+                                                        "Requiems and Zeroms (level 70) roam the same level and attack on sight. Bring potions, and keep close to the entrance if they swarm you."
                                                     ],
                                            "spots":  [
                                                          {
                                                              "map":  "morocc",
-                                                             "x":  160,
-                                                             "y":  258,
-                                                             "name":  "Kafra: Teleport to Payon (1,200 zeny)",
+                                                             "x":  26,
+                                                             "y":  164,
+                                                             "name":  "West gate: the way to the Sphinx",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "moc_fild19",
+                                                             "x":  100,
+                                                             "y":  99,
+                                                             "name":  "Entrance to the Sphinx",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "payon",
+                                                             "x":  175,
+                                                             "y":  226,
+                                                             "name":  "Kafra: Teleport to Morocc (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "prontera",
+                                                             "x":  146,
+                                                             "y":  89,
+                                                             "name":  "Kafra: Teleport to Morocc (1,200 zeny)",
+                                                             "sw":  null
+                                                         },
+                                                         {
+                                                             "map":  "moc_fild20",
+                                                             "x":  203,
+                                                             "y":  336,
+                                                             "name":  "Continental Guard: a free ride to Morroc",
                                                              "sw":  null
                                                          }
                                                      ]
@@ -491,7 +519,7 @@ export default {
                                            "type":  "deliver",
                                            "lv":  44,
                                            "title":  "Omens of the Desert",
-                                           "now":  "Nafisa reads omens in what the desert\u0027s beasts carry. Bring her 8 Wolf Claws and 5 Cobwebs in Morroc (156, 286).",
+                                           "now":  "Nafisa reads omens in what the Sphinx\u0027s creatures carry. Bring her 8 Wings of Red Bat and 5 Animal Skins in Morroc (156, 286).",
                                            "done":  "The omens spoke of the Pyramids, the tomb of Osiris, whose priests sealed the desert\u0027s evils. The priests are awake again.",
                                            "map":  null,
                                            "boss":  null,
@@ -506,13 +534,13 @@ export default {
                                                     ],
                                            "items":  [
                                                          {
-                                                             "name":  "Wolf Claw",
-                                                             "id":  920,
+                                                             "name":  "Wing of Red Bat",
+                                                             "id":  7006,
                                                              "count":  8
                                                          },
                                                          {
-                                                             "name":  "Cobweb",
-                                                             "id":  1025,
+                                                             "name":  "Animal Skin",
+                                                             "id":  919,
                                                              "count":  5
                                                          }
                                                      ],

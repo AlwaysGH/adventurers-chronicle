@@ -67,16 +67,16 @@ QuestInfoList = {
 		Description = { "Travel to Morroc, now a city in ruins (a Kafra Employee in Payon can teleport you there), and find Nafisa the seer in the north of the city (156, 286).<br><br>How to get there:<br>1. No open road leads into Morroc: the Continental Guard has closed the desert around it. Talk to a Kafra Employee in Payon (175, 226), choose Teleport Service, then Morocc (1,200 zeny). The Kafras in Prontera can send you too.<br>2. In Morroc, Nafisa stands in the north of the city (156, 286). She is marked on your minimap when you arrive.<br>3. Walked into the closed desert (moc_fild20) anyway? Talk to a Continental Guard at its edge and choose Ask What Happened, then Ask About Guard's Location, then Please do. He sends you to Morroc for free.<br><br>Route: <NAVI>[Kafra in Payon: Teleport to Morocc]<INFO>payon,175,226,0,000,0</INFO></NAVI>" },
 	},
 	[77012] = {
-		Title = "Chronicle 3-2: Restless Sands",
-		Summary = "Hunt 25 Wolves and 10 Argos in the Sograt Desert west of Payon (moc_fild03). No open road leads there from Morroc: its Kafra Employee (160, 258) can teleport you to Payon (1,200 zeny).",
+		Title = "Chronicle 3-2: Beneath the Sphinx",
+		Summary = "Hunt 30 Drainliars and 10 Matyrs on the first level of the Sphinx (in_sphinx1), a short walk west of Morroc.",
 		IconName = "ico_nq.bmp",
-		Description = { "Hunt 25 Wolves and 10 Argos in the Sograt Desert west of Payon (moc_fild03). No open road leads there from Morroc: its Kafra Employee (160, 258) can teleport you to Payon (1,200 zeny).<br><br>How to get there:<br>1. No open road leads from Morroc to the northern desert. Talk to the Kafra Employee in the north of Morroc (160, 258), choose Teleport Service, then Payon (1,200 zeny).<br>2. From Payon, the Route link leads out of the south gate (122, 27) and through the field's west edge (13, 152) into the desert (moc_fild03).<br><br>Route: <NAVI>[Hunting ground: moc_fild03]<INFO>moc_fild03,299,170,0,000,0</INFO></NAVI>" },
+		Description = { "Hunt 30 Drainliars and 10 Matyrs on the first level of the Sphinx (in_sphinx1), a short walk west of Morroc.<br><br>How to get there:<br>1. Leave Morroc by its west gate (24, 164). In the desert beyond (moc_fild19), the entrance to the Sphinx stands near the middle of the map (98, 99).<br>2. Requiems and Zeroms (level 70) roam the same level and attack on sight. Bring potions, and keep close to the entrance if they swarm you.<br><br>Route: <NAVI>[Hunting ground: in_sphinx1]<INFO>in_sphinx1,288,10,0,000,0</INFO></NAVI>" },
 	},
 	[77013] = {
 		Title = "Chronicle 3-3: Omens of the Desert",
-		Summary = "Nafisa reads omens in what the desert's beasts carry. Bring her 8 Wolf Claws and 5 Cobwebs in Morroc (156, 286).",
+		Summary = "Nafisa reads omens in what the Sphinx's creatures carry. Bring her 8 Wings of Red Bat and 5 Animal Skins in Morroc (156, 286).",
 		IconName = "ico_nq.bmp",
-		Description = { "Nafisa reads omens in what the desert's beasts carry. Bring her 8 Wolf Claws and 5 Cobwebs in Morroc (156, 286).<br><br>How to get there:<br>1. Away from Morroc? No open road leads back in: a Kafra Employee in Payon (175, 226) or Prontera (146, 89) can teleport you to Morocc (1,200 zeny).<br><br>Route: <NAVI>[Nafisa the Seer]<INFO>morocc,156,286,0,000,0</INFO></NAVI>" },
+		Description = { "Nafisa reads omens in what the Sphinx's creatures carry. Bring her 8 Wings of Red Bat and 5 Animal Skins in Morroc (156, 286).<br><br>How to get there:<br>1. Away from Morroc? No open road leads back in: a Kafra Employee in Payon (175, 226) or Prontera (146, 89) can teleport you to Morocc (1,200 zeny).<br><br>Route: <NAVI>[Nafisa the Seer]<INFO>morocc,156,286,0,000,0</INFO></NAVI>" },
 	},
 	[77014] = {
 		Title = "Chronicle 3-4: The Pyramid's Priest",

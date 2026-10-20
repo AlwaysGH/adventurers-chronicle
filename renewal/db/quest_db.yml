@@ -37,11 +37,11 @@ Body:
   - Id: 77011
     Title: "Chronicle 3-1: The Desert Seer"
   - Id: 77012
-    Title: "Chronicle 3-2: Restless Sands"
+    Title: "Chronicle 3-2: Beneath the Sphinx"
     Targets:
-      - Mob: WOLF
-        Count: 25
-      - Mob: ARGOS
+      - Mob: DRAINLIAR
+        Count: 30
+      - Mob: MATYR
         Count: 10
   - Id: 77013
     Title: "Chronicle 3-3: Omens of the Desert"

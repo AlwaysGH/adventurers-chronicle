@@ -145,27 +145,28 @@ $chapters = @(
           done = 'Nafisa read your fortune and frowned: your thread is knotted around the old seals of Rune-Midgard. She would say no more, but agreed to help, because the desert has been trembling.'
           say = @('Sit. Give me your hand. ...How strange.', 'Every soul in Midgard is a thread in the great weave. Yours is knotted around something old. The seals our ancestors laid.', 'Never mind that. The desert has been trembling for weeks, and the creatures of the sand flee from something. Find out what drives them.') }
        @{ id = 12; type = 'hunt'; lv = 31; title = 'Restless Sands'; where = 'moc_fild16'
-          # Renewal: Sandmen and Hodes are level 61-63 here; the northern desert's
-          # Wolves (45) and Argos (47) fit. Only Payon has a road to it.
-          re = @{ lv = 40; where = 'moc_fild03'
-             mobs = @(@(1013, 'Wolf', 25), @(1100, 'Argos', 10))
-             now = 'Hunt 25 Wolves and 10 Argos in the Sograt Desert west of Payon (moc_fild03). No open road leads there from Morroc: its Kafra Employee (160, 258) can teleport you to Payon (1,200 zeny).'
+          # Renewal: Sandmen and Hodes are level 61-63 here; the Sphinx's first
+          # level, a walk west of Morroc, has Drainliars (47) and Matyrs (58),
+          # with aggressive Requiems and Zeroms (70-71) around them.
+          re = @{ lv = 40; title = 'Beneath the Sphinx'; where = 'in_sphinx1'
+             mobs = @(@(1111, 'Drainliar', 30), @(1146, 'Matyr', 10))
+             now = 'Hunt 30 Drainliars and 10 Matyrs on the first level of the Sphinx (in_sphinx1), a short walk west of Morroc.'
              hint = @(
-               'No open road leads from Morroc to the northern desert. Talk to the Kafra Employee in the north of Morroc (160, 258), choose Teleport Service, then Payon (1,200 zeny).'
-               'From Payon, the Route link leads out of the south gate (122, 27) and through the field''s west edge (13, 152) into the desert (moc_fild03).'
+               'Leave Morroc by its west gate (24, 164). In the desert beyond (moc_fild19), the entrance to the Sphinx stands near the middle of the map (98, 99).'
+               'Requiems and Zeroms (level 70) roam the same level and attack on sight. Bring potions, and keep close to the entrance if they swarm you.'
              )
-             # Only this step's spot: the chapter's Kafras in Payon (to Morroc)
-             # would hide the Route link on the way out of Payon.
              spots = @(
-               @{ map = 'morocc'; x = 160; y = 258; name = 'Kafra: Teleport to Payon (1,200 zeny)' }
-             ); ownSpots = $true }
+               @{ map = 'morocc'; x = 26; y = 164; name = 'West gate: the way to the Sphinx' }
+               @{ map = 'moc_fild19'; x = 100; y = 99; name = 'Entrance to the Sphinx' }
+             )
+             done = 'The creatures of the sand were fleeing the Sphinx, and the things inside it were restless too. You thinned them out.' }
           mobs = @(@(1165, 'Sandman', 25), @(1127, 'Hode', 25))
           now = 'Hunt 25 Sandmen and 25 Hodes in the Sograt Desert (moc_fild16).'
           done = 'The desert creatures were fleeing something deeper in the sand. You turned them back.' }
        @{ id = 13; type = 'deliver'; lv = 35; title = 'Grains of Truth'
           re = @{ lv = 44; title = 'Omens of the Desert'
-             items = @(@(920, 'Wolf Claw', 8), @(1025, 'Cobweb', 5))
-             now = 'Nafisa reads omens in what the desert''s beasts carry. Bring her 8 Wolf Claws and 5 Cobwebs in Morroc (156, 286).'
+             items = @(@(7006, 'Wing of Red Bat', 8), @(919, 'Animal Skin', 5))
+             now = 'Nafisa reads omens in what the Sphinx''s creatures carry. Bring her 8 Wings of Red Bat and 5 Animal Skins in Morroc (156, 286).'
              done = 'The omens spoke of the Pyramids, the tomb of Osiris, whose priests sealed the desert''s evils. The priests are awake again.'
              say = @('Let me lay these out... yes. Yes, I see it.', 'The Pyramids, northwest of the city. The priests of Osiris sealed the evils of the desert there long ago.', 'They are awake again, and they chant a ritual that no longer works. Go to the third level and silence them.') }
           items = @(@(1056, 'Grit', 10), @(1055, 'Earthworm Peeling', 10))
