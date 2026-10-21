@@ -517,6 +517,25 @@ function	script	F_ChronTalk	{
 	close;
 }
 
+// A passage NPC (story.ps1's gates, Renewal's way into the New World): from
+// step position getarg(0) on (a finished Chronicle too), lines getarg(4) and
+// a warp to getarg(1), getarg(2), getarg(3); before that, line getarg(5).
+function	script	F_ChronGate	{
+	.@n$ = "[" + strnpcinfo(1) + "]";
+	if (CHRON_STEP < getarg(0)) {
+		mes .@n$;
+		mes getarg(5);
+		close;
+	}
+	callfunc "F_ChronSay", .@n$, getarg(4);
+	next;
+	if (select("Go through:Not now") == 2)
+		close;
+	close2;
+	warp getarg(1), getarg(2), getarg(3);
+	end;
+}
+
 // Arriving on a map the Chronicle cares about: a hint, or a mark on the minimap.
 function	script	F_ChronArrive	{
 	.@m$ = getarg(0);

@@ -396,6 +396,114 @@ mainTable[50118] = {
 	ClassNum = 43,
 	costume = true
 }
+mainTable[50128] = {
+	unidentifiedDisplayName = "Costume Feather Bonnet",
+	unidentifiedResourceName = "±êÅÐ¸ðÀÚ",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Feather Bonnet",
+	identifiedResourceName = "±êÅÐ¸ðÀÚ",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 8 of your Chronicle: Beyond the Rift.^000000",
+		"Looks like the Feather Bonnet, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 104,
+	costume = true
+}
+mainTable[50129] = {
+	unidentifiedDisplayName = "Costume Ear Muffs",
+	unidentifiedResourceName = "±Í¸¶°³",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Ear Muffs",
+	identifiedResourceName = "±Í¸¶°³",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 8 of your Chronicle: Beyond the Rift.^000000",
+		"Looks like the Ear Muffs, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 70,
+	costume = true
+}
+mainTable[50130] = {
+	unidentifiedDisplayName = "Costume Bunny Ears Hat",
+	unidentifiedResourceName = "Åä³¢±Í¸ðÀÚ",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Bunny Ears Hat",
+	identifiedResourceName = "Åä³¢±Í¸ðÀÚ",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 8 of your Chronicle: Beyond the Rift.^000000",
+		"Looks like the Bunny Ears Hat, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 384,
+	costume = true
+}
+mainTable[50131] = {
+	unidentifiedDisplayName = "Costume Antlers",
+	unidentifiedResourceName = "»ç½¿»Ô",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Antlers",
+	identifiedResourceName = "»ç½¿»Ô",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 9 of your Chronicle: The Sapha's Gate.^000000",
+		"Looks like the Antlers, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 71,
+	costume = true
+}
+mainTable[50132] = {
+	unidentifiedDisplayName = "Costume Jewel Crown",
+	unidentifiedResourceName = "Áê¾óÅ©¶ó¿î",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Jewel Crown",
+	identifiedResourceName = "Áê¾óÅ©¶ó¿î",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 9 of your Chronicle: The Sapha's Gate.^000000",
+		"Looks like the Jewel Crown, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 88,
+	costume = true
+}
+mainTable[50133] = {
+	unidentifiedDisplayName = "Costume Goggles",
+	unidentifiedResourceName = "°í±Û",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Goggles",
+	identifiedResourceName = "°í±Û",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 9 of your Chronicle: The Sapha's Gate.^000000",
+		"Looks like the Goggles, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 1,
+	costume = true
+}
 mainTable[50119] = {
 	unidentifiedDisplayName = "Costume Freya Crown",
 	unidentifiedResourceName = "ÇÁ·¹ÀÌ¾ßÀÇÅ©¶ó¿î",
@@ -403,7 +511,7 @@ mainTable[50119] = {
 	identifiedDisplayName = "Costume Freya Crown",
 	identifiedResourceName = "ÇÁ·¹ÀÌ¾ßÀÇÅ©¶ó¿î",
 	identifiedDescriptionName = {
-		"^777777A keepsake of Chapter 8 of your Chronicle: Fire and Faith.^000000",
+		"^777777A keepsake of Chapter 10 of your Chronicle: Fire and Faith.^000000",
 		"Looks like the Freya Crown, worn in the costume slot.",
 		"_______________________",
 		"^0000CCType:^000000 Costume",
@@ -421,7 +529,7 @@ mainTable[50120] = {
 	identifiedDisplayName = "Costume Halo",
 	identifiedResourceName = "¿µÈ¥°í¸®",
 	identifiedDescriptionName = {
-		"^777777A keepsake of Chapter 8 of your Chronicle: Fire and Faith.^000000",
+		"^777777A keepsake of Chapter 10 of your Chronicle: Fire and Faith.^000000",
 		"Looks like the Halo, worn in the costume slot.",
 		"_______________________",
 		"^0000CCType:^000000 Costume",
@@ -439,7 +547,7 @@ mainTable[50121] = {
 	identifiedDisplayName = "Costume Campfire Hat",
 	identifiedResourceName = "Ä·ÇÁÆÄÀÌ¾î¸ðÀÚ",
 	identifiedDescriptionName = {
-		"^777777A keepsake of Chapter 8 of your Chronicle: Fire and Faith.^000000",
+		"^777777A keepsake of Chapter 10 of your Chronicle: Fire and Faith.^000000",
 		"Looks like the Campfire Hat, worn in the costume slot.",
 		"_______________________",
 		"^0000CCType:^000000 Costume",
@@ -457,7 +565,7 @@ mainTable[50122] = {
 	identifiedDisplayName = "Costume Valkyrie Helm",
 	identifiedResourceName = "¹ßÅ°¸®Åõ±¸",
 	identifiedDescriptionName = {
-		"^777777A keepsake of Chapter 9 of your Chronicle: Twilight of the Gods.^000000",
+		"^777777A keepsake of Chapter 11 of your Chronicle: Twilight of the Gods.^000000",
 		"Looks like the Valkyrie Helm, worn in the costume slot.",
 		"_______________________",
 		"^0000CCType:^000000 Costume",
@@ -475,7 +583,7 @@ mainTable[50123] = {
 	identifiedDisplayName = "Costume Dragon Skull",
 	identifiedResourceName = "¿ëÀÇÇØ°ñ",
 	identifiedDescriptionName = {
-		"^777777A keepsake of Chapter 9 of your Chronicle: Twilight of the Gods.^000000",
+		"^777777A keepsake of Chapter 11 of your Chronicle: Twilight of the Gods.^000000",
 		"Looks like the Dragon Skull, worn in the costume slot.",
 		"_______________________",
 		"^0000CCType:^000000 Costume",
@@ -493,7 +601,7 @@ mainTable[50124] = {
 	identifiedDisplayName = "Costume Majestic Devil Horns",
 	identifiedResourceName = "¸¶Á¦½ºÆ½µ¥ºôÈ¥",
 	identifiedDescriptionName = {
-		"^777777A keepsake of Chapter 9 of your Chronicle: Twilight of the Gods.^000000",
+		"^777777A keepsake of Chapter 11 of your Chronicle: Twilight of the Gods.^000000",
 		"Looks like the Majestic Devil Horns, worn in the costume slot.",
 		"_______________________",
 		"^0000CCType:^000000 Costume",
@@ -502,6 +610,168 @@ mainTable[50124] = {
 	},
 	slotCount = 0,
 	ClassNum = 562,
+	costume = true
+}
+mainTable[50134] = {
+	unidentifiedDisplayName = "Costume Flower Band",
+	unidentifiedResourceName = "²É¸Ó¸®¶ì",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Flower Band",
+	identifiedResourceName = "²É¸Ó¸®¶ì",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 12 of your Chronicle: The Light of Bifrost.^000000",
+		"Looks like the Flower Band, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 5,
+	costume = true
+}
+mainTable[50135] = {
+	unidentifiedDisplayName = "Costume Smokie Leaf",
+	unidentifiedResourceName = "³ª¹µÀÙÅõ±¸",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Smokie Leaf",
+	identifiedResourceName = "³ª¹µÀÙÅõ±¸",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 12 of your Chronicle: The Light of Bifrost.^000000",
+		"Looks like the Smokie Leaf, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 148,
+	costume = true
+}
+mainTable[50136] = {
+	unidentifiedDisplayName = "Costume Fancy Flower",
+	unidentifiedResourceName = "Àå½Ä¿ë²É",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Fancy Flower",
+	identifiedResourceName = "Àå½Ä¿ë²É",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 12 of your Chronicle: The Light of Bifrost.^000000",
+		"Looks like the Fancy Flower, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 4,
+	costume = true
+}
+mainTable[50137] = {
+	unidentifiedDisplayName = "Costume Flower Crown",
+	unidentifiedResourceName = "È­°ü",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Flower Crown",
+	identifiedResourceName = "È­°ü",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 13 of your Chronicle: Under the World Tree.^000000",
+		"Looks like the Flower Crown, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 325,
+	costume = true
+}
+mainTable[50138] = {
+	unidentifiedDisplayName = "Costume Water Lily Crown",
+	unidentifiedResourceName = "¼ö·Ã¿Õ°ü",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Water Lily Crown",
+	identifiedResourceName = "¼ö·Ã¿Õ°ü",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 13 of your Chronicle: Under the World Tree.^000000",
+		"Looks like the Water Lily Crown, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 312,
+	costume = true
+}
+mainTable[50139] = {
+	unidentifiedDisplayName = "Costume Angel Wings",
+	unidentifiedResourceName = "Ãµ»çÀÇ¸Ó¸®¶ì",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Angel Wings",
+	identifiedResourceName = "Ãµ»çÀÇ¸Ó¸®¶ì",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 13 of your Chronicle: Under the World Tree.^000000",
+		"Looks like the Angel Wings, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 38,
+	costume = true
+}
+mainTable[50140] = {
+	unidentifiedDisplayName = "Costume Wings of Victory",
+	unidentifiedResourceName = "½Â¸®ÀÇ³¯°³",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Wings of Victory",
+	identifiedResourceName = "½Â¸®ÀÇ³¯°³",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 14 of your Chronicle: The First Seal.^000000",
+		"Looks like the Wings of Victory, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 365,
+	costume = true
+}
+mainTable[50141] = {
+	unidentifiedDisplayName = "Costume Emperor's Laurel Crown",
+	unidentifiedResourceName = "¿ù°è°ü",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Emperor's Laurel Crown",
+	identifiedResourceName = "¿ù°è°ü",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 14 of your Chronicle: The First Seal.^000000",
+		"Looks like the Emperor's Laurel Crown, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 261,
+	costume = true
+}
+mainTable[50142] = {
+	unidentifiedDisplayName = "Costume Crown",
+	unidentifiedResourceName = "Å©¶ó¿î",
+	unidentifiedDescriptionName = { "" },
+	identifiedDisplayName = "Costume Crown",
+	identifiedResourceName = "Å©¶ó¿î",
+	identifiedDescriptionName = {
+		"^777777A keepsake of Chapter 14 of your Chronicle: The First Seal.^000000",
+		"Looks like the Crown, worn in the costume slot.",
+		"_______________________",
+		"^0000CCType:^000000 Costume",
+		"^0000CCPosition:^000000 Upper",
+		"^0000CCWeight:^000000 0"
+	},
+	slotCount = 0,
+	ClassNum = 45,
 	costume = true
 }
 
@@ -534,4 +804,19 @@ if tbl then
 	tbl[50125] = mainTable[50125]
 	tbl[50126] = mainTable[50126]
 	tbl[50127] = mainTable[50127]
+	tbl[50128] = mainTable[50128]
+	tbl[50129] = mainTable[50129]
+	tbl[50130] = mainTable[50130]
+	tbl[50131] = mainTable[50131]
+	tbl[50132] = mainTable[50132]
+	tbl[50133] = mainTable[50133]
+	tbl[50134] = mainTable[50134]
+	tbl[50135] = mainTable[50135]
+	tbl[50136] = mainTable[50136]
+	tbl[50137] = mainTable[50137]
+	tbl[50138] = mainTable[50138]
+	tbl[50139] = mainTable[50139]
+	tbl[50140] = mainTable[50140]
+	tbl[50141] = mainTable[50141]
+	tbl[50142] = mainTable[50142]
 end

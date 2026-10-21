@@ -337,6 +337,96 @@ Body:
       NoCart: true
       NoMail: true
       NoAuction: true
+  - Id: 50128
+    AegisName: Chronicle_C_Feather_Bonnet
+    Name: "Costume Feather Bonnet"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 104
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50129
+    AegisName: Chronicle_C_Ear_Muffs
+    Name: "Costume Ear Muffs"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 70
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50130
+    AegisName: Chronicle_C_Bunny_Ears_Hat
+    Name: "Costume Bunny Ears Hat"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 384
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50131
+    AegisName: Chronicle_C_Antlers
+    Name: "Costume Antlers"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 71
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50132
+    AegisName: Chronicle_C_Jewel_Crown
+    Name: "Costume Jewel Crown"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 88
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50133
+    AegisName: Chronicle_C_Goggles
+    Name: "Costume Goggles"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 1
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
   - Id: 50119
     AegisName: Chronicle_C_Freya_Crown
     Name: "Costume Freya Crown"
@@ -420,6 +510,141 @@ Body:
     Locations:
       Costume_Head_Top: true
     View: 562
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50134
+    AegisName: Chronicle_C_Flower_Band
+    Name: "Costume Flower Band"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 5
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50135
+    AegisName: Chronicle_C_Smokie_Leaf
+    Name: "Costume Smokie Leaf"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 148
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50136
+    AegisName: Chronicle_C_Fancy_Flower
+    Name: "Costume Fancy Flower"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 4
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50137
+    AegisName: Chronicle_C_Flower_Crown
+    Name: "Costume Flower Crown"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 325
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50138
+    AegisName: Chronicle_C_Water_Lily_Crown
+    Name: "Costume Water Lily Crown"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 312
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50139
+    AegisName: Chronicle_C_Angel_Wings
+    Name: "Costume Angel Wings"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 38
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50140
+    AegisName: Chronicle_C_Wings_of_Victory
+    Name: "Costume Wings of Victory"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 365
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50141
+    AegisName: Chronicle_C_Emperor_s_Laurel_Crown
+    Name: "Costume Emperor's Laurel Crown"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 261
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50142
+    AegisName: Chronicle_C_Crown
+    Name: "Costume Crown"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 45
     ArmorLevel: 1
     Trade:
       NoDrop: true

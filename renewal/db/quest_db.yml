@@ -107,33 +107,108 @@ Body:
     Title: "Chronicle 7-4: The Core"
   - Id: 77030
     Title: "Chronicle 7-5: The Guardians' Purpose"
+  - Id: 77106
+    Title: "Chronicle 8-1: Through the Rift"
+  - Id: 77107
+    Title: "Chronicle 8-2: The Wild Fields"
+    Targets:
+      - Mob: NAGA
+        Count: 30
+      - Mob: CORNUS
+        Count: 20
+  - Id: 77108
+    Title: "Chronicle 8-3: Proof of Good Faith"
+  - Id: 77109
+    Title: "Chronicle 8-4: The Rift-Mad Beast"
+  - Id: 77110
+    Title: "Chronicle 8-5: A Word from the Sapha"
+  - Id: 77111
+    Title: "Chronicle 9-1: The Warden of El Dicastes"
+  - Id: 77112
+    Title: "Chronicle 9-2: The Swarm on the Mountain"
+    Targets:
+      - Mob: CENTIPEDE
+        Count: 30
+      - Mob: DOLOMEDES
+        Count: 10
+  - Id: 77113
+    Title: "Chronicle 9-3: What the Swarm Leaves"
+  - Id: 77114
+    Title: "Chronicle 9-4: The Hive Under Kamidal"
+  - Id: 77115
+    Title: "Chronicle 9-5: A Shard of the Seal"
   - Id: 77031
-    Title: "Chronicle 8-1: The Church of Freya"
+    Title: "Chronicle 10-1: The Church of Freya"
   - Id: 77032
-    Title: "Chronicle 8-2: Under the Mountain"
+    Title: "Chronicle 10-2: Under the Mountain"
     Targets:
       - Mob: IMP
         Count: 30
       - Mob: KASA
         Count: 15
   - Id: 77033
-    Title: "Chronicle 8-3: Embers for the Oracles"
+    Title: "Chronicle 10-3: Embers for the Oracles"
   - Id: 77034
-    Title: "Chronicle 8-4: The Ember Herald"
+    Title: "Chronicle 10-4: The Ember Herald"
   - Id: 77035
-    Title: "Chronicle 8-5: The Sign"
+    Title: "Chronicle 10-5: The Sign"
   - Id: 77036
-    Title: "Chronicle 9-1: The Valkyrie's Herald"
+    Title: "Chronicle 11-1: The Valkyrie's Herald"
   - Id: 77037
-    Title: "Chronicle 9-2: Fallen Spirits"
+    Title: "Chronicle 11-2: Fallen Spirits"
     Targets:
       - Mob: SKOGUL
         Count: 30
       - Mob: FRUS
         Count: 30
   - Id: 77038
-    Title: "Chronicle 9-3: Runes of the Gods"
+    Title: "Chronicle 11-3: Runes of the Gods"
   - Id: 77039
-    Title: "Chronicle 9-4: The Fallen Valkyrie"
+    Title: "Chronicle 11-4: The Fallen Valkyrie"
   - Id: 77040
-    Title: "Chronicle 9-5: Champion of Rune-Midgard"
+    Title: "Chronicle 11-5: The Light of Bifrost"
+  - Id: 77116
+    Title: "Chronicle 12-1: The Village Under the Bridge"
+  - Id: 77117
+    Title: "Chronicle 12-2: The Bridge Fields"
+    Targets:
+      - Mob: LITTLE_FATUM
+        Count: 30
+      - Mob: MIMING
+        Count: 20
+  - Id: 77118
+    Title: "Chronicle 12-3: Dust of the Rainbow"
+  - Id: 77119
+    Title: "Chronicle 12-4: The Thornheart"
+  - Id: 77120
+    Title: "Chronicle 12-5: Seven Colours"
+  - Id: 77121
+    Title: "Chronicle 13-1: The Gate of Eclage"
+  - Id: 77122
+    Title: "Chronicle 13-2: The Ashen Halls"
+    Targets:
+      - Mob: CENERE
+        Count: 25
+      - Mob: ANTIQUE_BOOK
+        Count: 20
+  - Id: 77123
+    Title: "Chronicle 13-3: Ash and Pages"
+  - Id: 77124
+    Title: "Chronicle 13-4: The Last Keeper"
+  - Id: 77125
+    Title: "Chronicle 13-5: The Roots Below"
+  - Id: 77126
+    Title: "Chronicle 14-1: The Buried City"
+  - Id: 77127
+    Title: "Chronicle 14-2: The Waking City"
+    Targets:
+      - Mob: REPAIR_ROBOT
+        Count: 30
+      - Mob: EXPLORATION_ROVER
+        Count: 15
+  - Id: 77128
+    Title: "Chronicle 14-3: Iron and Orders"
+  - Id: 77129
+    Title: "Chronicle 14-4: The Excavator Prime"
+  - Id: 77130
+    Title: "Chronicle 14-5: Champion of Rune-Midgard"

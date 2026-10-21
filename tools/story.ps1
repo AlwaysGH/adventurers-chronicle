@@ -25,7 +25,7 @@
 # by their place in each era's route (n below is the Pre-renewal number).
 
 $final = 115   # the level the last step fills toward
-$finalRe = 150 # the same on Renewal
+$finalRe = 175 # the same on Renewal (its level cap)
 
 # The way home from Odin's Temple (Chapter 8's Hugel steps): only its Boatman
 # sails back, so Navigation can't route out.
@@ -411,10 +411,124 @@ $chapters = @(
           watch = @{ map = 'juperos_02'; event = '3F Gate Switch#jupe::OnMyMobDead'; names = @('1st Gate Switch', '2nd Gate Switch', '3rd Gate Switch') }
           done = 'You destroyed the Awakened Core Guardian. Its last broadcast was a map of Arunafeltz, far to the north.' }
        @{ id = 30; type = 'report'; lv = 87; title = 'The Guardians'' Purpose'
-          re = @{ lv = 117 }
           now = 'Report to Sage Elisha in Juno (156, 47).'
           done = 'Elisha believes the guardians were built to watch over the seals. With them failing, the seals'' last line is gone. She sent you to the Church of Freya in Rachel.'
-          say = @('A map of Arunafeltz? Then I was right.', 'The guardians were built to watch over the seals. They woke because the seals are failing, and now they are failing too.', 'The Church of Freya in Rachel has watched the north for a thousand years. Find Sister Ilyana. Tell her a sage of Juno sent you.') }
+          say = @('A map of Arunafeltz? Then I was right.', 'The guardians were built to watch over the seals. They woke because the seals are failing, and now they are failing too.', 'The Church of Freya in Rachel has watched the north for a thousand years. Find Sister Ilyana. Tell her a sage of Juno sent you.')
+          # Renewal: the New World chapters come first.
+          re = @{ lv = 117
+             done = 'Elisha believes the guardians were built to watch over the seals. The Core''s last broadcast showed two places: Arunafeltz, and the rift that opened when Morroc fell. The Allied Expedition beyond the rift had asked the Sages for help, so she sent you through it first.'
+             say = @('A map of Arunafeltz? And this one... the rift beneath Morroc. Then I was right.', 'The guardians were built to watch over the seals. They woke because the seals are failing, and the deepest wound of all is the rift that opened when Morroc fell.', 'The Allied Expedition went through it into a new world, and their captain has asked the Sages for help. Go to Captain Varrick at their camp. Rachel can wait until you return.', 'An Allied Scout keeps watch over the rift, east of Morroc. Show him your Chronicle and he will let you through.') } }
+     ) }
+
+  # Renewal only: the New World beyond the rift under Morroc (rAthena
+  # quests_13_1.txt). The way in is quest-locked (ep13_ryu), so the Allied
+  # Scout (gates below) lets Chronicle bearers through to the Allied camp.
+  # The camp's own guards are locked too: the Teleport Cats take you out.
+  @{ era = 'renewal'; title = 'Beyond the Rift'; range = '118-124'
+     town = 'mid_camp'; townName = 'the Allied Forces Post'; npc = 'Captain Varrick'; sprite = '852'; x = 200; y = 282
+     costumes = @(5018, 2283, 5378); costumeId = 50128; gift = @(@(504, 50), @(505, 30)); zeny = 70000
+     intro = 'Beyond the rift under Morroc lies a world no map of Rune-Midgard shows: the land of the Laphine of Splendide and the Sapha of Manuk. The Allied Expedition of the three kingdoms keeps its camp just past the rift.'
+     spots = @(
+       @{ map = 'moc_fild20'; x = 345; y = 182; name = 'Allied Scout: through the rift to the camp' }
+       @{ map = 'mid_camp'; x = 207; y = 234; name = 'Teleport Cat: Near Splendide or Manuk Field (10,000 zeny)' }
+     )
+     away = 'Outside the New World? The Allied Scout east of Morroc (moc_fild20, 345, 182) lets you through the rift to the Allied camp. Once you have been there, a Waykeeper can send you back too.'
+     steps = @(
+       @{ id = 106; type = 'talk'; lv = 118; title = 'Through the Rift'
+          route = @('moc_fild20', 345, 182, 'Allied Scout: moc_fild20')
+          now = 'Go through the rift under Morroc to the Allied Forces Post, and find Captain Varrick in the camp (200, 282).'
+          hint = @(
+            'From Morroc, follow the Route link to the Allied Scout on the Sograt Desert east of the city (moc_fild20, 345, 182), next to the rift guards.'
+            'Show him your Chronicle and choose to go through. He sends you to the Allied Forces Post (mid_camp), where Captain Varrick stands near the arrival spot (200, 282).'
+          )
+          done = 'Captain Varrick leads the Allied Expedition''s camp. Since the rift opened, the monsters of this new world have grown wild, and both the Laphine and the Sapha blame the humans who came through it.'
+          say = @('A sage of Juno sends us a Chronicle bearer? Good. We need one.', 'When Morroc fell, the seal under it tore open, and through the tear we found this place. The Laphine of Splendide call it their home. So do the Sapha of Manuk.', 'Since we came, their monsters have gone wild. The Laphine say we brought it with us, and I am not sure they are wrong.', 'The fields north of Splendide are the worst. Clear them, and maybe the Laphine will talk to us again. Our Teleport Cat by the supply tents will take you to Splendide''s fields.') }
+       @{ id = 107; type = 'hunt'; lv = 119; title = 'The Wild Fields'; where = 'spl_fild01'
+          mobs = @(@(1993, 'Naga', 30), @(1992, 'Cornus', 20))
+          now = 'Hunt 30 Naga and 20 Cornus in the fields north of Splendide (spl_fild01).'
+          hint = @(
+            'The camp''s gate guards only let the Expedition''s own people out. Take the Teleport Cat in the camp (207, 234) to Near Splendide (10,000 zeny).'
+            'You arrive on spl_fild02. Its way north (293, 379) leads to spl_fild01, the hunting ground.'
+          )
+          spots = @(
+            @{ map = 'spl_fild02'; x = 293; y = 379; name = 'Way north to spl_fild01' }
+          )
+          done = 'You drove back the Naga and the Cornus that had overrun the fields north of Splendide.' }
+       @{ id = 108; type = 'deliver'; lv = 121; title = 'Proof of Good Faith'
+          items = @(@(936, 'Scale Shell', 8), @(6023, 'Mystic Horn', 8))
+          now = 'Varrick wants proof to show the Laphine. Bring him 8 Scale Shells from the Naga and 8 Mystic Horns from the Cornus, in the Allied camp (200, 282).'
+          hint = @(
+            'From spl_fild01, the way south (289, 28) leads back to spl_fild02. Its east edge (382, 143) leads into the camp.'
+          )
+          spots = @(
+            @{ map = 'spl_fild01'; x = 289; y = 28; name = 'Way south to spl_fild02' }
+            @{ map = 'spl_fild02'; x = 382; y = 143; name = 'Way east into the camp' }
+          )
+          done = 'The Laphine accepted the proof, but their elders had a warning: the madness is not coming from the humans. It seeps up out of the rift itself, and the Tatacho of Manuk''s fields have caught it worst.'
+          say = @('Scale and horn. The Laphine will believe their own eyes, if not my word.', 'Their answer came this morning. They say the madness is not ours. It seeps up out of the rift itself, like smoke from a wound.', 'And the worst of it is in the fields of Manuk, the Sapha''s land. One Tatacho there has gone so mad that even the Sapha hunters will not go near it. Put it down.') }
+       @{ id = 109; type = 'boss'; lv = 122; title = 'The Rift-Mad Beast'; map = 'man_fild02'; mob = 1986; boss = 'Rift-Mad Tatacho'; hp = 8
+          now = 'Go to Manuk Field (man_fild02), the Sapha''s land, and put down the Rift-Mad Tatacho.'
+          hint = @(
+            'Take the Teleport Cat in the camp (207, 234) to Manuk Field (10,000 zeny). The Rift-Mad Tatacho appears a few seconds after you arrive.'
+          )
+          done = 'You put down the Rift-Mad Tatacho. Its eyes burned with the same light as the seal crystals of Juperos.' }
+       @{ id = 110; type = 'report'; lv = 124; title = 'A Word from the Sapha'
+          now = 'Return to Captain Varrick in the Allied camp (200, 282).'
+          hint = @(
+            'From Manuk Field, the Teleport Cat (135, 49) takes you back to the Allied camp (10,000 zeny). Or walk west: man_fild01''s west edge (35, 232) leads into the camp.'
+          )
+          spots = @(
+            @{ map = 'man_fild02'; x = 135; y = 49; name = 'Teleport Cat: back to the camp (10,000 zeny)' }
+          )
+          done = 'The Sapha heard of the hunt. Their warden at the gate of El Dicastes, their capital, sent word: he wants to meet the one who did it, and he has seen the same light under Kamidal Mountain.'
+          say = @('The Sapha heard what you did. That is a first: they have never sent us anything but arrows.', 'Their warden at the gate of El Dicastes, Kahlis, wants to meet you. He says the same light burns under Kamidal Mountain, in the Scaraba hive.', 'No human has set foot in El Dicastes. But he will meet you outside the gate. Take this, and go.') }
+     ) }
+
+  # Renewal only: El Dicastes, the Sapha capital. Its gate is quest-locked
+  # (ep13_3_invite and the Bradium Earring), so Kahlis meets you outside it.
+  @{ era = 'renewal'; title = 'The Sapha''s Gate'; range = '124-129'
+     town = 'dic_fild01'; townName = 'El Dicastes'; npc = 'Warden Kahlis'; sprite = '492'; x = 156; y = 270
+     costumes = @(2284, 5002, 2224); costumeId = 50131; gift = @(@(504, 50), @(608, 3)); zeny = 80000
+     intro = 'El Dicastes is the capital of the Sapha, built into the slopes of Kamidal Mountain. Its gates are shut to every other race, and beneath the mountain lies the hive of the Scaraba.'
+     spots = @(
+       @{ map = 'mid_camp'; x = 207; y = 234; name = 'Teleport Cat: Manuk Field (10,000 zeny)' }
+       @{ map = 'man_fild02'; x = 135; y = 49; name = 'Teleport Cat: Near El Dicastes (20,000 zeny)' }
+     )
+     away = 'Far from El Dicastes? From the Allied camp, the Teleport Cat (207, 234) goes to Manuk Field, and the Teleport Cat there (135, 49) to Near El Dicastes. The Allied Scout east of Morroc (moc_fild20, 345, 182) lets you through the rift to the camp.'
+     steps = @(
+       @{ id = 111; type = 'talk'; lv = 124; title = 'The Warden of El Dicastes'
+          now = 'Go to Kamidal Mountain and find Warden Kahlis outside the gate of El Dicastes (dic_fild01, 156, 270).'
+          hint = @(
+            'From the Allied camp, take the Teleport Cat (207, 234) to Manuk Field (10,000 zeny).'
+            'On Manuk Field, the Teleport Cat (135, 49) goes to Near El Dicastes (20,000 zeny). Warden Kahlis stands just south of the city gate (156, 270).'
+          )
+          done = 'Kahlis guards the gate of El Dicastes. Since the rift opened, the Scaraba under Kamidal Mountain have been breeding out of season, and they have begun to dig toward the city.'
+          say = @('So you are the human who quieted the Tatacho. Kahlis, warden of this gate. I will not ask you in. The law forbids it, and I keep the law.', 'Since your rift opened, the Scaraba under the mountain breed out of season. Their workers swarm the slopes, and the hive digs toward the city.', 'Thin the swarm on the mountain first. Then we will talk about the hive.') }
+       @{ id = 112; type = 'hunt'; lv = 125; title = 'The Swarm on the Mountain'; where = 'dic_fild01'
+          mobs = @(@(1987, 'Centipede', 30), @(2092, 'Dolomedes', 10))
+          now = 'Hunt 30 Centipedes and 10 Dolomedes on the slopes of Kamidal Mountain (dic_fild01), outside El Dicastes.'
+          done = 'You thinned the creatures swarming over Kamidal Mountain, and the slopes fell quiet.' }
+       @{ id = 113; type = 'deliver'; lv = 126; title = 'What the Swarm Leaves'
+          items = @(@(1042, 'Bug Leg', 8), @(6325, 'White Spider Limb', 5))
+          now = 'Bring Warden Kahlis 8 Bug Legs from the Centipedes and 5 White Spider Limbs from the Dolomedes, at the gate of El Dicastes (156, 270).'
+          done = 'Kahlis read the remains as the Sapha read omens: the swarm was not hunting, it was fleeing. Something in the Scaraba hive drives them out.'
+          say = @('Hm. These are not wounds from your weapons alone. Look, the joints are scorched.', 'The swarm was not hunting. It was fleeing. Something in the Scaraba hive is driving everything out of the mountain.', 'The hive''s mouth is at the west end of these slopes. Go in, and find what rules it now.') }
+       @{ id = 114; type = 'boss'; lv = 127; title = 'The Hive Under Kamidal'; map = 'dic_dun01'; mob = 2083; boss = 'Rift-Touched Scaraba'; hp = 8
+          now = 'Enter the Scaraba Hole under Kamidal Mountain (dic_dun01). Its entrance is at the west end of dic_fild01 (24, 79).'
+          spots = @(
+            @{ map = 'dic_fild01'; x = 24; y = 79; name = 'Entrance to the Scaraba Hole' }
+          )
+          done = 'You slew the Rift-Touched Scaraba. In its shell was a shard of black crystal, the same seal crystal Gustav found in Einbech.' }
+       @{ id = 115; type = 'report'; lv = 129; title = 'A Shard of the Seal'
+          now = 'Return to Warden Kahlis at the gate of El Dicastes (156, 270).'
+          hint = @(
+            'From the Scaraba Hole, the way out (371, 44) leads back to dic_fild01. Kahlis waits by the city gate (156, 270).'
+          )
+          spots = @(
+            @{ map = 'dic_dun01'; x = 371; y = 44; name = 'Way out to dic_fild01' }
+          )
+          done = 'Kahlis knew the shard: the Sapha''s oldest songs tell of a seal-fire that broke through from another world. He sent you home, to the Church of Freya in Rachel, whose sisters keep the same songs.'
+          say = @('Seal crystal. The oldest songs of my people tell of it: a fire from another world, sealed away long before there were Sapha or humans.', 'The songs say the priests of the goddess across the rift keep the other half of the story. Your Church of Freya, in Rachel.', 'Go home, human, and take this shard to them. The gate of El Dicastes will remember your name, even if the law will not let you through it.') }
      ) }
 
   @{ n = 7; title = 'Fire and Faith'; range = '90-99'
@@ -424,7 +538,20 @@ $chapters = @(
      intro = 'Rachel is the holy city of the Arunafeltz States, seat of the Church of the goddess Freya.'
      steps = @(
        @{ id = 31; type = 'talk'; lv = 90; title = 'The Church of Freya'
-          re = @{ lv = 130 }
+          # Renewal: you come home from El Dicastes, through the rift.
+          re = @{ lv = 130
+             hint = @(
+               'From El Dicastes: on dic_fild01, the way south (69, 23) leads to dic_fild02. Its Dimensional Transporter (241, 31) takes you into the Dimensional Gap.'
+               'In the Gap, the way south (122, 48) leads to the rift gorge (moc_fild22b). The Rift Guard there (37, 196) walks you out to Morroc''s fields (moc_fild20).'
+               'From there, follow the Route link to Rachel, holy city of Arunafeltz. Sister Ilyana is at (141, 146).'
+             )
+             spots = @(
+               @{ map = 'dic_fild01'; x = 69; y = 23; name = 'Way south to dic_fild02' }
+               @{ map = 'dic_fild02'; x = 241; y = 31; name = 'Dimensional Transporter: into the Gap' }
+               @{ map = 'dali'; x = 122; y = 48; name = 'Way to the rift gorge' }
+               @{ map = 'moc_fild22b'; x = 37; y = 196; name = 'Rift Guard: out to Morroc''s fields' }
+             )
+             say = @('May Freya''s light guide you. Elisha wrote that you would come, and a letter from beyond the rift came after hers.', 'A shard of seal crystal, from the Sapha? Then the songs on both sides of the rift tell the same story.', 'Our oracles see fire under Thor''s Volcano, south of Veins. And in the cities of the kingdom, an old mark has begun to appear. We call it the Sign.', 'Go to the volcano. Its creatures are restless, and we must know why.') }
           now = 'Travel to Rachel, holy city of Arunafeltz, and find Sister Ilyana (141, 146).'
           done = 'Ilyana serves the goddess Freya. The church''s oracles have seen fire under Thor''s Volcano, and an old mark appearing in the cities: the Sign.'
           say = @('May Freya''s light guide you. Elisha wrote that you would come.', 'Our oracles see fire under Thor''s Volcano, south of Veins. And in the cities of the kingdom, an old mark has begun to appear. We call it the Sign.', 'Go to the volcano. Its creatures are restless, and we must know why.') }
@@ -453,7 +580,7 @@ $chapters = @(
      ) }
 
   @{ n = 8; title = 'Twilight of the Gods'; range = '99+'
-     re = @{ range = '140+' }
+     re = @{ range = '140-146' }
      town = 'hugel'; townName = 'Hugel'; npc = 'Brynjar the Herald'; sprite = '4_M_KNIGHT_GOLD'; x = 101; y = 56
      costumes = @(5171, 5292, 5584); gift = @(@(616, 1), @(607, 10)); zeny = 150000
      intro = 'Hugel is a quiet seaside village in the far north, where boats leave for the temple of Odin.'
@@ -507,13 +634,209 @@ $chapters = @(
           )
           done = 'You defeated the Fallen Valkyrie''s Shade, and the temple fell quiet for the first time in years.' }
        @{ id = 40; type = 'report'; lv = 110; title = 'Champion of Rune-Midgard'
-          re = @{ lv = 146 }
           now = 'Return to Brynjar the Herald in Hugel (101, 56).'
           hint = @(, $odinHomeHint)
           spots = $odinHome
           done = 'Brynjar knelt. The Norns weave every fate in Midgard, but a hero who stands where the seals fail can change what was written. Your Chronicle is complete: you are a Champion of Rune-Midgard. Legends still wait: The Sign and Geffenia, Thanatos Tower, the Abyss Lakes and the Endless Tower.'
-          say = @('The temple is quiet. The Valkyries thank you.', 'The Norns weave every fate in Midgard. But a hero who stands where the seals fail can change what was written. That is what you have done.', 'Rise, Champion of Rune-Midgard. Your Chronicle is complete, but legends still wait: the Sign, Thanatos Tower, the Abyss Lakes, the Endless Tower.') }
+          say = @('The temple is quiet. The Valkyries thank you.', 'The Norns weave every fate in Midgard. But a hero who stands where the seals fail can change what was written. That is what you have done.', 'Rise, Champion of Rune-Midgard. Your Chronicle is complete, but legends still wait: the Sign, Thanatos Tower, the Abyss Lakes, the Endless Tower.')
+          # Renewal: not the end yet. On to Mora, beyond the rift.
+          re = @{ lv = 146; title = 'The Light of Bifrost'
+             done = 'Brynjar thanked you in the Valkyries'' name, but the temple had shown them one more failing light: Bifrost, the rainbow bridge beyond the rift, where the Laphine of Mora live. He sent you there.'
+             say = @('The temple is quiet. The Valkyries thank you.', 'But from the upper hall they saw one more light failing. Bifrost, the rainbow bridge of the gods, stands beyond the rift you crossed, in the land of the Laphine.', 'The Laphine village of Mora lies at its foot. Its elder, Mirrel, has kept the bridge''s light for longer than any human has lived. Go to him.', 'The Allied Scout east of Morroc will let you back through the rift.') } }
+     ) }
+
+  # Renewal only: Mora, the Laphine village at the foot of Bifrost. From the
+  # Allied camp: Teleport Cats to Splendide's field, then to Bifrost's.
+  @{ era = 'renewal'; title = 'The Light of Bifrost'; range = '147-150'
+     town = 'mora'; townName = 'Mora'; npc = 'Elder Mirrel'; sprite = '4_M_RAFLE_OLD'; x = 114; y = 96
+     costumes = @(2215, 5064, 2207); costumeId = 50134; gift = @(@(607, 10), @(608, 5)); zeny = 100000
+     intro = 'Mora is a Laphine village of healers and gardeners, hidden in the hills at the foot of Bifrost, the rainbow bridge beyond the rift. Its Small Holes in the hillside are its only doors.'
+     spots = @(
+       @{ map = 'moc_fild20'; x = 345; y = 182; name = 'Allied Scout: through the rift to the camp' }
+       @{ map = 'mid_camp'; x = 207; y = 234; name = 'Teleport Cat: Near Splendide (10,000 zeny)' }
+       @{ map = 'spl_fild02'; x = 53; y = 242; name = 'Teleport Cat: Entrance to Mora (55,000 zeny)' }
+       @{ map = 'bif_fild02'; x = 285; y = 332; name = 'Small Hole: into Mora' }
+     )
+     away = 'Far from Mora? Through the rift (the Allied Scout east of Morroc, moc_fild20, 345, 182) to the Allied camp, its Teleport Cat (207, 234) to Near Splendide, the Teleport Cat there (53, 242) to Entrance to Mora, then knock on the Small Hole (285, 332).'
+     steps = @(
+       @{ id = 116; type = 'talk'; lv = 147; title = 'The Village Under the Bridge'
+          route = @('moc_fild20', 345, 182, 'Allied Scout: moc_fild20')
+          now = 'Go to Mora, the Laphine village at the foot of Bifrost, and find Elder Mirrel (114, 96).'
+          hint = @(
+            'Follow the Route link to the Allied Scout east of Morroc (moc_fild20, 345, 182). He lets you through the rift to the Allied camp.'
+            'In the camp, the Teleport Cat (207, 234) goes to Near Splendide (10,000 zeny). On spl_fild02, the Teleport Cat (53, 242) goes to Entrance to Mora (55,000 zeny).'
+            'On bif_fild02, knock on the Small Hole in the hill (285, 332). It opens into Mora. Elder Mirrel stands in the village centre (114, 96).'
+          )
+          done = 'Mirrel keeps the light of Bifrost. Since the rift opened, the fairy-folk of the bridge''s fields have turned on the Laphine, and the bridge''s colours are fading.'
+          say = @('A human, with a Valkyrie''s blessing on him? Then Brynjar''s message was true. Sit, sit.', 'I keep the light of Bifrost. For a thousand years it has shone in seven colours. This spring it shines in five.', 'The little spirits of the bridge fields, the Fatum and the Miming, have turned on my people. They were never cruel. Something has made them so.', 'Drive them back from the village, so my gardeners can work again.') }
+       @{ id = 117; type = 'hunt'; lv = 147; title = 'The Bridge Fields'; where = 'bif_fild02'
+          mobs = @(@(2136, 'Little Fatum', 30), @(2137, 'Miming', 20))
+          now = 'Hunt 30 Little Fatum and 20 Miming on the fields of Bifrost outside Mora (bif_fild02).'
+          hint = @(
+            'Mora''s east door (182, 74) leads out to bif_fild02, the hunting ground.'
+          )
+          spots = @(
+            @{ map = 'mora'; x = 182; y = 74; name = 'Way out to bif_fild02' }
+          )
+          done = 'You drove the maddened spirits back from Mora''s gardens.' }
+       @{ id = 118; type = 'deliver'; lv = 148; title = 'Dust of the Rainbow'
+          items = @(@(6395, 'Angel Magic Powder', 5), @(6394, 'Golden Feather', 5))
+          now = 'Bring Elder Mirrel 5 Angel Magic Powder from the Little Fatum and 5 Golden Feathers from the Miming, in Mora (114, 96).'
+          done = 'The powder and feathers had lost their colour. Mirrel saw why: the bridge''s light was being drunk by a thorn-hearted mantis in the fields.'
+          say = @('Look. Fatum powder should shimmer in every colour, and Miming feathers should be warm as sunlight. These are grey.', 'Something is drinking the light of Bifrost before it reaches them. My gardeners have seen it: a mantis with a heart of thorns, bigger than any they have seen.', 'It hides in the bridge fields. Find it, and the bridge will shine again.') }
+       @{ id = 119; type = 'boss'; lv = 149; title = 'The Thornheart'; map = 'bif_fild02'; mob = 2133; boss = 'Thornheart Mantis'; hp = 10
+          now = 'Return to the fields of Bifrost outside Mora (bif_fild02) and slay the Thornheart Mantis.'
+          hint = @(
+            'Mora''s east door (182, 74) leads out to bif_fild02. The Thornheart Mantis appears a few seconds after you arrive.'
+          )
+          spots = @(
+            @{ map = 'mora'; x = 182; y = 74; name = 'Way out to bif_fild02' }
+          )
+          done = 'You slew the Thornheart Mantis. As it fell, the light it had drunk streamed back up into Bifrost.' }
+       @{ id = 120; type = 'report'; lv = 150; title = 'Seven Colours'
+          now = 'Return to Elder Mirrel in Mora (114, 96).'
+          hint = @(
+            'On bif_fild02, knock on the Small Hole in the hill (285, 332). It opens into Mora.'
+          )
+          spots = @(
+            @{ map = 'bif_fild02'; x = 285; y = 332; name = 'Small Hole: into Mora' }
+          )
+          done = 'Bifrost shone in seven colours again. But Mirrel knew the mantis had not been the cause: the bridge draws its light from the World Tree, and in Eclage, the Laphine city on the tree, it is withering.'
+          say = @('Seven colours. I had almost forgotten what that looks like. Thank you.', 'But the mantis was a thief, not the cause. Bifrost draws its light from the World Tree itself, Yggdrasil, and the tree is sick.', 'The Laphine of Eclage live on its branches. Their guard captain, Sylwen, keeps watch outside the city gate. Tell her Mirrel sent you, and take this for the road.') }
+     ) }
+
+  # Renewal only: Eclage, the Laphine city on the World Tree. Its gate is
+  # quest-locked (ep14_2_oliver), so Sylwen meets you outside it.
+  @{ era = 'renewal'; title = 'Under the World Tree'; range = '151-158'
+     town = 'ecl_fild01'; townName = 'Eclage'; npc = 'Captain Sylwen'; sprite = '4_M_FAIRYSOLDIER'; x = 102; y = 307
+     costumes = @(5303, 5284, 2254); costumeId = 50137; gift = @(@(607, 10), @(608, 5)); zeny = 120000
+     intro = 'Eclage is the capital of the Laphine, built in the branches of Yggdrasil, the World Tree. Its gate admits only those the Laphine have registered, and the old tower of the tree''s keepers stands in the field below.'
+     spots = @(
+       @{ map = 'mora'; x = 182; y = 74; name = 'Way out to bif_fild02' }
+       @{ map = 'bif_fild02'; x = 292; y = 351; name = 'Way north to the fields of Eclage' }
+     )
+     away = 'Far from Eclage? From Mora, the east door (182, 74) leads to bif_fild02, and its north-east way (292, 351) to ecl_fild01. Captain Sylwen stands outside the city gate (102, 307).'
+     steps = @(
+       @{ id = 121; type = 'talk'; lv = 151; title = 'The Gate of Eclage'
+          now = 'Go to the fields of Eclage (ecl_fild01) and find Captain Sylwen outside the city gate (102, 307).'
+          hint = @(
+            'From Mora, the east door (182, 74) leads out to bif_fild02.'
+            'On bif_fild02, the way in the north-east (292, 351) leads to ecl_fild01. Walk north-west to the city gate; Captain Sylwen stands just outside it (102, 307).'
+          )
+          done = 'Sylwen guards the gate of Eclage. The keepers'' tower in the field below the city, where the Laphine once tended the tree''s roots, has filled with ash and walking books, and no keeper has come out of it.'
+          say = @('Mirrel sent you? Then you may stand here. Inside the gate, I am afraid, is another matter: the council lets no stranger in.', 'You see that tower in the field? The keepers of the World Tree lived there. They tended its roots for a thousand years.', 'Since spring it has filled with ash and dust, and their old books walk the halls on their own. No keeper has come out.', 'Go up into the tower. Clear its halls, and we will learn what happened to them.') }
+       @{ id = 122; type = 'hunt'; lv = 152; title = 'The Ashen Halls'; where = 'ecl_tdun02'
+          mobs = @(@(2365, 'Cenere', 25), @(2366, 'Antique Book', 20))
+          now = 'Hunt 25 Cenere and 20 Antique Books on the second floor of the keepers'' tower (ecl_tdun02).'
+          hint = @(
+            'The tower''s door is in the south of ecl_fild01 (182, 82).'
+            'Floor 1: the stairs up (67, 106) lead to the second floor (ecl_tdun02), the hunting ground.'
+          )
+          spots = @(
+            @{ map = 'ecl_fild01'; x = 182; y = 82; name = 'Door of the keepers'' tower' }
+            @{ map = 'ecl_tdun01'; x = 67; y = 106; name = 'Stairs up to the second floor' }
+          )
+          done = 'You cleared the ash spirits and the restless books from the tower''s second floor.' }
+       @{ id = 123; type = 'deliver'; lv = 154; title = 'Ash and Pages'
+          items = @(@(7001, 'Mould Powder', 5), @(1097, 'Worn Out Page', 5))
+          now = 'Bring Captain Sylwen 5 Mould Powder from the Cenere and 5 Worn Out Pages from the Antique Books, outside the gate of Eclage (102, 307).'
+          done = 'The pages were the keepers'' last records: the roots of the World Tree were rotting, and the keepers'' old steward had gone up to the top floor to stop it, and never come down.'
+          say = @('Ash from the roots... and these pages are the keepers'' own records. Let me read.', '"The roots are rotting from below. Something under the world is drinking from them." And the last page: "The steward has gone up to stop it."', 'The steward never came down. Go to the top floor, friend. Whatever he has become, end it.') }
+       @{ id = 124; type = 'boss'; lv = 156; title = 'The Last Keeper'; map = 'ecl_tdun03'; mob = 2371; boss = 'Withered Steward'; hp = 8
+          now = 'Climb to the third floor of the keepers'' tower (ecl_tdun03) and free the Withered Steward.'
+          hint = @(
+            'The tower''s door is in the south of ecl_fild01 (182, 82). Floor 1: the stairs up (67, 106). Floor 2: the stairs up (52, 9) lead to the third floor.'
+            'The Withered Steward appears a few seconds after you arrive.'
+          )
+          spots = @(
+            @{ map = 'ecl_fild01'; x = 182; y = 82; name = 'Door of the keepers'' tower' }
+            @{ map = 'ecl_tdun01'; x = 67; y = 106; name = 'Stairs up to the second floor' }
+            @{ map = 'ecl_tdun02'; x = 52; y = 9; name = 'Stairs up to the third floor' }
+          )
+          done = 'You freed the Withered Steward. With his last breath he named what drinks from the roots: an ancient machine city, buried under the Schwarzwald, where the first seal was made.' }
+       @{ id = 125; type = 'report'; lv = 158; title = 'The Roots Below'
+          now = 'Return to Captain Sylwen outside the gate of Eclage (102, 307).'
+          hint = @(
+            'From the tower, take the stairs down to the first floor and its door (61, 11) back out to ecl_fild01. Sylwen stands outside the city gate (102, 307).'
+          )
+          spots = @(
+            @{ map = 'ecl_tdun03'; x = 49; y = 11; name = 'Stairs down to the second floor' }
+            @{ map = 'ecl_tdun02'; x = 60; y = 90; name = 'Stairs down to the first floor' }
+            @{ map = 'ecl_tdun01'; x = 61; y = 11; name = 'Door out to ecl_fild01' }
+          )
+          done = 'Sylwen knew the city the steward named: Verus, the buried city beneath the Juperos ruins. The machines there are digging toward the first seal, and the World Tree''s roots run through it. She sent you back across the rift, to Verus.'
+          say = @('A machine city, under the Schwarzwald... the Laphine call it the Iron Root. Your people call it Verus.', 'The ruins of Juperos are its upper floors. Below them, the machines that built the seals are still digging, and the roots of the World Tree run right through their tunnels.', 'If they reach the first seal, there will be no tree, no bridge and no rift left to close. Go to Verus, champion. The Laphine will sing of you either way.') }
+     ) }
+
+  # Renewal only: the finale in Verus (rAthena Episode 15), under Juperos:
+  # juperos_01's east tunnel leads to the excavation and the city.
+  @{ era = 'renewal'; title = 'The First Seal'; range = '160-171'
+     town = 'verus04'; townName = 'Verus'; npc = 'Professor Hendrik'; sprite = '4_M_OLDSCHOLAR'; x = 190; y = 180
+     costumes = @(5357, 5205, 2235); costumeId = 50140; gift = @(@(616, 1), @(607, 20)); zeny = 200000
+     intro = 'Verus is a city of the ancients, buried beneath the ruins of Juperos and only now dug out by the Republic''s excavators. Its machines built the seals of Rune-Midgard, and some of them still run.'
+     spots = @(
+       @{ map = 'juperos_01'; x = 245; y = 87; name = 'East tunnel: to the excavation (ver_eju)' }
+       @{ map = 'ver_eju'; x = 107; y = 36; name = 'Way down to the tunnel (ver_tunn)' }
+       @{ map = 'ver_tunn'; x = 10; y = 36; name = 'Way to Verus (verus04)' }
+     )
+     away = 'Far from Verus? From Juno, go down into the Juperos ruins (juperos_01). Its east tunnel (245, 87) leads to the excavation (ver_eju), its south way (107, 36) to the tunnel (ver_tunn), and the tunnel''s west end (10, 36) to Verus (verus04).'
+     steps = @(
+       @{ id = 126; type = 'talk'; lv = 160; title = 'The Buried City'
+          route = @('juperos_01', 245, 87, 'The way to Verus: juperos_01')
+          now = 'Go to Verus, the buried city beneath Juperos, and find Professor Hendrik at the excavation camp (verus04, 190, 180).'
+          hint = @(
+            'From Juno, follow the Route link into the Juperos ruins (juperos_01). Its east tunnel (245, 87) leads to the excavation site (ver_eju).'
+            'On ver_eju, the way south (107, 36) leads into the tunnel (ver_tunn). The tunnel''s west end (10, 36) opens into Verus (verus04). Professor Hendrik works near the excavators'' camp (190, 180).'
+          )
+          done = 'Hendrik leads the Republic''s dig in Verus. The city''s repair machines have woken and joined its old diggers: all of them are tunnelling down, toward something sealed under the city.'
+          say = @('Careful where you step, this floor is older than the kingdom. Hendrik, of the Juno Academy.', 'Elisha''s letters said you might come. The Laphine one I did not expect. The World Tree''s roots, here? Then it is worse than I feared.', 'This city built the seals. Every crystal in Juperos, in Einbech, under Morroc, was cut here. And its machines have woken, all of them, and they are digging down.', 'Start with the old city south of my camp. Its repair machines and rovers have gone wild. Stop them.') }
+       @{ id = 127; type = 'hunt'; lv = 161; title = 'The Waking City'; where = 'verus03'
+          mobs = @(@(3155, 'Repair Robot', 30), @(3156, 'Exploration Rover', 15))
+          route = @('verus04', 121, 267, 'Way to the old city: verus04')
+          now = 'Hunt 30 Repair Robots and 15 Exploration Rovers in the old city of Verus (verus03).'
+          hint = @(
+            'From Professor Hendrik''s camp, the ways north (121, 267) and (44, 267) lead to the old city (verus03), the hunting ground.'
+          )
+          spots = @(
+            @{ map = 'verus04'; x = 121; y = 267; name = 'Way north to the old city (verus03)' }
+          )
+          done = 'You broke the swarm of repair machines and rovers that had woken in the old city.' }
+       @{ id = 128; type = 'deliver'; lv = 164; title = 'Iron and Orders'
+          items = @(@(7319, 'Used Iron Plate', 5), @(998, 'Iron', 10))
+          now = 'Bring Professor Hendrik 5 Used Iron Plates from the Repair Robots and 10 Iron from the Exploration Rovers, in Verus (190, 180).'
+          done = 'Etched inside the plates were the machines'' orders, older than any kingdom: dig to the first seal and open it. One machine gives those orders, the great Excavator at the dig site above.'
+          say = @('Look inside the plate. These marks are orders, burned in by the machines themselves.', '"Dig to the first seal. Open it." Every machine in this city carries the same order. And it comes from one source.', 'The great Excavator, at the dig site you walked through on your way down. It is not one of ours. It woke before we came. Stop it, and the city sleeps.') }
+       @{ id = 129; type = 'boss'; lv = 167; title = 'The Excavator Prime'; map = 'ver_eju'; mob = 3153; boss = 'Excavator Prime'; hp = 10
+          now = 'Go back up to the excavation site (ver_eju) and destroy the Excavator Prime.'
+          hint = @(
+            'From Verus, the way east (204, 163) leads into the tunnel (ver_tunn), and its north end (84, 86) up to the excavation site (ver_eju). The Excavator Prime appears a few seconds after you arrive.'
+          )
+          spots = @(
+            @{ map = 'verus04'; x = 204; y = 163; name = 'Way to the tunnel (ver_tunn)' }
+            @{ map = 'ver_tunn'; x = 84; y = 86; name = 'Way up to the excavation site (ver_eju)' }
+          )
+          done = 'You destroyed the Excavator Prime. All through the city the machines fell still, one by one, and far below them the first seal held.' }
+       @{ id = 130; type = 'report'; lv = 171; title = 'Champion of Rune-Midgard'
+          now = 'Return to Professor Hendrik in Verus (190, 180).'
+          hint = @(
+            'From the excavation site, the way south (107, 36) leads into the tunnel (ver_tunn), and its west end (10, 36) to Verus. Hendrik is at his camp (190, 180).'
+          )
+          spots = @(
+            @{ map = 'ver_eju'; x = 107; y = 36; name = 'Way down to the tunnel (ver_tunn)' }
+            @{ map = 'ver_tunn'; x = 10; y = 36; name = 'Way to Verus (verus04)' }
+          )
+          done = 'The first seal holds. From Prontera''s fields to the roots of the World Tree, you stood wherever the seals failed. Your Chronicle is complete: you are a Champion of Rune-Midgard. Legends still wait: The Sign and Geffenia, Thanatos Tower, the Abyss Lakes and the Endless Tower.'
+          say = @('Silence. For the first time since we broke ground, the whole city is silent.', 'Under Morroc, in Einbech, beyond the rift, on the World Tree, and now here, at the first seal itself. You stood wherever the seals failed, and they held.', 'The Valkyries have a word for that, I am told. Rise, Champion of Rune-Midgard. Your Chronicle is complete, but legends still wait: the Sign, Thanatos Tower, the Abyss Lakes, the Endless Tower.') }
      ) }
 )
 
-return @{ chapters = $chapters; final = $final; finalRe = $finalRe }
+# Passages the Chronicle opens: a Renewal NPC who lets a character through
+# from step id 'from' on (the New World's own way in is quest-locked). Only
+# built into a route that has that step.
+$gates = @(
+  @{ from = 106; map = 'moc_fild20'; x = 345; y = 182; dir = 4; sprite = '707'; name = 'Allied Scout'; to = @('mid_camp', 210, 288)
+     say = @('You carry a Chronicle, and the Sages of Juno vouch for you. The Allied Expedition will be glad of you.', 'Beyond the rift is the Allied Forces Post. Its own Teleport Cats and Dimensional Device can take you on from there.')
+     shut = 'The rift is closed to all but the Allied Expedition and those it calls for. I cannot let you through.' }
+)
+
+return @{ chapters = $chapters; final = $final; finalRe = $finalRe; gates = $gates }
