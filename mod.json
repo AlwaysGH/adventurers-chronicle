@@ -2,8 +2,9 @@
   "name": "adventurers-chronicle",
   "version": "1.2.9",
   "author": "Always",
-  "description": "New to Ragnarok, or coming back after years and not sure where to go next? The Adventurer's Chronicle is a story-driven main quest that walks you across Rune-Midgard at the right pace for your level: from Prontera's fields at level 1 to Odin's Temple past 99, through Payon, Morroc, Geffen, Glast Heim, Juno, Rachel and Hugel. Its 8 chapters retell Rune-Midgard's own lore: the weakening seals, Geffenia, the fall of Glast Heim, Juperos, The Sign. Hunt, gather and face a named boss in every region; quest EXP carries you to the next quest's level, and each chapter ends with a costume of your choice. A built-in journal (Alt+B) recaps everything you've done and shows what to do next, with a Route link that opens Navigation to the exact spot. Veterans can skip ahead to their level. Waykeepers in every town send you back to any place you have already set foot in. Friendly to new and veteran players alike. Pre-renewal.",
-  "requires": { "app": ">=1.4.8", "era": "pre-renewal" },
+  "description": "New to Ragnarok, or coming back after years and not sure where to go next? The Adventurer's Chronicle is a story-driven main quest that walks you across Rune-Midgard at the right pace for your level: from Prontera's fields at level 1 to Odin's Temple past 99, through Payon, Morroc, Geffen, Glast Heim, Juno, Rachel and Hugel. On Renewal it goes on to 175, through Einbech, the New World beyond the rift, Mora, Eclage and Verus. Its 8 chapters (14 on Renewal) retell Rune-Midgard's own lore: the weakening seals, Geffenia, the fall of Glast Heim, Juperos, The Sign. Hunt, gather and face a named boss in every region; quest EXP carries you to the next quest's level, and each chapter ends with a costume of your choice. A built-in journal (Alt+B) recaps everything you've done and shows what to do next, with a Route link that opens Navigation to the exact spot. Veterans can skip ahead to their level. Waykeepers in every town send you back to any place you have already set foot in. Friendly to new and veteran players alike. Pre-renewal and Renewal, each with its own levels and hunting grounds.",
+  "requires": { "app": ">=1.4.8" },
+  "renewalFolder": "renewal",
   "tags": ["quests", "story", "journal", "costumes"],
   "settings": [
     {

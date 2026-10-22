@@ -1,5 +1,5 @@
 THE ADVENTURER'S CHRONICLE  v1.2.7 (BETA)  by Always
-For Ragnarok Offline 1.4.8 or newer. Pre-renewal.
+For Ragnarok Offline 1.4.8 or newer. Pre-renewal and Renewal.
 
 A story-driven main quest that walks you across Rune-Midgard at the right
 pace for your level. For new players, and for anyone coming back after
@@ -54,7 +54,13 @@ years and wondering where to go next.
  NOTES
 ==========================================================================
 
-  - BETA. Pre-renewal only.
+  - BETA. On Renewal 14 chapters run on Renewal levels, up to 175: new
+    chapters in Einbech's mine (90-105), in the New World beyond the
+    rift under Morroc (118-129), in Mora (147-150), Eclage (151-158) and
+    Verus (160-171), and the Chapter 3 and 4 hunts moved to monsters of
+    the right level. An Allied Scout east of Morroc lets Chronicle
+    bearers through the rift. The Renewal route is new and not yet
+    played through.
   - Tested: Chapters 1 to 3. Chapters 4 to 8, the costume rewards and the
     Journal's Route link are still being tested. If something breaks,
     type @chronicle and send the chapter and step it shows, with what
@@ -63,16 +69,18 @@ years and wondering where to go next.
     1 knight offers higher-level characters a skip ahead.
   - Chapter 8 goes past level 99 with a level cap mod, and still works at
     99 without one.
-  - The Chapter 4 orc hunt (gef_fild14) has a Route link from version
-    1.1.2, with the app's 1.5.5 client data. Older clients' Navigation
-    doesn't know that map: walk west from the orc village (gef_fild10).
+  - Pre-renewal: the Chapter 4 orc hunt (gef_fild14) has a Route link
+    from version 1.1.2, with the app's 1.5.5 client data. Older clients'
+    Navigation doesn't know that map: walk west from the orc village
+    (gef_fild10).
   - Some places can't be walked to, so Navigation can't route there. The
     Chronicle walks you through them instead: the Culvert (volunteer with
     the Recruiter), Morroc (closed by the Continental Guard: the Kafra
     teleports you in and out), Juperos Core (the elevator puzzle) and
     Odin's Temple (the Boatman in Hugel). See "How to get there" in the
     Journal and the quest window.
-  - Uses item IDs 50100-50124 and quest IDs 77001-77040.
+  - Uses item IDs 50100-50124 and quest IDs 77001-77040; Renewal also
+    50125-50142 and 77101-77130.
   - Once the Chronicle is complete, it points you to Rune-Midgard's own
     legends: The Sign, Thanatos Tower, the Abyss Lakes, the Endless Tower.
 

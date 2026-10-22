@@ -2,7 +2,7 @@
 
 A mod for [Ragnarok Offline](https://github.com/Flux159/ragnarokoffline.app).
 
-Are you new to Ragnarok, or coming back after years and not sure where to go next? The Adventurer's Chronicle is a story-driven main quest. It walks you across Rune-Midgard at the right pace for your level, from Prontera's fields at level 1 to Odin's Temple past 99.
+Are you new to Ragnarok, or coming back after years and not sure where to go next? The Adventurer's Chronicle is a story-driven main quest. It walks you across Rune-Midgard at the right pace for your level, from Prontera's fields at level 1 to Odin's Temple past 99 (on Renewal, on to level 175).
 
 ## What's in it
 
@@ -33,7 +33,7 @@ If Find Mods can't install it, it can't reach GitHub's downloads. That can happe
 ## Requirements
 
 - Ragnarok Offline 1.4.8 or newer
-- Pre-renewal
+- Pre-renewal or Renewal. Renewal has its own route: 14 chapters on Renewal levels, up to 175. New chapters: Einbech's mine (90-105) between Glast Heim and Juno; the New World beyond the rift under Morroc, at the Allied camp and outside El Dicastes (118-129), between Juno and Rachel; and after Odin's Temple, Mora (147-150), Eclage (151-158) and the finale in Verus (160-171). The hunts in Morroc and Geffen move to monsters of the right level.
 
 ## Settings
 
