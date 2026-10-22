@@ -1,8 +1,8 @@
 {
   "name": "adventurers-chronicle",
-  "version": "1.2.9",
+  "version": "1.4.5",
   "author": "Always",
-  "description": "New to Ragnarok, or coming back after years and not sure where to go next? The Adventurer's Chronicle is a story-driven main quest that walks you across Rune-Midgard at the right pace for your level: from Prontera's fields at level 1 to Odin's Temple past 99, through Payon, Morroc, Geffen, Glast Heim, Juno, Rachel and Hugel. Its 8 chapters retell Rune-Midgard's own lore: the weakening seals, Geffenia, the fall of Glast Heim, Juperos, The Sign. Hunt, gather and face a named boss in every region; quest EXP carries you to the next quest's level, and each chapter ends with a costume of your choice. A built-in journal (Alt+B) recaps everything you've done and shows what to do next, with a Route link that opens Navigation to the exact spot. Veterans can skip ahead to their level. Waykeepers in every town send you back to any place you have already set foot in. Friendly to new and veteran players alike. Pre-renewal.",
+  "description": "New to Ragnarok, or coming back after years and not sure where to go next? The Adventurer's Chronicle is a story-driven main quest that walks you across Rune-Midgard at the right pace for your level: from Prontera's fields at level 1 to Odin's Temple past 99, through Payon, Morroc, Geffen, Glast Heim, Juno, Rachel and Hugel. Its 8 chapters retell Rune-Midgard's own lore: the weakening seals, Geffenia, the fall of Glast Heim, Juperos, The Sign. Hunt, gather and face a named boss in every region; quest EXP carries you to the next quest's level, and each chapter ends with a costume of your choice. A built-in journal (Alt+B) recaps everything you've done and shows what to do next, with a Route link that opens Navigation to the exact spot. Optional Side Quests branch off the road to famous places (Byalan Island, the Sunken Ship, the Sphinx, Ayothaya, the Orc's Memory, Amatsu, Kunlun, the Clock Tower, Turtle Island), each with a costume and a Passport stamp, and an MVP Ledger lists the bosses worth coming back for. Veterans can skip ahead to their level. Waykeepers in every town send you back to any place you have already set foot in. Friendly to new and veteran players alike. Pre-renewal.",
   "requires": { "app": ">=1.4.8", "era": "pre-renewal" },
   "tags": ["quests", "story", "journal", "costumes"],
   "settings": [
@@ -28,6 +28,13 @@
       "default": true,
       "label": "Waykeepers",
       "description": "A Waykeeper in front of the Prontera fountain and in every town. The first time you set foot on a map it is remembered, and any Waykeeper can send you back there. Switch off if you use another warper."
+    },
+    {
+      "key": "test_tools",
+      "type": "boolean",
+      "default": false,
+      "label": "Test tools",
+      "description": "For testing: the chat command @chronicle side <quest> <step> puts you on any Side Quest step (0 = not open yet, 100 = done). Leave off for normal play."
     },
     {
       "key": "show_button",

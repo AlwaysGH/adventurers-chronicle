@@ -1848,5 +1848,3880 @@ export default {
                                        }
                                    ]
                      }
-                 ]
+                 ],
+    "sides":  [
+                  {
+                      "n":  1,
+                      "ch":  1,
+                      "hook":  5,
+                      "title":  "The Sea Caves of Byalan",
+                      "range":  "13-25",
+                      "intro":  "Sir Leonhart: \"The Culvert drains into the sea at Izlude, and the harbour master there writes that sea creatures have been attacking boats near Byalan Island since the same week the bugs appeared.\"",
+                      "ro":  false,
+                      "npc":  "Harbour Master Oswin",
+                      "town":  "Izlude",
+                      "townMap":  "izlude",
+                      "x":  197,
+                      "y":  181,
+                      "costumes":  [
+                                       "Fish Head Hat",
+                                       "Fish in Mouth"
+                                   ],
+                      "zeny":  2000,
+                      "failText":  null,
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "talk",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Harbour Master",
+                                        "now":  "Walk south from Prontera to Izlude (prt_fild08) and find Harbour Master Oswin on the Izlude dock (197, 181).",
+                                        "done":  "Harbour Master Oswin told you of the beast. Boats rowing past Byalan Island come back holed, or not at all.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "izlude",
+                                                      "x":  197,
+                                                      "y":  181,
+                                                      "name":  "Harbour Master Oswin"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Your First Boat",
+                                        "now":  "Ride the Sailor at the end of the Izlude dock (201, 181) to Byalan Island (150 zeny).",
+                                        "done":  "You took your first boat, out to Byalan Island.",
+                                        "map":  "izlu2dun",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "izlude",
+                                                      "x":  201,
+                                                      "y":  181,
+                                                      "name":  "Sailor: boat to Byalan Island"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Talk to the Sailor at the end of the Izlude dock (201, 181) and choose Byalan Island -\u003e 150 Zeny. Boats are how you reach islands: each one names its price before you board.",
+                                                     "The way back: the Sailor standing on the island (108, 27) rows you back to Izlude."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "hunt",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Undersea Tunnel",
+                                        "now":  "Enter the cave in the middle of Byalan Island (108, 83) and hunt 20 Planktons and 10 Hydras on the first level of the Undersea Tunnel (iz_dun00).",
+                                        "done":  "The tunnel\u0027s creatures were frenzied, swarming the shallows where the boats pass.",
+                                        "map":  "iz_dun00",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "izlude",
+                                                      "x":  201,
+                                                      "y":  181,
+                                                      "name":  "Sailor: boat to Byalan Island"
+                                                  },
+                                        "mobs":  [
+                                                     {
+                                                         "name":  "Plankton",
+                                                         "id":  1161,
+                                                         "count":  20
+                                                     },
+                                                     {
+                                                         "name":  "Hydra",
+                                                         "id":  1068,
+                                                         "count":  10
+                                                     }
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "izlu2dun",
+                                                          "x":  108,
+                                                          "y":  83,
+                                                          "name":  "Cave into the Undersea Tunnel",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  4,
+                                        "type":  "boss",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Something Bites the Boats",
+                                        "now":  "Go down to the second level of the Undersea Tunnel (iz_dun01). The beast that bites the boats waits there.",
+                                        "done":  "You broke the shell of the Tidebreaker Vadon, a crab swollen huge by the same wrongness as the Brood Lord.",
+                                        "map":  "iz_dun01",
+                                        "boss":  "Tidebreaker Vadon",
+                                        "route":  {
+                                                      "map":  "izlude",
+                                                      "x":  201,
+                                                      "y":  181,
+                                                      "name":  "Sailor: boat to Byalan Island"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "First level: the way down is in the far north-east (352, 342) or in the south-west (39, 41). The Tidebreaker Vadon rises a few seconds after you arrive."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "izlu2dun",
+                                                          "x":  108,
+                                                          "y":  83,
+                                                          "name":  "Cave into the Undersea Tunnel",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "iz_dun00",
+                                                          "x":  352,
+                                                          "y":  342,
+                                                          "name":  "Way down to level 2 (north-east)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "iz_dun00",
+                                                          "x":  39,
+                                                          "y":  41,
+                                                          "name":  "Way down to level 2 (south-west)",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  5,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Fair Winds",
+                                        "now":  "Tell Harbour Master Oswin on the Izlude dock (197, 181) that the caves are quiet.",
+                                        "done":  "Oswin swore the boats would sail again, and sent word to Leonhart that the sickness below Prontera reaches all the way to the sea.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "izlude",
+                                                      "x":  197,
+                                                      "y":  181,
+                                                      "name":  "Harbour Master Oswin"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "izlu2dun",
+                                                          "x":  108,
+                                                          "y":  27,
+                                                          "name":  "Crewman: boat back to Izlude",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  },
+                  {
+                      "n":  2,
+                      "ch":  2,
+                      "hook":  8,
+                      "title":  "The Drowned Crew",
+                      "range":  "18-30",
+                      "intro":  "Captain Hwarang: \"A merchant from Alberta came begging this morning. The old wreck off his coast walks at night, drowned sailors on its deck. It sounds like our sickness.\"",
+                      "ro":  false,
+                      "npc":  "Merchant Tolliver",
+                      "town":  "Alberta",
+                      "townMap":  "alberta",
+                      "x":  186,
+                      "y":  153,
+                      "costumes":  [
+                                       "Captain\u0027s Hat",
+                                       "Pirate Bandana"
+                                   ],
+                      "zeny":  3000,
+                      "failText":  null,
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "talk",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Port Town",
+                                        "now":  "Walk west from Payon to the port town of Alberta (pay_fild01, pay_fild02, pay_fild03) and find Merchant Tolliver by the docks (186, 153).",
+                                        "done":  "Merchant Tolliver told you of the wreck off Alberta, where drowned sailors walk the decks at night.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  186,
+                                                      "y":  153,
+                                                      "name":  "Merchant Tolliver"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Towns are joined by fields: leave Payon by its west gate and keep walking west through three fields. Nothing on the way attacks first. The Route link draws the whole path."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Out to the Wreck",
+                                        "now":  "Ride with Fisk on the Alberta dock (189, 151) to the Sunken Ship (250 zeny), then walk into the wreck (88, 111).",
+                                        "done":  "You rowed out with Fisk and set foot on the Sunken Ship.",
+                                        "map":  "treasure01",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  189,
+                                                      "y":  151,
+                                                      "name":  "Fisk: boat to the Sunken Ship"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Talk to Fisk (189, 151) and choose Sunken Ship -\u003e 250 zeny. He rows you to the wreck\u0027s outer deck (alb2trea).",
+                                                     "On the outer deck, the way into the ship is at (88, 111).",
+                                                     "The way back: Fisk waits on the outer deck (39, 50) to row you to Alberta."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "alb2trea",
+                                                          "x":  88,
+                                                          "y":  111,
+                                                          "name":  "Into the Sunken Ship",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "alb2trea",
+                                                          "x":  39,
+                                                          "y":  50,
+                                                          "name":  "Fisk: boat back to Alberta",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "hunt",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Drowned Crew",
+                                        "now":  "Hunt 15 Pirate Skeletons on the first deck of the Sunken Ship (treasure01).",
+                                        "done":  "You put down the drowned crew. They fought as if someone still gave them orders.",
+                                        "map":  "treasure01",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  189,
+                                                      "y":  151,
+                                                      "name":  "Fisk: boat to the Sunken Ship"
+                                                  },
+                                        "mobs":  [
+                                                     {
+                                                         "name":  "Pirate Skeleton",
+                                                         "id":  1071,
+                                                         "count":  15
+                                                     }
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "alb2trea",
+                                                          "x":  88,
+                                                          "y":  111,
+                                                          "name":  "Into the Sunken Ship",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  4,
+                                        "type":  "boss",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The First Mate",
+                                        "now":  "Someone still gives the crew orders. Face the Drowned First Mate on the first deck of the Sunken Ship (treasure01).",
+                                        "done":  "The Drowned First Mate fell, still shouting orders to a crew long gone.",
+                                        "map":  "treasure01",
+                                        "boss":  "The Drowned First Mate",
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  189,
+                                                      "y":  151,
+                                                      "name":  "Fisk: boat to the Sunken Ship"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "alb2trea",
+                                                          "x":  88,
+                                                          "y":  111,
+                                                          "name":  "Into the Sunken Ship",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  5,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Calm Waters",
+                                        "now":  "Tell Merchant Tolliver in Alberta (186, 153) that the crew rests again.",
+                                        "done":  "Tolliver\u0027s ships sail past the wreck again. Hwarang would want to hear it: the dead of the sea woke in the same weeks as the dead of Payon.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  186,
+                                                      "y":  153,
+                                                      "name":  "Merchant Tolliver"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "treasure01",
+                                                          "x":  69,
+                                                          "y":  22,
+                                                          "name":  "Way out of the wreck",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "alb2trea",
+                                                          "x":  39,
+                                                          "y":  50,
+                                                          "name":  "Fisk: boat back to Alberta",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  },
+                  {
+                      "n":  3,
+                      "ch":  3,
+                      "hook":  13,
+                      "title":  "The Face in the Sand",
+                      "range":  "30-42",
+                      "intro":  "Nafisa: \"The sands show me something else too. A face of stone, west of the city. The same hands that built the Pyramids built the Sphinx, and whatever wakes in one stirs the other.\"",
+                      "ro":  false,
+                      "npc":  "Nafisa the Seer",
+                      "town":  "Morroc",
+                      "townMap":  "morocc",
+                      "x":  156,
+                      "y":  286,
+                      "costumes":  [
+                                       "Anubis Helm",
+                                       "Desert Prince"
+                                   ],
+                      "zeny":  5000,
+                      "failText":  null,
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "hunt",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Into the Sphinx",
+                                        "now":  "Walk west out of Morroc to the Sphinx (moc_fild19, the entrance at 98, 99) and hunt 20 Zeroms and 15 Drainliars on its first floors (in_sphinx1, in_sphinx2).",
+                                        "done":  "The Sphinx\u0027s halls were full of restless things, Zeroms and Drainliars stirred from the dark.",
+                                        "map":  "in_sphinx1",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "moc_fild19",
+                                                      "x":  98,
+                                                      "y":  99,
+                                                      "name":  "Sphinx entrance: moc_fild19"
+                                                  },
+                                        "mobs":  [
+                                                     {
+                                                         "name":  "Zerom",
+                                                         "id":  1178,
+                                                         "count":  20
+                                                     },
+                                                     {
+                                                         "name":  "Drainliar",
+                                                         "id":  1111,
+                                                         "count":  15
+                                                     }
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Some monsters in the Sphinx attack on sight. The first floor\u0027s stairs down are at (80, 191)."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "in_sphinx1",
+                                                          "x":  80,
+                                                          "y":  191,
+                                                          "name":  "Stairs down to the second floor",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "payon",
+                                                          "x":  175,
+                                                          "y":  226,
+                                                          "name":  "Kafra: Teleport to Morocc (1,200 zeny)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "prontera",
+                                                          "x":  146,
+                                                          "y":  89,
+                                                          "name":  "Kafra: Teleport to Morocc (1,200 zeny)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "moc_fild20",
+                                                          "x":  203,
+                                                          "y":  336,
+                                                          "name":  "Continental Guard: a free ride to Morroc",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "boss",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Warden",
+                                        "now":  "Go down to the third floor of the Sphinx (in_sphinx3). The guardian Nafisa saw waits there.",
+                                        "done":  "You struck down the Warden of the Sphinx, a priest of the old desert still guarding a door it could not hold shut.",
+                                        "map":  "in_sphinx3",
+                                        "boss":  "Warden of the Sphinx",
+                                        "route":  {
+                                                      "map":  "in_sphinx3",
+                                                      "x":  210,
+                                                      "y":  54,
+                                                      "name":  "Warden of the Sphinx: in_sphinx3"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "First floor: stairs down at (80, 191). Second floor: the stairs to the third floor are in the far north-east (276, 272). The Warden rises a few seconds after you arrive."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "in_sphinx1",
+                                                          "x":  80,
+                                                          "y":  191,
+                                                          "name":  "Stairs down to the second floor",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "in_sphinx2",
+                                                          "x":  276,
+                                                          "y":  272,
+                                                          "name":  "Stairs down to the third floor",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "payon",
+                                                          "x":  175,
+                                                          "y":  226,
+                                                          "name":  "Kafra: Teleport to Morocc (1,200 zeny)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "prontera",
+                                                          "x":  146,
+                                                          "y":  89,
+                                                          "name":  "Kafra: Teleport to Morocc (1,200 zeny)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "moc_fild20",
+                                                          "x":  203,
+                                                          "y":  336,
+                                                          "name":  "Continental Guard: a free ride to Morroc",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "One Seal",
+                                        "now":  "Tell Nafisa in Morroc (156, 286) what guards the Sphinx.",
+                                        "done":  "Nafisa said it plainly: the Sphinx and the Pyramids share one seal. Below the Sphinx\u0027s fifth floor sleeps Pharaoh, and she begged you not to wake him yet.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "morocc",
+                                                      "x":  156,
+                                                      "y":  286,
+                                                      "name":  "Nafisa the Seer"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "payon",
+                                                          "x":  175,
+                                                          "y":  226,
+                                                          "name":  "Kafra: Teleport to Morocc (1,200 zeny)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "prontera",
+                                                          "x":  146,
+                                                          "y":  89,
+                                                          "name":  "Kafra: Teleport to Morocc (1,200 zeny)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "moc_fild20",
+                                                          "x":  203,
+                                                          "y":  336,
+                                                          "name":  "Continental Guard: a free ride to Morroc",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  },
+                  {
+                      "n":  4,
+                      "ch":  3,
+                      "hook":  15,
+                      "title":  "The Tiger Across the Sea",
+                      "range":  "39-49",
+                      "intro":  "Nafisa: \"One more vision before you go. Across the sea, in a land of temples, a tiger spirit stirs in an old shrine. It guarded a seal like ours, and the shrine has an older keeper still, Lady Tanee.\"",
+                      "ro":  true,
+                      "npc":  "Kasim the Courier",
+                      "town":  "Ayothaya",
+                      "townMap":  "ayothaya",
+                      "x":  146,
+                      "y":  72,
+                      "costumes":  [
+                                       "Tiger Mask",
+                                       "Leaf Cat Hat"
+                                   ],
+                      "zeny":  10000,
+                      "failText":  null,
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Your First Ship Overseas",
+                                        "now":  "Sail to Ayothaya, across the sea: about 11,700 zeny in all. The ship leaves from the Alberta dock (Aibakthing, 247, 42, 10,000 zeny).",
+                                        "done":  "You crossed the sea to Ayothaya, a land of temples and floating houses.",
+                                        "map":  "ayothaya",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  247,
+                                                      "y":  42,
+                                                      "name":  "Aibakthing: ship to Ayothaya"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Morroc: a Kafra Employee (160, 258 or 156, 97) teleports you to Prontera (1,200 zeny). Morroc has no open road out.",
+                                                     "Prontera: walk south to Izlude (prt_fild08). The Sailor at the end of the Izlude dock (201, 181) sails to Alberta Marina for 500 zeny. Do not walk to Alberta from Prontera: Eddga hunts the forest on that road.",
+                                                     "Alberta: Aibakthing at the far end of the dock (247, 42) sails to Ayothaya for 10,000 zeny. Ships overseas cost much more than boats, so the Journal tells you the price up front.",
+                                                     "The way back: Aibakthing waits by the Ayothaya dock (152, 68) to sail you to Alberta."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "morocc",
+                                                          "x":  160,
+                                                          "y":  258,
+                                                          "name":  "Kafra: Teleport to Prontera (1,200 zeny)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "izlude",
+                                                          "x":  201,
+                                                          "y":  181,
+                                                          "name":  "Sailor: Alberta Marina (500 zeny)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "alberta",
+                                                          "x":  247,
+                                                          "y":  42,
+                                                          "name":  "Aibakthing: ship to Ayothaya (10,000 zeny)",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "talk",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Nafisa\u0027s Courier",
+                                        "now":  "Find Kasim, Nafisa\u0027s courier, on the Ayothaya dock (146, 72). He sailed ahead of you with her pouch.",
+                                        "done":  "Kasim, Nafisa\u0027s courier, met you on the dock with her pouch and the name of a man who knows the tiger\u0027s tale: Dusit.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ayothaya",
+                                                      "x":  146,
+                                                      "y":  72,
+                                                      "name":  "Kasim the Courier"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Dusit and the Shaman",
+                                        "now":  "RO quest: hear Dusit\u0027s tale of the Sa-mhing Tiger (83, 132), then find the shaman Boonthom in a house in western Ayothaya (the door at 62, 104).",
+                                        "done":  "Dusit told you of the Sa-mhing Tiger, a man-eater that wears the faces of its victims. Boonthom helped capture it ten years ago: it was locked in the Ancient Shrine, not killed.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ayothaya",
+                                                      "x":  83,
+                                                      "y":  132,
+                                                      "name":  "Dusit"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Talk to Dusit and choose What is it?, then Yes, I do and I think they\u0027re scary! (the other answer ends the talk). He sends you to the shaman Boonthom.",
+                                                     "Boonthom sits inside the house behind the door at (62, 104), at (181, 193). Choose I want to explore the ancient ruins., then Sure!. He asks for materials to weave a Holy Thread."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ayo_in01",
+                                                          "x":  181,
+                                                          "y":  193,
+                                                          "name":  "Boonthom the shaman",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  1,
+                                                          "name":  "Hear Dusit\u0027s tale of the tiger",
+                                                          "route":  {
+                                                                        "map":  "ayothaya",
+                                                                        "x":  83,
+                                                                        "y":  132,
+                                                                        "name":  "Dusit"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  2,
+                                                          "name":  "Ask the shaman Boonthom for help",
+                                                          "route":  {
+                                                                        "map":  "ayothaya",
+                                                                        "x":  62,
+                                                                        "y":  104,
+                                                                        "name":  "Door to Boonthom\u0027s house"
+                                                                    }
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  4,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Holy Thread",
+                                        "now":  "RO quest: bring Boonthom 1 Fabric, 1 Nine Tails (a fox tail), 1 Solid Husk and 1 Holy Water. He weaves the Holy Thread that lets you into the Ancient Shrine.",
+                                        "done":  "Boonthom wove you a Holy Thread, so the Shrine\u0027s evil spirits would let you pass.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ayothaya",
+                                                      "x":  62,
+                                                      "y":  104,
+                                                      "name":  "Door to Boonthom\u0027s house"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Fabric",
+                                                          "id":  1059,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Nine Tails",
+                                                          "id":  1022,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Solid Husk",
+                                                          "id":  7190,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Holy Water",
+                                                          "id":  523,
+                                                          "count":  1
+                                                      }
+                                                  ],
+                                        "hint":  [
+                                                     "Kasim\u0027s pouch (he gave it to you on the dock) holds all four. Lost or sold them? Talk to Kasim on the Ayothaya dock (146, 72): he replaces them (once per step). Or hunt them: Fabric: Whispers (Sunken Ship, the Shrine). Nine Tails, the item: the Nine Tail monsters (Payon Forest pay_fild11, where Eddga hunts, or Payon Cave\u0027s deepest floor). Solid Husk: Beetle Kings (the field outside the Shrine, or Umbala\u0027s fields). Holy Water: an Acolyte\u0027s Aqua Benedicta, or a player\u0027s shop."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ayo_in01",
+                                                          "x":  181,
+                                                          "y":  193,
+                                                          "name":  "Boonthom the shaman",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  5,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Six Slates",
+                                        "now":  "RO quest: enter the Ancient Shrine and read the six stone slates on its first level, in order.",
+                                        "done":  "The six slates spelled a dead man\u0027s warning: do not enter the second level without more holy power.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ayo_fild01",
+                                                      "x":  129,
+                                                      "y":  197,
+                                                      "name":  "Puraim: the way down to the Shrine"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Leave Ayothaya by the east road (276, 176). On that field (ayo_fild01), Puraim (129, 197) feels your Holy Thread: choose Yes. and he shoves you down the hill to the field below (ayo_fild02).",
+                                                     "The Shrine\u0027s entrance is at the east end of that field (285, 149). Back up the hill: Aik (ayo_fild02, 25, 154).",
+                                                     "Read the slates in order; the Journal shows the next one while you are inside. Some monsters here attack on sight, and the Shrine has drops that kill you outright: keep to the paths."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ayo_fild02",
+                                                          "x":  285,
+                                                          "y":  149,
+                                                          "name":  "Entrance to the Ancient Shrine",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ayo_dun01",
+                                                          "x":  198,
+                                                          "y":  164,
+                                                          "name":  "Stone slate 1",
+                                                          "ro":  3
+                                                      },
+                                                      {
+                                                          "map":  "ayo_dun01",
+                                                          "x":  87,
+                                                          "y":  16,
+                                                          "name":  "Stone slate 2",
+                                                          "ro":  4
+                                                      },
+                                                      {
+                                                          "map":  "ayo_dun01",
+                                                          "x":  268,
+                                                          "y":  214,
+                                                          "name":  "Stone slate 3",
+                                                          "ro":  5
+                                                      },
+                                                      {
+                                                          "map":  "ayo_dun01",
+                                                          "x":  147,
+                                                          "y":  274,
+                                                          "name":  "Stone slate 4",
+                                                          "ro":  6
+                                                      },
+                                                      {
+                                                          "map":  "ayo_dun01",
+                                                          "x":  99,
+                                                          "y":  118,
+                                                          "name":  "Stone slate 5",
+                                                          "ro":  7
+                                                      },
+                                                      {
+                                                          "map":  "ayo_dun01",
+                                                          "x":  16,
+                                                          "y":  188,
+                                                          "name":  "Stone slate 6",
+                                                          "ro":  8
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  4,
+                                                          "name":  "Read stone slate 1 (198, 164)",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  5,
+                                                          "name":  "Read stone slate 2 (87, 16)",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  6,
+                                                          "name":  "Read stone slate 3 (268, 214)",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  7,
+                                                          "name":  "Read stone slate 4 (147, 274)",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  8,
+                                                          "name":  "Read stone slate 5 (99, 118)",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  9,
+                                                          "name":  "Read stone slate 6 (16, 188)",
+                                                          "route":  null
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  6,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "A Stronger Thread",
+                                        "now":  "RO quest: show Boonthom the slate\u0027s message, then bring him 2 Holy Water, 1 Yggdrasil Leaf, 2 Fabric and 2 Nine Tails for a stronger thread.",
+                                        "done":  "Boonthom wove a stronger Holy Thread, enough to brave the Shrine\u0027s second level.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ayothaya",
+                                                      "x":  62,
+                                                      "y":  104,
+                                                      "name":  "Door to Boonthom\u0027s house"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Holy Water",
+                                                          "id":  523,
+                                                          "count":  2
+                                                      },
+                                                      {
+                                                          "name":  "Yggdrasil Leaf",
+                                                          "id":  610,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Fabric",
+                                                          "id":  1059,
+                                                          "count":  2
+                                                      },
+                                                      {
+                                                          "name":  "Nine Tails",
+                                                          "id":  1022,
+                                                          "count":  2
+                                                      }
+                                                  ],
+                                        "hint":  [
+                                                     "Talk to Boonthom once to show him the message; he names the materials. Nafisa\u0027s pouch only covered the first thread: these you gather yourself, and the Journal counts them.",
+                                                     "2 Fabric: the Whispers (little ghosts) right here in the Ancient Shrine drop it often.",
+                                                     "2 Nine Tails, the item: the Nine Tail foxes in Payon Forest (pay_fild11) or on Payon Cave\u0027s deepest floor (pay_dun04) drop it often. They are Lv 51: bring companions.",
+                                                     "2 Holy Water: an Acolyte or Priest makes it (Aqua Benedicta, standing in water), a player shop may sell it, or the Mermen on the deepest level of the Byalan Undersea Tunnel (iz_dun04) drop it rarely.",
+                                                     "1 Yggdrasil Leaf: the Brilights (glowing fireflies) in the Clock Tower\u0027s second basement (alde_dun02) drop it rarely. Angelings and Baphomet Jr. drop it too."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ayo_in01",
+                                                          "x":  181,
+                                                          "y":  193,
+                                                          "name":  "Boonthom the shaman",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  7,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Second Level",
+                                        "now":  "RO quest: carrying the stronger thread, go back into the Ancient Shrine, down to its second level, and find the remains of Boonthom\u0027s friend (ayo_dun02, 268, 108).",
+                                        "done":  "Deep in the Shrine you found the remains of Boonthom\u0027s friend, an old letter and a box.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ayo_fild01",
+                                                      "x":  129,
+                                                      "y":  197,
+                                                      "name":  "Puraim: the way down to the Shrine"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Back to the Shrine: leave Ayothaya by the east road (276, 176), talk to Puraim on that field (129, 197) and choose Yes. to be pushed down the hill, then enter the Shrine at the east end of the lower field (285, 149).",
+                                                     "The way down is in the far north-west of the first level (24, 283). The second level is much harder (around Lv 52), so bring companions. Its MVP, Lady Tanee, is for much later."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ayo_fild01",
+                                                          "x":  129,
+                                                          "y":  197,
+                                                          "name":  "Puraim: down the hill",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ayo_fild02",
+                                                          "x":  285,
+                                                          "y":  149,
+                                                          "name":  "Entrance to the Ancient Shrine",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ayo_dun01",
+                                                          "x":  24,
+                                                          "y":  283,
+                                                          "name":  "Way down to the second level",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ayo_dun02",
+                                                          "x":  268,
+                                                          "y":  108,
+                                                          "name":  "The remains",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  8,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Old Letter",
+                                        "now":  "RO quest: bring the old letter back to Boonthom (ayo_in01, 181, 193).",
+                                        "done":  "Boonthom mourned his friend, who died making sure the tiger stayed sealed.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ayothaya",
+                                                      "x":  62,
+                                                      "y":  104,
+                                                      "name":  "Door to Boonthom\u0027s house"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ayo_in01",
+                                                          "x":  181,
+                                                          "y":  193,
+                                                          "name":  "Boonthom the shaman",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  9,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "A Letter for Nafisa",
+                                        "now":  "Tell Kasim on the Ayothaya dock (146, 72) what you found, so he can write to Nafisa.",
+                                        "done":  "Kasim wrote it all down for Nafisa: another seal, half a world away, still holding, because a man gave his life for it.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ayothaya",
+                                                      "x":  146,
+                                                      "y":  72,
+                                                      "name":  "Kasim the Courier"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  },
+                  {
+                      "n":  5,
+                      "ch":  4,
+                      "hook":  18,
+                      "title":  "Orc\u0027s Memory",
+                      "range":  "50-80",
+                      "intro":  "Magister Ivo: \"A scientist lives in the orcs\u0027 village, expelled from our Academy for a machine he swore could show the past. My scholar Wendel is watching him. If the orcs remember who sealed them, I want to know.\"",
+                      "ro":  true,
+                      "npc":  "Scholar Wendel",
+                      "town":  "the Orc Village",
+                      "townMap":  "gef_fild10",
+                      "x":  234,
+                      "y":  199,
+                      "costumes":  [
+                                       "Orc Hero Headdress",
+                                       "Orc Helm"
+                                   ],
+                      "zeny":  8000,
+                      "failText":  null,
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Orc Village",
+                                        "now":  "Walk west from Geffen to the Orc Village (gef_fild10): through gef_fild07, gef_fild13 and the orc lands of gef_fild14.",
+                                        "done":  "You reached the Orc Village, where orcs mill around a strange stone statue.",
+                                        "map":  "gef_fild10",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gef_fild10",
+                                                      "x":  234,
+                                                      "y":  199,
+                                                      "name":  "Scholar Wendel: Orc Village"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "The Orc Hero (Lv 77) sometimes walks gef_fild14, and the Orc Lord (Lv 74) the village itself. Both attack on sight: if you see one, walk around it."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "talk",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Magister\u0027s Scholar",
+                                        "now":  "Find Scholar Wendel in the Orc Village (234, 199). The Magister sent him to watch the Mad Scientist.",
+                                        "done":  "Wendel told you of the Mad Scientist\u0027s machine, a statue that lets you live an orc\u0027s memory.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gef_fild10",
+                                                      "x":  234,
+                                                      "y":  199,
+                                                      "name":  "Scholar Wendel"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  50,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Mad Scientist",
+                                        "now":  "RO quest: let the Mad Scientist (238, 202) explain his machine. He only talks to Lv 50 and up.",
+                                        "done":  "The Mad Scientist showed you his statue, the Dimensional Gorge Piece, built from minerals of a gorge near Morroc.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gef_fild10",
+                                                      "x":  238,
+                                                      "y":  202,
+                                                      "name":  "Mad Scientist"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Choose Orcs don\u0027t attack you?, then Oh? Like what, travel to alternate space?, then ...Um, that doesn\u0027t sound legal?, then Alright... What do I do?"
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  4,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  30,
+                                        "maxLv":  80,
+                                        "alt":  true,
+                                        "title":  "An Orc\u0027s Memory",
+                                        "now":  "RO instance: enter Orc\u0027s Memory through the statue (242, 202) and live it to the end, until you speak with the dying Kruger.",
+                                        "done":  "Inside the memory you fought beside Kruger against Shaman Cargalache, his own daughter, lost to dark power. He died relieved that she was free.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gef_fild10",
+                                                      "x":  242,
+                                                      "y":  202,
+                                                      "name":  "Dimensional Gorge Piece"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "LEVEL LIMIT: RO\u0027s statue only lets in Lv 30 to 80. Over Lv 80? Talk to Scholar Wendel (234, 199) instead: he reads you the memory from the scientist\u0027s notes, and this step counts as done.",
+                                                     "The statue needs a party of 2 or more, everyone online and Lv 30 to 80 (companions too). The party leader talks to the statue first and chooses Reserve the Orc\u0027s Memory, then Enter the Dungeon. After it ends, the statue needs 2 hours before the next try.",
+                                                     "First floor: you are an orc warrior, Kruger\u0027s ally. Talk to Kruger. The basement is split into 4 zones: kill the one Enchanted Orc in each zone to open the way on. Fight as few other orcs as you can, every kill brings reinforcements.",
+                                                     "Second floor: talk to Kruger again. Only the party leader can light the braziers, one at a time, each opening the next path. Three guardians wait on the way: the Safeguard Chief, the Orc Sniper and the Depraved Orc Spirit.",
+                                                     "At the altar, Shaman Cargalache and the Depraved Orc Hero attack together. Defeat the Shaman, then talk to Kruger lying beside the altar. That ends the memory."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  5,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "What the Orcs Remember",
+                                        "now":  "Tell Scholar Wendel in the Orc Village (234, 199) what you saw in the orc\u0027s memory.",
+                                        "done":  "Wendel wrote it all down for Ivo: the orcs were once a proud people, broken by the same dark power that now cracks the seal under Geffen.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gef_fild10",
+                                                      "x":  234,
+                                                      "y":  199,
+                                                      "name":  "Scholar Wendel"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  },
+                  {
+                      "n":  6,
+                      "ch":  4,
+                      "hook":  20,
+                      "title":  "The Fox of the Palace",
+                      "range":  "45-65",
+                      "intro":  "Magister Ivo: \"Two letters came this week, from opposite ends of the sea. Amatsu\u0027s lord says a fox spirit haunts his mother. I have sent Lise, one of my people, ahead to Amatsu.\"",
+                      "ro":  true,
+                      "npc":  "Envoy Lise",
+                      "town":  "Amatsu",
+                      "townMap":  "amatsu",
+                      "x":  199,
+                      "y":  86,
+                      "costumes":  [
+                                       "Kitsune Mask",
+                                       "Drooping Nine Tail"
+                                   ],
+                      "zeny":  10000,
+                      "failText":  null,
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "A Ship to Amatsu",
+                                        "now":  "Sail to Amatsu: the Sea Captain on the Alberta dock (245, 93) takes you there and back for 10,000 zeny.",
+                                        "done":  "You sailed east to Amatsu, a land of cherry trees and a great castle.",
+                                        "map":  "amatsu",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  245,
+                                                      "y":  93,
+                                                      "name":  "Sea Captain: ship to Amatsu"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Getting to Alberta from Geffen: a Kafra Employee teleports you to Prontera (1,200 zeny). From Prontera, walk south to Izlude and take the Sailor at the end of the dock (201, 181) to Alberta Marina (500 zeny).",
+                                                     "The Sea Captain stands near the south end of the Alberta dock (245, 93). In Amatsu, he waits by the dock (194, 79) to sail you back."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Sick Mother",
+                                        "now":  "RO quest: ask the Gate Soldiers guarding a house in Amatsu (164, 174 or 171, 174) what is wrong.",
+                                        "done":  "The Gate Soldiers told you the lord\u0027s mother lies sick in that house, and no doctor can help her.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "amatsu",
+                                                      "x":  164,
+                                                      "y":  174,
+                                                      "name":  "Gate Soldier"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Lord of the Castle",
+                                        "now":  "RO quest: climb the castle in north-west Amatsu (the door at 85, 235) to Lord Ishida (200, 176) and offer your help.",
+                                        "done":  "Lord Ishida Yoshinaga begged you to cure his mother, after every doctor had failed.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "amatsu",
+                                                      "x":  85,
+                                                      "y":  235,
+                                                      "name":  "Castle door"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Inside, the castle\u0027s stairs take you up floor by floor. When you are inside, the Journal lists each stair on your map.",
+                                                     "Talk to Lord Ishida Yoshinaga and choose I heard about your mother... He asks you to cure her."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  195,
+                                                          "y":  44,
+                                                          "name":  "Stairs up (1)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  56,
+                                                          "y":  44,
+                                                          "name":  "Stairs up (2)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  59,
+                                                          "y":  160,
+                                                          "name":  "Stairs up (3)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  200,
+                                                          "y":  176,
+                                                          "name":  "Lord Ishida Yoshinaga",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  4,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "A Children\u0027s Song",
+                                        "now":  "RO quest: listen to Kouji, the boy who sings in the streets of Amatsu (189, 166). His song holds a clue.",
+                                        "done":  "Kouji\u0027s song spoke of a fox following someone, and a priest at the north shrine.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "amatsu",
+                                                      "x":  189,
+                                                      "y":  166,
+                                                      "name":  "Kouji"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  5,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The North Shrine",
+                                        "now":  "RO quest: find Takehue at the abandoned north shrine (ama_in01, 180, 173) and show him your spirit.",
+                                        "done":  "Takehue taught you that a fox only leaves a body for a stronger spirit, and that vengeful foxes were wronged by someone first.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "ama_fild01",
+                                                      "x":  174,
+                                                      "y":  331,
+                                                      "name":  "North shrine door"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Leave Amatsu by the north-east road (248, 292) onto the field (ama_fild01). The shrine\u0027s door is far to the north (174, 331).",
+                                                     "Talk to Takehue (the boy in the Kitsune Mask) and choose Taaaaah!!. He teaches you to shout the fox out."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ama_in01",
+                                                          "x":  180,
+                                                          "y":  173,
+                                                          "name":  "Takehue",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  6,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  true,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Driving Out the Fox",
+                                        "now":  "RO quest: go into the guarded house (the door at 168, 182), face the possessed mother (22, 111) and shout the fox out of her.",
+                                        "done":  "You drove the fox out of the lord\u0027s mother. It fled cursing the Ishida family, and left its tail behind.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "amatsu",
+                                                      "x":  168,
+                                                      "y":  182,
+                                                      "name":  "Door of the guarded house"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Holy Water",
+                                                          "id":  523,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Bear\u0027s Footskin",
+                                                          "id":  948,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Tiger Skin",
+                                                          "id":  1029,
+                                                          "count":  1
+                                                      }
+                                                  ],
+                                        "hint":  [
+                                                     "Choose Taaaah!!. It does not always work: if the fox laughs, you are thrown outside. Just walk back in and try again.",
+                                                     "Your odds are 1 in 4. Carry ONE of these and they become 1 in 2: Holy Water, a Bear\u0027s Footskin or a Tiger Skin (the Journal counts them; you need only one, it is not used up). Acolytes and Monks get 1 in 2 anyway, Priests 3 in 4.",
+                                                     "When it works, the fox flees as a Nine Tail and leaves its tail behind: the item Nine Tails, your proof."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ama_in01",
+                                                          "x":  22,
+                                                          "y":  111,
+                                                          "name":  "The possessed mother",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  7,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Proof for the Lord",
+                                        "now":  "RO quest: bring the fox\u0027s tail (Nine Tails) to Lord Ishida at the top of the castle (200, 176). Keep it in your bag: he wants proof.",
+                                        "done":  "Lord Ishida laughed with relief and gave you his Feudal Lord Permit, the pass to a gate he would rather no one saw.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "amatsu",
+                                                      "x":  85,
+                                                      "y":  235,
+                                                      "name":  "Castle door"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Nine Tails",
+                                                          "id":  1022,
+                                                          "count":  1
+                                                      }
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  195,
+                                                          "y":  44,
+                                                          "name":  "Stairs up (1)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  56,
+                                                          "y":  44,
+                                                          "name":  "Stairs up (2)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  59,
+                                                          "y":  160,
+                                                          "name":  "Stairs up (3)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  200,
+                                                          "y":  176,
+                                                          "name":  "Lord Ishida Yoshinaga",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  8,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Gate Beneath",
+                                        "now":  "Show the Feudal Lord Permit to Jyuro, the soldier on the castle\u0027s top floor (115, 177). He opens the hidden gate to the palace dungeon (ama_dun01).",
+                                        "done":  "Beyond Jyuro\u0027s gate lay the lord\u0027s secret: a dungeon full of caged things and forbidden magic.",
+                                        "map":  "ama_dun01",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "amatsu",
+                                                      "x":  85,
+                                                      "y":  235,
+                                                      "name":  "Castle door"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Jyuro stands on the floor above the lord: climb the same stairs, then take one more (222, 161).",
+                                                     "Talk to Jyuro, choose Open the gate, then I will go in. The permit is not used up. In the dungeon, a Soldier by the entrance (229, 7) takes you back up. Its floors are around Lv 39 to 62; the Samurai Specter rules the third."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  195,
+                                                          "y":  44,
+                                                          "name":  "Stairs up (1)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  56,
+                                                          "y":  44,
+                                                          "name":  "Stairs up (2)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  59,
+                                                          "y":  160,
+                                                          "name":  "Stairs up (3)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  222,
+                                                          "y":  161,
+                                                          "name":  "Stairs up (4)",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "ama_in02",
+                                                          "x":  115,
+                                                          "y":  177,
+                                                          "name":  "Jyuro: the hidden gate",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  9,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "A Letter for Geffen",
+                                        "now":  "Tell Envoy Lise on the Amatsu dock (199, 86) how it ended.",
+                                        "done":  "Lise wrote to Ivo: the fox was a punishment for the lord\u0027s forbidden magic, and his palace hides a dungeon of caged horrors.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "amatsu",
+                                                      "x":  199,
+                                                      "y":  86,
+                                                      "name":  "Envoy Lise"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "ama_dun01",
+                                                          "x":  229,
+                                                          "y":  7,
+                                                          "name":  "Guard: back up to the castle",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  },
+                  {
+                      "n":  7,
+                      "ch":  4,
+                      "hook":  20,
+                      "title":  "The Broken Sword of Kunlun",
+                      "range":  "51-70",
+                      "intro":  "Magister Ivo: \"And from Kunlun, high in the mountains, the village chief begs for help: a sword of his ancestors, stolen. His scribe is waiting for whoever answers.\"",
+                      "ro":  true,
+                      "npc":  "Scribe Wang",
+                      "town":  "Kunlun",
+                      "townMap":  "gonryun",
+                      "x":  118,
+                      "y":  128,
+                      "costumes":  [
+                                       "Evil Snake Lord Hat",
+                                       "Chinese Crown"
+                                   ],
+                      "zeny":  15000,
+                      "failText":  "A wrong answer earlier closed RO\u0027s Broken Sword quest for this character: it cannot be finished any more. Another character can still do it.",
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Mountain Village",
+                                        "now":  "Sail to Kunlun: the Kunlun Envoy on the Alberta dock (245, 69) takes you for 10,000 zeny. You land on the field below the village: walk north into Kunlun (gonryun).",
+                                        "done":  "You sailed to Kunlun, a village of floating stone and peach trees high above the clouds.",
+                                        "map":  "gonryun",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  245,
+                                                      "y":  69,
+                                                      "name":  "Kunlun Envoy: ship to Kunlun"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Getting to Alberta from Geffen: a Kafra Employee teleports you to Prontera (1,200 zeny); walk south to Izlude and take the Sailor (201, 181) to Alberta Marina (500 zeny).",
+                                                     "You land at the south of the field (gon_fild01, 258, 82). The village gate is at its north end (192, 265).",
+                                                     "The way back: the Kunlun Envoy in the village (153, 64) takes you down to the harbour for free, and the Envoy there (255, 79) sails you to Alberta.",
+                                                     "RO\u0027s Broken Sword quest needs Lv 51 or higher: the chief won\u0027t speak of it before."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "gon_fild01",
+                                                          "x":  192,
+                                                          "y":  265,
+                                                          "name":  "Into the village (north gate)",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Chief\u0027s Treasure",
+                                        "now":  "RO quest: meet the chief, Shi Yan Wen, then the tavern hostess, and offer the chief your help. The Journal names every answer: NEVER choose any other.",
+                                        "done":  "The chief\u0027s family sword, an heirloom of many generations, was stolen in the night. You promised to find it.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gonryun",
+                                                      "x":  109,
+                                                      "y":  131,
+                                                      "name":  "Door of the chief\u0027s hall"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "1. The chief\u0027s hall: the door at (109, 131), then the inner door (42, 35). Talk to the chief (17, 93) once; he only greets you.",
+                                                     "2. The tavern: the door at (215, 114). Talk to the hostess, Mei Yen Fang (152, 35). She tells you of the robbery.",
+                                                     "3. Back to the chief. Choose I heard that something was stolen..., then What was stolen?, then Can I find it for you?. WARNING: Hope you find it soon. closes the quest forever on this character.",
+                                                     "4. Back to the hostess once more: she points you to the drinker at the table."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "gon_in",
+                                                          "x":  42,
+                                                          "y":  35,
+                                                          "name":  "Inner door to the chief",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gon_in",
+                                                          "x":  17,
+                                                          "y":  93,
+                                                          "name":  "Chief Shi Yan Wen",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gon_in",
+                                                          "x":  152,
+                                                          "y":  35,
+                                                          "name":  "Hostess Mei Yen Fang",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  1,
+                                                          "name":  "Greet the chief (17, 93)",
+                                                          "route":  {
+                                                                        "map":  "gonryun",
+                                                                        "x":  109,
+                                                                        "y":  131,
+                                                                        "name":  "Door of the chief\u0027s hall"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  2,
+                                                          "name":  "Hear the hostess\u0027s story in the tavern (152, 35)",
+                                                          "route":  {
+                                                                        "map":  "gonryun",
+                                                                        "x":  215,
+                                                                        "y":  114,
+                                                                        "name":  "Tavern door"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  3,
+                                                          "name":  "Offer the chief your help (3 answers)",
+                                                          "route":  {
+                                                                        "map":  "gonryun",
+                                                                        "x":  109,
+                                                                        "y":  131,
+                                                                        "name":  "Door of the chief\u0027s hall"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  4,
+                                                          "name":  "Back to the hostess once more",
+                                                          "route":  {
+                                                                        "map":  "gonryun",
+                                                                        "x":  215,
+                                                                        "y":  114,
+                                                                        "name":  "Tavern door"
+                                                                    }
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Drinker\u0027s Story",
+                                        "now":  "RO quest: bring the hungover drinker, Xue Bong, a Green Potion in the tavern (165, 16), hear what he saw, and tell the chief.",
+                                        "done":  "Xue Bong saw something on the chief\u0027s roof that night, fleeing towards a shrine. The chief warned that the thief was wounded and could not be far.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gonryun",
+                                                      "x":  215,
+                                                      "y":  114,
+                                                      "name":  "Tavern door"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Green Potion",
+                                                          "id":  506,
+                                                          "count":  1
+                                                      }
+                                                  ],
+                                        "hint":  [
+                                                     "Talk to Xue Bong with a Green Potion in your bag. Choose Here, drink this!, then About a thief..., then Where to?. WARNING: choosing No. and then Sorry, I don\u0027t have any. closes the quest forever.",
+                                                     "Then go back to the chief (17, 93): he thanks you with White Potions.",
+                                                     "Green Potions are sold by Tool Dealers in most towns."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "gon_in",
+                                                          "x":  165,
+                                                          "y":  16,
+                                                          "name":  "Xue Bong, the drinker",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gon_in",
+                                                          "x":  17,
+                                                          "y":  93,
+                                                          "name":  "Chief Shi Yan Wen",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  6,
+                                                          "name":  "Give Xue Bong a Green Potion and hear him out (165, 16)",
+                                                          "route":  {
+                                                                        "map":  "gonryun",
+                                                                        "x":  215,
+                                                                        "y":  114,
+                                                                        "name":  "Tavern door"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  7,
+                                                          "name":  "Tell the chief (17, 93)",
+                                                          "route":  {
+                                                                        "map":  "gonryun",
+                                                                        "x":  109,
+                                                                        "y":  131,
+                                                                        "name":  "Door of the chief\u0027s hall"
+                                                                    }
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  4,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Traces in the Dark",
+                                        "now":  "RO quest: find the three pieces of the sword in the Kunlun Dungeon, one on each floor (gon_dun01, gon_dun02, gon_dun03). The entrance is in the village (159, 201).",
+                                        "done":  "Deep in the dungeon you found all three pieces of the sword, and the bones of the thief, who broke it rather than give it up.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gonryun",
+                                                      "x":  159,
+                                                      "y":  201,
+                                                      "name":  "Kunlun Dungeon entrance"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "The thief\u0027s trace is INVISIBLE. On each floor it waits on one of the trace spots the Journal lists, and moves to another spot after a minute or so.",
+                                                     "At a trace spot: stand on it for 3 seconds, then walk 4 steps away and walk back onto it. The blade piece is hidden right there and only shows itself when you walk into it. If the message You found a piece of blade appears, that floor is done. If not, the trace was elsewhere: try the next spot.",
+                                                     "A piece you uncovered waits for you until the server restarts, so going back to a spot you tried is never wasted.",
+                                                     "Two of RO\u0027s pieces fall away from their trace: floor 2\u0027s trace at (65, 168) drops its piece at (202, 25), and floor 3\u0027s trace at (162, 40) drops its piece at (68, 39). If you stood on one of those traces, walk to its piece spot.",
+                                                     "Floor 2 is a maze of warp tiles. The trace at (23, 105) is in the first area. Maze A (56, 119) leads to the trace at (65, 168). From there, maze B (92, 190) leads to the trace at (249, 39) and the piece spot (202, 25); maze C (44, 166) leads on to maze D (94, 118).",
+                                                     "Floor 2, after maze D: maze E (165, 189) leads to the trace at (247, 129), and maze F (276, 76) from there to the trace at (149, 74). Or take maze G (180, 189), then H (170, 161), I (86, 44) and J (148, 236) to the trace at (265, 200) and the way down to floor 3 (251, 268).",
+                                                     "Floor 1 is around Lv 35 to 55, floors 2 and 3 harder. The Evil Snake Lord (Lv 73) rules floor 3: bring companions."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "gon_dun01",
+                                                          "x":  201,
+                                                          "y":  25,
+                                                          "name":  "Trace spot",
+                                                          "ro":  7
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun01",
+                                                          "x":  190,
+                                                          "y":  160,
+                                                          "name":  "Trace spot",
+                                                          "ro":  7
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun01",
+                                                          "x":  163,
+                                                          "y":  53,
+                                                          "name":  "Trace spot",
+                                                          "ro":  7
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun01",
+                                                          "x":  133,
+                                                          "y":  183,
+                                                          "name":  "Trace spot",
+                                                          "ro":  7
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun01",
+                                                          "x":  139,
+                                                          "y":  257,
+                                                          "name":  "Trace spot",
+                                                          "ro":  7
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun01",
+                                                          "x":  162,
+                                                          "y":  273,
+                                                          "name":  "Way down to floor 2",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  23,
+                                                          "y":  105,
+                                                          "name":  "Trace spot",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  56,
+                                                          "y":  119,
+                                                          "name":  "Maze A",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  65,
+                                                          "y":  168,
+                                                          "name":  "Trace spot (piece at 202, 25)",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  92,
+                                                          "y":  190,
+                                                          "name":  "Maze B",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  249,
+                                                          "y":  39,
+                                                          "name":  "Trace spot",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  202,
+                                                          "y":  25,
+                                                          "name":  "Piece of the trace at 65, 168",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  44,
+                                                          "y":  166,
+                                                          "name":  "Maze C",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  94,
+                                                          "y":  118,
+                                                          "name":  "Maze D",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  165,
+                                                          "y":  189,
+                                                          "name":  "Maze E",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  247,
+                                                          "y":  129,
+                                                          "name":  "Trace spot",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  276,
+                                                          "y":  76,
+                                                          "name":  "Maze F",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  149,
+                                                          "y":  74,
+                                                          "name":  "Trace spot",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  180,
+                                                          "y":  189,
+                                                          "name":  "Maze G",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  170,
+                                                          "y":  161,
+                                                          "name":  "Maze H",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  86,
+                                                          "y":  44,
+                                                          "name":  "Maze I",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  148,
+                                                          "y":  236,
+                                                          "name":  "Maze J",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  265,
+                                                          "y":  200,
+                                                          "name":  "Trace spot",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun01",
+                                                          "x":  162,
+                                                          "y":  273,
+                                                          "name":  "Way down to floor 2",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  56,
+                                                          "y":  119,
+                                                          "name":  "Maze A",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  44,
+                                                          "y":  166,
+                                                          "name":  "Maze C",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  94,
+                                                          "y":  118,
+                                                          "name":  "Maze D",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  180,
+                                                          "y":  189,
+                                                          "name":  "Maze G",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  170,
+                                                          "y":  161,
+                                                          "name":  "Maze H",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  86,
+                                                          "y":  44,
+                                                          "name":  "Maze I",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  148,
+                                                          "y":  236,
+                                                          "name":  "Maze J",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun02",
+                                                          "x":  251,
+                                                          "y":  268,
+                                                          "name":  "Way down to floor 3",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun03",
+                                                          "x":  11,
+                                                          "y":  75,
+                                                          "name":  "Trace spot",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun03",
+                                                          "x":  199,
+                                                          "y":  103,
+                                                          "name":  "Trace spot",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun03",
+                                                          "x":  14,
+                                                          "y":  162,
+                                                          "name":  "Trace spot",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun03",
+                                                          "x":  155,
+                                                          "y":  263,
+                                                          "name":  "Trace spot",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun03",
+                                                          "x":  169,
+                                                          "y":  90,
+                                                          "name":  "Trace spot",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun03",
+                                                          "x":  162,
+                                                          "y":  40,
+                                                          "name":  "Trace spot (piece at 68, 39)",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun03",
+                                                          "x":  68,
+                                                          "y":  39,
+                                                          "name":  "Piece of the trace at 162, 40",
+                                                          "ro":  9
+                                                      },
+                                                      {
+                                                          "map":  "gon_dun03",
+                                                          "x":  68,
+                                                          "y":  212,
+                                                          "name":  "Trace spot",
+                                                          "ro":  9
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  8,
+                                                          "name":  "Blade piece on floor 1 (gon_dun01)",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  9,
+                                                          "name":  "Blade piece on floor 2 (gon_dun02)",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  10,
+                                                          "name":  "Blade piece on floor 3 (gon_dun03)",
+                                                          "route":  null
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  5,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "A Knife and a Name",
+                                        "now":  "RO quest: agree to have the sword repaired, help Han Ran Jiao find her lost knife, and ask the stranger Zuo Hei where to find a smith.",
+                                        "done":  "You returned Han Ran Jiao\u0027s knife, and the gruff Zuo Hei, satisfied you keep your promises, named a smith in Geffen.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gonryun",
+                                                      "x":  109,
+                                                      "y":  131,
+                                                      "name":  "Door of the chief\u0027s hall"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "1. The chief (17, 93): choose Alright. when he asks you to repair the sword. WARNING: No way. ends the quest here.",
+                                                     "2. Han Ran Jiao, by the cliff in the north-east of the village (237, 226): she dropped her family knife.",
+                                                     "3. The knife lies hidden under leaves on the field below the village (gon_fild01, 245, 257). Walk over the spot and it is yours.",
+                                                     "4. Back to Han Ran Jiao: choose Return the knife. (Refuse. only ends the talk: keep the knife and ask again.)",
+                                                     "5. Zuo Hei, the stranger on the village\u0027s north-west edge (100, 241): choose Ask about the blacksmith., then Exactly.. He sends you to Geffen. (Talked to him before the knife? He sends you to help someone first: just do the knife, then come back.)"
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "gon_in",
+                                                          "x":  17,
+                                                          "y":  93,
+                                                          "name":  "Chief Shi Yan Wen",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gonryun",
+                                                          "x":  237,
+                                                          "y":  226,
+                                                          "name":  "Han Ran Jiao",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gon_fild01",
+                                                          "x":  245,
+                                                          "y":  257,
+                                                          "name":  "The hidden knife",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gonryun",
+                                                          "x":  100,
+                                                          "y":  241,
+                                                          "name":  "Zuo Hei, the stranger",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  14,
+                                                          "name":  "Agree to have the sword repaired (the chief)",
+                                                          "route":  {
+                                                                        "map":  "gonryun",
+                                                                        "x":  109,
+                                                                        "y":  131,
+                                                                        "name":  "Door of the chief\u0027s hall"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  17,
+                                                          "name":  "Return Han Ran Jiao\u0027s knife, then ask Zuo Hei about a smith",
+                                                          "route":  {
+                                                                        "map":  "gonryun",
+                                                                        "x":  237,
+                                                                        "y":  226,
+                                                                        "name":  "Han Ran Jiao"
+                                                                    }
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  6,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Smith\u0027s Granddaughter",
+                                        "now":  "RO quest: win over the grieving smith Aumgarl in Geffen, then search Prontera and Juno for a doctor who can cure his granddaughter, Lyroo.",
+                                        "done":  "Aumgarl would not touch the sword while his granddaughter lay dying. You followed a trail of rumours from Prontera to Juno, to the doctor Cylrnel.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "geffen",
+                                                      "x":  172,
+                                                      "y":  174,
+                                                      "name":  "Door of the smith\u0027s house"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "1. Geffen: the house door at (172, 174). The smith Aumgarl is inside (71, 112). Choose Sir...?, then I came to repair this sword.",
+                                                     "2. He shuts his shop and throws you out. Keep walking back in and talking to him: about 1 time in 8 he gives in.",
+                                                     "3. Then choose, in this order: Your granddaughter is such a pretty girl., Anything wrong?, I\u0027ll make her happy., I want to take her with me., I am sorry., Well..., Sure., Yes, Sir.. He asks you to find a cure for Lyroo.",
+                                                     "4. Prontera: Neil, by the east wall (275, 86), was cured by a doctor from Juno.",
+                                                     "5. Juno: the girl Hisa (208, 164) names the doctor, Cylrnel.",
+                                                     "6. Juno: Cylrnel\u0027s house, the door at (245, 147). A voice throws you out: keep walking in. About 1 time in 10 you are let in."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "gonryun",
+                                                          "x":  153,
+                                                          "y":  64,
+                                                          "name":  "Kunlun Envoy: down to the harbour",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gon_fild01",
+                                                          "x":  255,
+                                                          "y":  79,
+                                                          "name":  "Kunlun Envoy: ship to Alberta",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "geffen_in",
+                                                          "x":  71,
+                                                          "y":  112,
+                                                          "name":  "Aumgarl the smith",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "prontera",
+                                                          "x":  275,
+                                                          "y":  86,
+                                                          "name":  "Neil",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "yuno",
+                                                          "x":  208,
+                                                          "y":  164,
+                                                          "name":  "Hisa",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "yuno",
+                                                          "x":  245,
+                                                          "y":  147,
+                                                          "name":  "Door of Cylrnel\u0027s house",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  18,
+                                                          "name":  "Tell Aumgarl you came to repair the sword",
+                                                          "route":  {
+                                                                        "map":  "geffen",
+                                                                        "x":  172,
+                                                                        "y":  174,
+                                                                        "name":  "Door of the smith\u0027s house"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  19,
+                                                          "name":  "Keep visiting Aumgarl until he gives in (1 in 8)",
+                                                          "route":  {
+                                                                        "map":  "geffen",
+                                                                        "x":  172,
+                                                                        "y":  174,
+                                                                        "name":  "Door of the smith\u0027s house"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  20,
+                                                          "name":  "Promise to cure his granddaughter (8 answers)",
+                                                          "route":  {
+                                                                        "map":  "geffen",
+                                                                        "x":  172,
+                                                                        "y":  174,
+                                                                        "name":  "Door of the smith\u0027s house"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  21,
+                                                          "name":  "Ask Neil in Prontera (275, 86)",
+                                                          "route":  {
+                                                                        "map":  "prontera",
+                                                                        "x":  275,
+                                                                        "y":  86,
+                                                                        "name":  "Neil"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  22,
+                                                          "name":  "Ask Hisa in Juno (208, 164)",
+                                                          "route":  {
+                                                                        "map":  "yuno",
+                                                                        "x":  208,
+                                                                        "y":  164,
+                                                                        "name":  "Hisa"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  23,
+                                                          "name":  "Get let into Cylrnel\u0027s house (1 in 10)",
+                                                          "route":  {
+                                                                        "map":  "yuno",
+                                                                        "x":  245,
+                                                                        "y":  147,
+                                                                        "name":  "Door of Cylrnel\u0027s house"
+                                                                    }
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  7,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Doctor\u0027s Cure",
+                                        "now":  "RO quest: get the busy doctor Cylrnel (yuno_in01, 99, 101) to listen, answer her questions about Lyroo correctly, and bring the ingredients for the medicine.",
+                                        "done":  "Cylrnel named the illness, Amarhade, and brewed a medicine that would ease Lyroo\u0027s pain.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "yuno",
+                                                      "x":  245,
+                                                      "y":  147,
+                                                      "name":  "Door of Cylrnel\u0027s house"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Yggdrasil Seed",
+                                                          "id":  608,
+                                                          "count":  2
+                                                      },
+                                                      {
+                                                          "name":  "Aloe",
+                                                          "id":  704,
+                                                          "count":  3
+                                                      },
+                                                      {
+                                                          "name":  "Witherless Rose",
+                                                          "id":  748,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Witch Starsand",
+                                                          "id":  1061,
+                                                          "count":  10
+                                                      },
+                                                      {
+                                                          "name":  "Burning Heart",
+                                                          "id":  7097,
+                                                          "count":  5
+                                                      },
+                                                      {
+                                                          "name":  "Ice Cubic",
+                                                          "id":  7066,
+                                                          "count":  5
+                                                      }
+                                                  ],
+                                        "hint":  [
+                                                     "1. Cylrnel is moody: keep talking to her. When she asks if you want something, choose You\u0027re so beautiful.. If she laughs at you, choose Yes, I fell in love at first sight., then Well, actually.... It can take many tries; this way she never throws you out.",
+                                                     "2. When she asks for the symptoms, choose Yes, Here., then exactly: Turns hot and cold repeatedly., No sweating at all., Becomes paralyzed often., Heart beats irregularly., then Yes, I am sure. and I\u0027m sure.. (No need to visit Lyroo first: these are her symptoms.)",
+                                                     "3. WARNING: wrong symptoms give a shorter list that is the wrong medicine. It wastes those items and you start the questions again.",
+                                                     "4. Bring the full list (the Journal counts it): 2 Yggdrasil Seeds, 3 Aloe, 1 Witherless Rose, 10 Witch Starsand, 5 Burning Hearts, 5 Ice Cubics. She brews Aloevera."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "yuno_in01",
+                                                          "x":  99,
+                                                          "y":  101,
+                                                          "name":  "Cylrnel, the doctor",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  24,
+                                                          "name":  "Win Cylrnel\u0027s attention",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  26,
+                                                          "name":  "Describe Lyroo\u0027s symptoms correctly",
+                                                          "route":  null
+                                                      },
+                                                      {
+                                                          "at":  27,
+                                                          "name":  "Bring the ingredients for the medicine",
+                                                          "route":  null
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  8,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Mending the Sword",
+                                        "now":  "RO quest: give Lyroo her medicine, bring Aumgarl the materials to mend the sword, and carry it home to the chief in Kunlun.",
+                                        "done":  "Aumgarl mended the sword, and you carried it back to Kunlun. The chief\u0027s ancestors are no longer shamed.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "geffen",
+                                                      "x":  172,
+                                                      "y":  174,
+                                                      "name":  "Door of the smith\u0027s house"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Anvil",
+                                                          "id":  986,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Rough Oridecon",
+                                                          "id":  756,
+                                                          "count":  2
+                                                      },
+                                                      {
+                                                          "name":  "Broken Sword",
+                                                          "id":  7110,
+                                                          "count":  5
+                                                      },
+                                                      {
+                                                          "name":  "Steel",
+                                                          "id":  999,
+                                                          "count":  2
+                                                      },
+                                                      {
+                                                          "name":  "Hammer of Blacksmith",
+                                                          "id":  1005,
+                                                          "count":  1
+                                                      },
+                                                      {
+                                                          "name":  "Star Crumb",
+                                                          "id":  1000,
+                                                          "count":  2
+                                                      },
+                                                      {
+                                                          "name":  "Live Coal",
+                                                          "id":  7098,
+                                                          "count":  5
+                                                      }
+                                                  ],
+                                        "hint":  [
+                                                     "1. Lyroo is upstairs in the smith\u0027s house (106, 106): choose It\u0027s your medicine..",
+                                                     "2. Aumgarl (71, 112): choose Would you repair the sword for me?, then Alright, I\u0027ll go get them..",
+                                                     "3. Bring him (the Journal counts them): 1 Anvil, 2 Rough Oridecon, 5 Broken Swords, 2 Steel, 1 Hammer of Blacksmith, 2 Star Crumbs, 5 Live Coal.",
+                                                     "4. Keep talking to him until the sword is done: about 1 time in 5. You receive the repaired sword (Haedonggum).",
+                                                     "5. Sail back to Kunlun and give the sword to the chief (17, 93)."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "geffen_in",
+                                                          "x":  106,
+                                                          "y":  106,
+                                                          "name":  "Lyroo",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "geffen_in",
+                                                          "x":  71,
+                                                          "y":  112,
+                                                          "name":  "Aumgarl the smith",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gon_fild01",
+                                                          "x":  192,
+                                                          "y":  265,
+                                                          "name":  "Into the village",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gonryun",
+                                                          "x":  109,
+                                                          "y":  131,
+                                                          "name":  "Door of the chief\u0027s hall",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gon_in",
+                                                          "x":  42,
+                                                          "y":  35,
+                                                          "name":  "Inner door to the chief",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "gon_in",
+                                                          "x":  17,
+                                                          "y":  93,
+                                                          "name":  "Chief Shi Yan Wen",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+                                                      {
+                                                          "at":  28,
+                                                          "name":  "Give Lyroo her medicine (106, 106)",
+                                                          "route":  {
+                                                                        "map":  "geffen",
+                                                                        "x":  172,
+                                                                        "y":  174,
+                                                                        "name":  "Door of the smith\u0027s house"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  30,
+                                                          "name":  "Ask Aumgarl to repair the sword",
+                                                          "route":  {
+                                                                        "map":  "geffen",
+                                                                        "x":  172,
+                                                                        "y":  174,
+                                                                        "name":  "Door of the smith\u0027s house"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  31,
+                                                          "name":  "Bring Aumgarl the materials",
+                                                          "route":  {
+                                                                        "map":  "geffen",
+                                                                        "x":  172,
+                                                                        "y":  174,
+                                                                        "name":  "Door of the smith\u0027s house"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  32,
+                                                          "name":  "Keep talking until the sword is done (1 in 5)",
+                                                          "route":  {
+                                                                        "map":  "geffen",
+                                                                        "x":  172,
+                                                                        "y":  174,
+                                                                        "name":  "Door of the smith\u0027s house"
+                                                                    }
+                                                      },
+                                                      {
+                                                          "at":  33,
+                                                          "name":  "Give the sword to the chief in Kunlun",
+                                                          "route":  {
+                                                                        "map":  "alberta",
+                                                                        "x":  245,
+                                                                        "y":  69,
+                                                                        "name":  "Kunlun Envoy: ship to Kunlun"
+                                                                    }
+                                                      }
+                                                  ]
+                                    },
+                                    {
+                                        "k":  9,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "A Letter for Geffen",
+                                        "now":  "Tell Scribe Wang in Kunlun (118, 128) that the sword is home.",
+                                        "done":  "Wang wrote to Ivo: the sword is mended, and the thief broke it in a shrine where something old still watches.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "gonryun",
+                                                      "x":  118,
+                                                      "y":  128,
+                                                      "name":  "Scribe Wang"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  },
+                  {
+                      "n":  8,
+                      "ch":  5,
+                      "hook":  21,
+                      "title":  "The Gears Below",
+                      "range":  "60-70",
+                      "intro":  "Sir Aldric: \"The great gears above and below are slipping too. The fourth floor and the fourth basement are sealed by the old alchemists\u0027 gates. If you go that deep, a Gatekeeper will want a key.\"",
+                      "ro":  false,
+                      "npc":  "Sir Aldric",
+                      "town":  "Al De Baran",
+                      "townMap":  "aldebaran",
+                      "x":  142,
+                      "y":  63,
+                      "costumes":  [
+                                       "Time Keeper Hat",
+                                       "Alarm Mask"
+                                   ],
+                      "zeny":  12000,
+                      "failText":  null,
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "hunt",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Tick and Tock",
+                                        "now":  "Climb the Clock Tower: hunt 15 Clocks on floor 2 (c_tower2) and 15 Alarms on floor 3 (c_tower3).",
+                                        "done":  "The Clocks and Alarms of the upper floors were winding themselves faster and faster, as if the tower were running out of time.",
+                                        "map":  "c_tower2",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "c_tower1",
+                                                      "x":  235,
+                                                      "y":  226,
+                                                      "name":  "Stairs up to floor 2"
+                                                  },
+                                        "mobs":  [
+                                                     {
+                                                         "name":  "Clock",
+                                                         "id":  1269,
+                                                         "count":  15
+                                                     },
+                                                     {
+                                                         "name":  "Alarm",
+                                                         "id":  1193,
+                                                         "count":  15
+                                                     }
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Floor 1: the stairs up are in the north-east (235, 226). Floor 2: the stairs to floor 3 are in the north (142, 283)."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "c_tower1",
+                                                          "x":  235,
+                                                          "y":  226,
+                                                          "name":  "Stairs up to floor 2",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "c_tower2",
+                                                          "x":  142,
+                                                          "y":  283,
+                                                          "name":  "Stairs up to floor 3",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "ro",
+                                        "label":  "Find",
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Key of the Tower",
+                                        "now":  "Find a Key of Clock Tower. Your best bet: a Clock Tower Manager, the big clock keeper (about 1 in 5). One walks each of floors 1 and 2, three walk floor 3.",
+                                        "done":  "An Alarm dropped a Key of Clock Tower, an alchemist\u0027s key to the sealed floor.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "c_tower2",
+                                                      "x":  142,
+                                                      "y":  283,
+                                                      "name":  "Stairs up to floor 3"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Key of Clock Tower",
+                                                          "id":  7026,
+                                                          "count":  1
+                                                      }
+                                                  ],
+                                        "hint":  [
+                                                     "Alarms and Clocks drop the key too, but rarely (about 1 in 400). The odds are RO\u0027s normal drop rates: your server\u0027s drop rate setting makes them better."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "c_tower2",
+                                                          "x":  142,
+                                                          "y":  283,
+                                                          "name":  "Stairs up to floor 3",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Gatekeeper Boy",
+                                        "now":  "Give the key to the Gatekeeper Boy in the far north-west of floor 3 (10, 249) and go through to floor 4 (c_tower4).",
+                                        "done":  "The Gatekeeper Boy took your key and let you through to the sealed fourth floor.",
+                                        "map":  "c_tower4",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "c_tower3",
+                                                      "x":  10,
+                                                      "y":  249,
+                                                      "name":  "Gatekeeper Boy"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Talk to him and choose Move to the 4th Floor. He takes the key and sends you through."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "c_tower3",
+                                                          "x":  10,
+                                                          "y":  249,
+                                                          "name":  "Gatekeeper Boy",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  4,
+                                        "type":  "boss",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Wound Too Tight",
+                                        "now":  "Somewhere on floor 4 (c_tower4) the tower\u0027s keeper has been wound far too tight. Stop it.",
+                                        "done":  "You stopped the Overwound Keeper, a clockwork guardian ticking itself apart. A Key of Underground fell out of its works.",
+                                        "map":  "c_tower4",
+                                        "boss":  "The Overwound Keeper",
+                                        "route":  {
+                                                      "map":  "c_tower3",
+                                                      "x":  10,
+                                                      "y":  249,
+                                                      "name":  "Gatekeeper Boy: floor 4"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "It rises a few seconds after you arrive. Owl Dukes (Lv 75) haunt this floor: keep your companions close."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  5,
+                                        "type":  "ro",
+                                        "label":  "Find",
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Key Below",
+                                        "now":  "Keep the Key of Underground the Overwound Keeper dropped. Lost it? Elders (about 1 in 3, two walk floors 2 and 4) and Clock Tower Managers (1 in 5) drop one.",
+                                        "done":  "You carry a Key of Underground, for the gate in the basements.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "c_tower1",
+                                                      "x":  235,
+                                                      "y":  226,
+                                                      "name":  "Stairs up to floor 2"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+                                                      {
+                                                          "name":  "Key of Underground",
+                                                          "id":  7027,
+                                                          "count":  1
+                                                      }
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  6,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Gate Below",
+                                        "now":  "Give the key to the Gatekeeper in basement 3 (alde_dun03, 264, 16) and go down to basement 4 (alde_dun04).",
+                                        "done":  "The second Gatekeeper took your key and let you down into the fourth basement.",
+                                        "map":  "alde_dun04",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alde_dun03",
+                                                      "x":  264,
+                                                      "y":  16,
+                                                      "name":  "Gatekeeper (basement 3)"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "The quickest way to basement 3 is from floor 4 itself: the way at (37, 70) leads straight there (alde_dun03, 277, 54).",
+                                                     "Talk to the Gatekeeper and choose Move to the B4th Floor. He takes the key."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "c_tower4",
+                                                          "x":  37,
+                                                          "y":  70,
+                                                          "name":  "Way down to basement 3",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "alde_dun03",
+                                                          "x":  264,
+                                                          "y":  16,
+                                                          "name":  "Gatekeeper",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  7,
+                                        "type":  "boss",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Jester in the Dark",
+                                        "now":  "Something laughs in basement 4 (alde_dun04), where the great gear turns. Silence it.",
+                                        "done":  "You silenced the Jester of the Deep Gears, and below you the great gear caught its rhythm again.",
+                                        "map":  "alde_dun04",
+                                        "boss":  "The Jester of the Deep Gears",
+                                        "route":  {
+                                                      "map":  "alde_dun03",
+                                                      "x":  264,
+                                                      "y":  16,
+                                                      "name":  "Gatekeeper: basement 4"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "It rises a few seconds after you arrive. Bathories and Jokers fill this floor, and the cursed swords Mysteltainn and Tirfing wander it."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  8,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "On Time",
+                                        "now":  "Tell Sir Aldric in Al De Baran (142, 63) that the tower keeps time again.",
+                                        "done":  "Aldric listened to the bells strike the hour, exactly on time, for the first time in weeks.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "aldebaran",
+                                                      "x":  142,
+                                                      "y":  63,
+                                                      "name":  "Sir Aldric"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  },
+                  {
+                      "n":  9,
+                      "ch":  5,
+                      "hook":  23,
+                      "title":  "The Turtle General",
+                      "range":  "60-75",
+                      "intro":  "Sir Aldric: \"One page among these was not ours: a ship\u0027s voyage log, telling of an island where turtles walk like soldiers and serve a general. The old men of Alberta still tell of it.\"",
+                      "ro":  true,
+                      "npc":  "Navigator Corvin",
+                      "town":  "Alberta",
+                      "townMap":  "alberta",
+                      "x":  243,
+                      "y":  119,
+                      "costumes":  [
+                                       "Red Bandana",
+                                       "Diver Goggles"
+                                   ],
+                      "zeny":  12000,
+                      "failText":  null,
+                      "steps":  [
+                                    {
+                                        "k":  1,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Grandpa Turtle",
+                                        "now":  "RO quest: in Alberta, ask Grandpa Turtle how to reach Turtle Island. His house door is at (65, 233).",
+                                        "done":  "Grandpa Turtle told you of Jornadan Niliria\u0027s crew, who found Turtle Island, and of Gotanblue, the last of them who knows the way.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  65,
+                                                      "y":  233,
+                                                      "name":  "Door of Grandpa Turtle\u0027s house"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Inside, go up through the room to the north (22, 130). Grandpa Turtle sits at (23, 104). Choose How can I get there?. He names the only navigator who knows the way, Gotanblue."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "alberta_in",
+                                                          "x":  22,
+                                                          "y":  130,
+                                                          "name":  "Door to the north room",
+                                                          "ro":  null
+                                                      },
+                                                      {
+                                                          "map":  "alberta_in",
+                                                          "x":  23,
+                                                          "y":  104,
+                                                          "name":  "Grandpa Turtle",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  2,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Voyage Log",
+                                        "now":  "RO quest: read the old Voyage Log lying on the Alberta dock (246, 117).",
+                                        "done":  "In the Voyage Log you found a page of the crew\u0027s notes, and a key, pointing to one of Turtle Island\u0027s hidden secrets.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  246,
+                                                      "y":  117,
+                                                      "name":  "Voyage Log"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Click the log. Half the time the page you open is blank or unreadable: just read it again. The page you find decides which of the island\u0027s secrets you will follow."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  3,
+                                        "type":  "reach",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Only Navigator",
+                                        "now":  "Ask Gotanblue, the old sailor on the dock (247, 122), to take you to Turtle Island (10,000 zeny).",
+                                        "done":  "Gotanblue steered you through the fog to Turtle Island.",
+                                        "map":  "tur_dun01",
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  247,
+                                                      "y":  122,
+                                                      "name":  "Gotanblue: boat to Turtle Island"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "Choose How can I get there?, then Turtle island -\u003e 10000 zeny.",
+                                                     "The way back: a Sailor waits where you land (165, 29) to take you to Alberta.",
+                                                     "The island is dangerous at this level: Dragon Tails and Permeters on floor 1, Freezers and Assaulters below, all aggressive. Bring companions."
+                                                 ],
+                                        "spots":  [
+
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  4,
+                                        "type":  "ro",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "The Island\u0027s Secret",
+                                        "now":  "RO quest: follow the page you found in the Voyage Log to one of the island\u0027s hidden treasures. The Journal shows your next spot on each floor.",
+                                        "done":  "You uncovered one of Turtle Island\u0027s sealed treasures, as Jornadan Niliria\u0027s crew once did.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  247,
+                                                      "y":  122,
+                                                      "name":  "Gotanblue: boat to Turtle Island"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+                                                     "The skull page: the Skull Stone on floor 1 (160, 81).",
+                                                     "The turtle-crystal page: the Turtle Tree Roots on floor 2 (132, 251), then the pile of turtle crystals (46, 125), then the Turtle Pillar (49, 158).",
+                                                     "The turtle-stone page: the turtle stones on floor 1 (203, 155), floor 2 (75, 249) and floor 3 (118, 233), then the Turtle Statue on floor 4 (113, 178).",
+                                                     "Floor 1 to 2: (154, 241). Floor 2 to 3: (167, 19). Floor 3 to 4: (217, 71)."
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  160,
+                                                          "y":  81,
+                                                          "name":  "Skull Stone",
+                                                          "ro":  2
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  154,
+                                                          "y":  241,
+                                                          "name":  "Way down to floor 2",
+                                                          "ro":  3
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun02",
+                                                          "x":  132,
+                                                          "y":  251,
+                                                          "name":  "Turtle Tree Roots",
+                                                          "ro":  3
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  154,
+                                                          "y":  241,
+                                                          "name":  "Way down to floor 2",
+                                                          "ro":  7
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun02",
+                                                          "x":  46,
+                                                          "y":  125,
+                                                          "name":  "Pile of turtle crystals",
+                                                          "ro":  7
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  154,
+                                                          "y":  241,
+                                                          "name":  "Way down to floor 2",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun02",
+                                                          "x":  49,
+                                                          "y":  158,
+                                                          "name":  "Turtle Pillar",
+                                                          "ro":  8
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  203,
+                                                          "y":  155,
+                                                          "name":  "Turtle stone (floor 1)",
+                                                          "ro":  4
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  154,
+                                                          "y":  241,
+                                                          "name":  "Way down to floor 2",
+                                                          "ro":  10
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun02",
+                                                          "x":  75,
+                                                          "y":  249,
+                                                          "name":  "Turtle stone (floor 2)",
+                                                          "ro":  10
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  154,
+                                                          "y":  241,
+                                                          "name":  "Way down to floor 2",
+                                                          "ro":  11
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun02",
+                                                          "x":  167,
+                                                          "y":  19,
+                                                          "name":  "Way down to floor 3",
+                                                          "ro":  11
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun03",
+                                                          "x":  118,
+                                                          "y":  233,
+                                                          "name":  "Turtle stone (floor 3)",
+                                                          "ro":  11
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  154,
+                                                          "y":  241,
+                                                          "name":  "Way down to floor 2",
+                                                          "ro":  12
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun02",
+                                                          "x":  167,
+                                                          "y":  19,
+                                                          "name":  "Way down to floor 3",
+                                                          "ro":  12
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun03",
+                                                          "x":  217,
+                                                          "y":  71,
+                                                          "name":  "Way down to floor 4",
+                                                          "ro":  12
+                                                      },
+                                                      {
+                                                          "map":  "tur_dun04",
+                                                          "x":  113,
+                                                          "y":  178,
+                                                          "name":  "Turtle Statue",
+                                                          "ro":  12
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    },
+                                    {
+                                        "k":  5,
+                                        "type":  "report",
+                                        "label":  null,
+                                        "any":  false,
+                                        "minLv":  null,
+                                        "maxLv":  null,
+                                        "alt":  false,
+                                        "title":  "Back from the Fog",
+                                        "now":  "Tell Navigator Corvin on the Alberta dock (243, 119) what you found on Turtle Island.",
+                                        "done":  "Corvin, grandson of one of Jornadan\u0027s crew, swore to write your voyage into the family log beside his grandfather\u0027s.",
+                                        "map":  null,
+                                        "boss":  null,
+                                        "route":  {
+                                                      "map":  "alberta",
+                                                      "x":  243,
+                                                      "y":  119,
+                                                      "name":  "Navigator Corvin"
+                                                  },
+                                        "mobs":  [
+
+                                                 ],
+                                        "items":  [
+
+                                                  ],
+                                        "hint":  [
+
+                                                 ],
+                                        "spots":  [
+                                                      {
+                                                          "map":  "tur_dun01",
+                                                          "x":  165,
+                                                          "y":  29,
+                                                          "name":  "Sailor: boat back to Alberta",
+                                                          "ro":  null
+                                                      }
+                                                  ],
+                                        "parts":  [
+
+                                                  ]
+                                    }
+                                ]
+                  }
+              ],
+    "mvps":  [
+                 {
+                     "id":  1086,
+                     "name":  "Golden Thief Bug",
+                     "where":  "Culvert 4F",
+                     "map":  "prt_sewb4",
+                     "lv":  64,
+                     "g":  3,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1150,
+                     "name":  "Moonlight Flower",
+                     "where":  "Payon Cave 5F",
+                     "map":  "pay_dun04",
+                     "lv":  67,
+                     "g":  6,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1115,
+                     "name":  "Eddga",
+                     "where":  "Payon Forest",
+                     "map":  "pay_fild11",
+                     "lv":  65,
+                     "g":  6,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1112,
+                     "name":  "Drake",
+                     "where":  "Sunken Ship 2F",
+                     "map":  "treasure02",
+                     "lv":  70,
+                     "g":  null,
+                     "side":  2,
+                     "k":  1
+                 },
+                 {
+                     "id":  1038,
+                     "name":  "Osiris",
+                     "where":  "Pyramid 4F",
+                     "map":  "moc_pryd04",
+                     "lv":  78,
+                     "g":  13,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1511,
+                     "name":  "Amon Ra",
+                     "where":  "Pyramid B2",
+                     "map":  "moc_pryd06",
+                     "lv":  88,
+                     "g":  15,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1688,
+                     "name":  "Lady Tanee",
+                     "where":  "Ancient Shrine 2F",
+                     "map":  "ayo_dun02",
+                     "lv":  89,
+                     "g":  null,
+                     "side":  4,
+                     "k":  0
+                 },
+                 {
+                     "id":  1157,
+                     "name":  "Pharaoh",
+                     "where":  "Sphinx 5F",
+                     "map":  "in_sphinx5",
+                     "lv":  93,
+                     "g":  null,
+                     "side":  3,
+                     "k":  3
+                 },
+                 {
+                     "id":  1087,
+                     "name":  "Orc Hero",
+                     "where":  "Orc lands",
+                     "map":  "gef_fild14",
+                     "lv":  77,
+                     "g":  16,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1389,
+                     "name":  "Dracula",
+                     "where":  "Geffen Dungeon 2F",
+                     "map":  "gef_dun01",
+                     "lv":  85,
+                     "g":  18,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1046,
+                     "name":  "Doppelganger",
+                     "where":  "Geffen Dungeon 3F",
+                     "map":  "gef_dun02",
+                     "lv":  72,
+                     "g":  18,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1190,
+                     "name":  "Orc Lord",
+                     "where":  "Orc Village",
+                     "map":  "gef_fild10",
+                     "lv":  74,
+                     "g":  null,
+                     "side":  5,
+                     "k":  2
+                 },
+                 {
+                     "id":  1492,
+                     "name":  "Samurai Specter",
+                     "where":  "Amatsu Dungeon 3F",
+                     "map":  "ama_dun03",
+                     "lv":  71,
+                     "g":  null,
+                     "side":  6,
+                     "k":  0
+                 },
+                 {
+                     "id":  1418,
+                     "name":  "Evil Snake Lord",
+                     "where":  "Kunlun Dungeon 3F",
+                     "map":  "gon_dun03",
+                     "lv":  73,
+                     "g":  null,
+                     "side":  7,
+                     "k":  0
+                 },
+                 {
+                     "id":  1272,
+                     "name":  "Dark Lord",
+                     "where":  "Glast Heim Churchyard",
+                     "map":  "gl_chyard",
+                     "lv":  80,
+                     "g":  23,
+                     "side":  null,
+                     "k":  null
+                 },
+                 {
+                     "id":  1312,
+                     "name":  "Turtle General",
+                     "where":  "Turtle Island 4F",
+                     "map":  "tur_dun04",
+                     "lv":  97,
+                     "g":  null,
+                     "side":  9,
+                     "k":  0
+                 }
+             ],
+    "ranks":  [
+                  {
+                      "need":  3,
+                      "name":  "Wanderer",
+                      "item":  50129,
+                      "hat":  "Wanderer\u0027s Sakkat",
+                      "stat":  "+1 LUK"
+                  },
+                  {
+                      "need":  6,
+                      "name":  "Voyager",
+                      "item":  50144,
+                      "hat":  "Drooping Cat",
+                      "stat":  "+1 AGI, +1 DEX"
+                  }
+              ]
 };

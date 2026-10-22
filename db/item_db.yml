@@ -382,3 +382,307 @@ Body:
       NoCart: true
       NoMail: true
       NoAuction: true
+  - Id: 50125
+    AegisName: Chronicle_C_Fish_Head_Hat
+    Name: "Costume Fish Head Hat"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 386
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50126
+    AegisName: Chronicle_C_Captain_s_Hat
+    Name: "Costume Captain's Hat"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 236
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50127
+    AegisName: Chronicle_C_Anubis_Helm
+    Name: "Costume Anubis Helm"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 485
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50128
+    AegisName: Chronicle_C_Tiger_Mask
+    Name: "Costume Tiger Mask"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 181
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50129
+    AegisName: Chronicle_C_Wanderer_s_Sakkat
+    Name: "Costume Wanderer's Sakkat"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 558
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bLuk,1;
+  - Id: 50130
+    AegisName: Chronicle_C_Fish_in_Mouth
+    Name: "Costume Fish in Mouth"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 406
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50131
+    AegisName: Chronicle_C_Pirate_Bandana
+    Name: "Costume Pirate Bandana"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 74
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50132
+    AegisName: Chronicle_C_Desert_Prince
+    Name: "Costume Desert Prince"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 567
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50133
+    AegisName: Chronicle_C_Leaf_Cat_Hat
+    Name: "Costume Leaf Cat Hat"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 539
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50134
+    AegisName: Chronicle_C_Orc_Hero_Headdress
+    Name: "Costume Orc Hero Headdress"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 381
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50135
+    AegisName: Chronicle_C_Orc_Helm
+    Name: "Costume Orc Helm"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 86
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50136
+    AegisName: Chronicle_C_Kitsune_Mask
+    Name: "Costume Kitsune Mask"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 153
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50137
+    AegisName: Chronicle_C_Drooping_Nine_Tail
+    Name: "Costume Drooping Nine Tail"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 296
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50138
+    AegisName: Chronicle_C_Evil_Snake_Lord_Hat
+    Name: "Costume Evil Snake Lord Hat"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 372
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50139
+    AegisName: Chronicle_C_Chinese_Crown
+    Name: "Costume Chinese Crown"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 221
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50140
+    AegisName: Chronicle_C_Time_Keeper_Hat
+    Name: "Costume Time Keeper Hat"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 240
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50141
+    AegisName: Chronicle_C_Alarm_Mask
+    Name: "Costume Alarm Mask"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 170
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50142
+    AegisName: Chronicle_C_Red_Bandana
+    Name: "Costume Red Bandana"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 62
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50143
+    AegisName: Chronicle_C_Diver_Goggles
+    Name: "Costume Diver Goggles"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 10
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+  - Id: 50144
+    AegisName: Chronicle_C_Drooping_Cat
+    Name: "Costume Drooping Cat"
+    Type: Armor
+    Weight: 0
+    Locations:
+      Costume_Head_Top: true
+    View: 142
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoSell: true
+      NoCart: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bAgi,1; bonus bDex,1;

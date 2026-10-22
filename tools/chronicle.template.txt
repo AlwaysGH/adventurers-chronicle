@@ -21,6 +21,7 @@ OnInit:
 	.mod$ = "adventurers-chronicle";
 	$@chr_exprate = callfunc("F_ModSetting", .mod$, "exp_rate", 100);
 	$@chr_share = callfunc("F_ModSetting", .mod$, "share_exp", 1);
+	$@chr_test = callfunc("F_ModSetting", .mod$, "test_tools", 0);
 
 	//@@DATA@@
 
@@ -51,6 +52,14 @@ OnPCLoginEvent:
 	if (!countitem(50100) && CHRON_STEP <= 41)
 		getitem 50100, 1;
 	@chr_lastmap$ = "";
+	// 1.3.1: before, a Side Quest's pouch came the moment it opened.
+	if (!CHRON_V131) {
+		for (.@i = 1; .@i <= $@sq_n; .@i++)
+			if (CHRON_SQ[.@i] && $@sq_kit$[.@i] != "")
+				CHRON_SQKIT = CHRON_SQKIT | (1 << .@i);
+		CHRON_V131 = 1;
+	}
+	callfunc "F_ChronSideUnlock";
 	end;
 
 OnTick:
@@ -59,8 +68,12 @@ OnTick:
 		@chr_lastmap$ = .@map$;
 		@chr_mapat = gettimetick(2);
 		callfunc "F_ChronBossMark";
+		callfunc "F_ChronSideMark";
 		callfunc "F_ChronArrive", .@map$;
+		callfunc "F_ChronSideArrive", .@map$;
 	}
+	// Side Quests run beside the main road (and after it is finished).
+	callfunc "F_ChronSideTick", .@map$;
 	.@g = CHRON_STEP;
 	if (.@g < 1 || .@g > $@chr_steps)
 		end;
@@ -157,8 +170,87 @@ OnBossDead:
 		callfunc "F_ChronAdvance", .@g;
 	end;
 
+OnSideBossDead:
+	if (!playerattached())
+		end;
+	@chr_sb = 0;
+	for (.@i = 1; .@i <= $@sq_n; .@i++) {
+		.@k = CHRON_SQ[.@i];
+		if (.@k < 1 || .@k > $@sq_steps[.@i])
+			continue;
+		.@s = .@i * 10 + .@k;
+		if ($@sqs_type[.@s] == 4 && killedrid == $@sqs_bmob[.@s] && @chr_sbs == .@s) {
+			if ($@sqs_loot$[.@s] != "") {
+				// a boss that carries what the next step needs (a gate key)
+				explode(.@p$, $@sqs_loot$[.@s], ",");
+				getitem atoi(.@p$[0]), atoi(.@p$[1]);
+				dispbottom "[Chronicle] " + $@sqs_bname$[.@s] + " dropped " + getitemname(atoi(.@p$[0])) + ".", 0xE5A15E;
+			}
+			callfunc "F_ChronSideAdvance", .@i;
+			break;
+		}
+	}
+	end;
+
+// The MVP Ledger ticks itself: a kill counts for you and for the people of
+// your party on the same map, so a companion's kill counts for its owner.
+OnNPCKillEvent:
+	for (.@m = 0; .@m < $@mvp_n; .@m++)
+		if ($@mvp_id[.@m] == killedrid)
+			break;
+	if (.@m >= $@mvp_n)
+		end;
+	.@bit = 1 << .@m;
+	.@map$ = strcharinfo(3);
+	.@pid = getcharid(1);
+	if (.@pid) {
+		getpartymember .@pid, 2;
+		.@n = $@partymembercount;
+		copyarray .@aid[0], $@partymemberaid[0], .@n;
+	} else {
+		.@n = 1;
+		.@aid[0] = getcharid(3);
+	}
+	for (.@j = 0; .@j < .@n; .@j++) {
+		if (.@aid[.@j] >= 95000000)
+			continue;	// an AI player
+		if (!attachrid(.@aid[.@j]))
+			continue;
+		if (strcharinfo(3) == .@map$ && !(CHRON_MVPK & .@bit)) {
+			CHRON_MVPK = CHRON_MVPK | .@bit;
+			dispbottom "[Chronicle] MVP Ledger: " + $@mvp_name$[.@m] + " defeated!", 0xFF7766;
+			dispbottom "@@event chronicle refresh";
+		}
+	}
+	end;
+
 // @chronicle opens the journal; the window asks "@chronicle <n> state".
+// With the "Test tools" setting on, "@chronicle side <quest> <step>" puts you
+// on any Side Quest step (0: not open, 100: done).
 OnCmd:
+	if (.@atcmd_numparameters >= 3 && .@atcmd_parameters$[0] == "side") {
+		if (!$@chr_test) {
+			dispbottom "[Chronicle] Turn on the Test tools setting of adventurers-chronicle first.";
+			end;
+		}
+		.@i = atoi(.@atcmd_parameters$[1]);
+		.@k = atoi(.@atcmd_parameters$[2]);
+		if (.@i < 1 || .@i > $@sq_n || (.@k > $@sq_steps[.@i] && .@k != 100) || .@k < 0) {
+			dispbottom "[Chronicle] Usage: @chronicle side <1-" + $@sq_n + "> <step, 0 or 100>";
+			end;
+		}
+		for (.@j = 1; .@j <= $@sq_steps[.@i]; .@j++)
+			if (checkquest(77100 + .@i * 10 + .@j) >= 0)
+				erasequest 77100 + .@i * 10 + .@j;
+		CHRON_SQ[.@i] = .@k;
+		if (.@k >= 1 && .@k <= $@sq_steps[.@i])
+			setquest 77100 + .@i * 10 + .@k;
+		callfunc "F_ChronSideMark";
+		@chr_lastmap$ = "";	// bosses and arrivals count again
+		dispbottom "[Chronicle] " + $@sq_title$[.@i] + " is now at step " + .@k + ".";
+		dispbottom "@@event chronicle refresh";
+		end;
+	}
 	if (.@atcmd_numparameters >= 2 && .@atcmd_parameters$[1] == "state") {
 		.@g = CHRON_STEP;
 		.@hunt = -1;
@@ -167,7 +259,28 @@ OnCmd:
 		.@have$ = "";
 		if (.@g >= 1 && .@g <= $@chr_steps && $@chr_items$[.@g] != "" && ($@chr_type[.@g] == 3 || $@chr_type[.@g] == 4))
 			.@have$ = callfunc("F_ChronHave", .@g);
-		dispbottom "@@reply " + .@atcmd_parameters$[0] + " 1/1 " + .@g + "|" + BaseLevel + "|" + getarraysize(NPCP_WM$) + "|" + CHRON_SKIP + "|" + .@hunt + "|" + .@have$ + "|" + @chr_watch$ + "|" + callfunc("F_ChronCapped");
+		// Side Quests, one "step:hunt:items:ro:fail" per quest, ';' between them.
+		.@sq$ = "";
+		for (.@i = 1; .@i <= $@sq_n; .@i++) {
+			.@k = CHRON_SQ[.@i];
+			.@h = -1;
+			.@hv$ = "";
+			.@ro = -1;
+			if (.@k >= 1 && .@k <= $@sq_steps[.@i]) {
+				.@s = .@i * 10 + .@k;
+				if ($@sqs_type[.@s] == 2)
+					.@h = checkquest(77100 + .@s, HUNTING);
+				if ($@sqs_items$[.@s] != "")
+					.@hv$ = callfunc("F_ChronHaveList", $@sqs_items$[.@s]);
+				if ($@sqs_var$[.@s] != "")
+					.@ro = getd($@sqs_var$[.@s]);
+			}
+			.@fail = 0;
+			if (.@k >= 1 && .@k <= $@sq_steps[.@i])
+				.@fail = callfunc("F_ChronSideFail", .@i);
+			.@sq$ += (.@i > 1 ? ";" : "") + .@k + ":" + .@h + ":" + .@hv$ + ":" + .@ro + ":" + (.@fail ? 1 : 0);
+		}
+		dispbottom "@@reply " + .@atcmd_parameters$[0] + " 1/1 " + .@g + "|" + BaseLevel + "|" + getarraysize(NPCP_WM$) + "|" + CHRON_SKIP + "|" + .@hunt + "|" + .@have$ + "|" + @chr_watch$ + "|" + callfunc("F_ChronCapped") + "|" + .@sq$ + "|" + CHRON_MVPK;
 		end;
 	}
 	dispbottom "@@event chronicle open";
@@ -180,6 +293,12 @@ OnCmd:
 	end;
 }
 
+// The Side Quest givers of their own ("Name#s<n>").
+-	script	ChronSide	-1,{
+	callfunc "F_ChronSideTalk", atoi(delchar(strnpcinfo(2), 0));
+	end;
+}
+
 // Finish step getarg(0): quest window, EXP, and the next step.
 function	script	F_ChronAdvance	{
 	.@g = getarg(0);
@@ -189,6 +308,7 @@ function	script	F_ChronAdvance	{
 		completequest 77000 + .@g;
 	CHRON_STEP = .@g + 1;
 	callfunc "F_ChronBossMark";
+	callfunc "F_ChronSideUnlock";
 	dispbottom "[Chronicle] " + $@chr_title$[.@g] + ": complete!", 0xFFDD66;
 	.@target = $@chr_final;
 	if (.@g < $@chr_steps)
@@ -219,7 +339,12 @@ function	script	F_ChronBossMark	{
 // How many of deliver step getarg(0)'s items are in the bag: "3,10" (one
 // count per item, in the step's order).
 function	script	F_ChronHave	{
-	explode(.@it$, $@chr_items$[getarg(0)], ";");
+	return callfunc("F_ChronHaveList", $@chr_items$[getarg(0)]);
+}
+
+// The same for an item list getarg(0): "id,count,name;id,count,name".
+function	script	F_ChronHaveList	{
+	explode(.@it$, getarg(0), ";");
 	.@s$ = "";
 	for (.@i = 0; .@i < getarraysize(.@it$); .@i++) {
 		explode(.@p$, .@it$[.@i], ",");
@@ -258,24 +383,45 @@ function	script	F_ChronReward	{
 			.@need = .@next - readparam(BaseExp, .@c);
 			if (.@need <= 0)
 				break;
-			getexp .@need, 0, .@c;
+			callfunc "F_ChronGetExp", .@need, 0, .@c;
 		}
 		.@next = readparam(NextBaseExp, .@c);
 		if (.@frac > 0 && !callfunc("F_ChronCapped", .@c)) {
 			.@e = .@next * .@frac / 100;
 			if (.@e > 0)
-				getexp .@e, 0, .@c;
+				callfunc "F_ChronGetExp", .@e, 0, .@c;
 		}
 	} else if (readparam(NextBaseExp, .@c) > 0) {
 		.@e = readparam(NextBaseExp, .@c) * .@rate / 400;
 		if (.@e > 0)
-			getexp .@e, 0, .@c;
+			callfunc "F_ChronGetExp", .@e, 0, .@c;
 	}
 	if (readparam(NextJobExp, .@c) > 0) {
 		.@e = readparam(NextJobExp, .@c) * .@rate * 6 / 1000;
 		if (.@e > 0)
-			getexp 0, .@e, .@c;
+			callfunc "F_ChronGetExp", 0, .@e, .@c;
 	}
+	return;
+}
+
+// getexp getarg(0) base and getarg(1) job EXP to character id getarg(2),
+// exactly: rAthena multiplies script EXP by the server's quest_exp_rate
+// (5000% on a 50x server), so the amount is divided by it first.
+function	script	F_ChronGetExp	{
+	.@rate = getbattleflag("quest_exp_rate");
+	if (.@rate <= 0)
+		.@rate = 100;
+	.@b = getarg(0);
+	.@j = getarg(1);
+	if (.@rate != 100) {
+		.@b = .@b / .@rate * 100 + (.@b % .@rate) * 100 / .@rate;
+		.@j = .@j / .@rate * 100 + (.@j % .@rate) * 100 / .@rate;
+		if (getarg(0) > 0 && .@b < 1)
+			.@b = 1;
+		if (getarg(1) > 0 && .@j < 1)
+			.@j = 1;
+	}
+	getexp .@b, .@j, getarg(2);
 	return;
 }
 
@@ -327,6 +473,28 @@ function	script	F_ChronTalk	{
 		.@g = 1;
 	.@n$ = "[" + $@chr_npc$[.@ch] + "]";
 
+	// A Side Quest this NPC gave you, with news to tell.
+	for (.@i = 1; .@i <= $@sq_n; .@i++) {
+		if ($@sq_ch[.@i] != .@ch || $@sq_npc$[.@i] != "")
+			continue;
+		.@k = CHRON_SQ[.@i];
+		if (.@k == 100) {
+			if ((CHRON_SQSW & (1 << .@i)) || (!countitem($@sq_cost[.@i]) && !countitem($@sq_cost2[.@i])))
+				continue;
+		} else {
+			if (.@k < 1 || .@k > $@sq_steps[.@i])
+				continue;
+			.@t = $@sqs_type[.@i * 10 + .@k];
+			if (.@t != 1 && .@t != 5)
+				continue;
+		}
+		if (select("Side Quest - " + $@sq_title$[.@i] + ":Talk about the Chronicle") == 1) {
+			callfunc "F_ChronSideTalk", .@i;
+			end;
+		}
+		break;
+	}
+
 	// The first NPC offers experienced adventurers a start at their level.
 	if (.@ch == 1 && .@g == 1) {
 		.@best = 1;
@@ -348,6 +516,7 @@ function	script	F_ChronTalk	{
 				mes "Then here it is in brief. Monsters are waking all over Rune-Midgard, where they have slept for centuries. Something is pulling at the old seals.";
 				mes "Your Chronicle holds the story so far. Go to " + $@chr_townname$[.@best] + " and find " + $@chr_npc$[.@best] + ".";
 				close2;
+				callfunc "F_ChronSideUnlock";
 				dispbottom "@@event chronicle refresh";
 				end;
 			}
@@ -462,6 +631,387 @@ function	script	F_ChronArrive	{
 		dispbottom "[Chronicle] Something here has been waiting for you...", 0xFF9977;
 	}
 	return;
+}
+
+// ---- Side Quests ----------------------------------------------------------
+// Optional quests the chapter NPCs mention on the way. CHRON_SQ[n] is 0 until
+// the main road passes the hook step, then the step you are on (1..), then
+// 100 once done. Step k of Side Quest n has the id n*10+k ($@sqs_* arrays,
+// quest 77100+id). Types: 1 talk, 2 hunt, 4 boss, 5 report, 6 reach (set foot
+// on a map), 7 ro (RO's own quest: done when its variable reaches a value).
+
+// Open the Side Quests whose hook the main road has passed.
+function	script	F_ChronSideUnlock	{
+	for (.@i = 1; .@i <= $@sq_n; .@i++) {
+		if (CHRON_SQ[.@i] || CHRON_STEP <= $@sq_hook[.@i])
+			continue;
+		CHRON_SQ[.@i] = 1;
+		if (checkquest(77100 + .@i * 10 + 1) < 0)
+			setquest 77100 + .@i * 10 + 1;
+		dispbottom "[Chronicle] New Side Quest (optional): " + $@sq_title$[.@i] + ". It waits in your Journal (Alt+B), Side Quests tab.", 0xE5A15E;
+		if ($@sq_kit$[.@i] != "" && !$@sq_kitk[.@i]) {
+			explode(.@it$, $@sq_kit$[.@i], ";");
+			for (.@j = 0; .@j < getarraysize(.@it$); .@j++) {
+				explode(.@p$, .@it$[.@j], ",");
+				getitem atoi(.@p$[0]), atoi(.@p$[1]);
+			}
+			CHRON_SQKIT = CHRON_SQKIT | (1 << .@i);
+			dispbottom "[Chronicle] " + $@chr_npc$[$@sq_ch[.@i]] + " gave you a pouch for the road ahead.", 0xE5A15E;
+		}
+		.@new++;
+	}
+	if (.@new)
+		dispbottom "@@event chronicle refresh";
+	return;
+}
+
+// Side Quest getarg(0) moves to its next step (or is done).
+function	script	F_ChronSideAdvance	{
+	.@i = getarg(0);
+	.@k = CHRON_SQ[.@i];
+	if (.@k < 1 || .@k > $@sq_steps[.@i])
+		return;
+	.@s = .@i * 10 + .@k;
+	if (checkquest(77100 + .@s) >= 0 && checkquest(77100 + .@s) < 2)
+		completequest 77100 + .@s;
+	callfunc "F_ChronSideMark";
+	if (.@k >= $@sq_steps[.@i]) {
+		callfunc "F_ChronSideDone", .@i;
+		return;
+	}
+	CHRON_SQ[.@i] = .@k + 1;
+	if (checkquest(77100 + .@s + 1) < 0)
+		setquest 77100 + .@s + 1;
+	dispbottom "[Chronicle] " + $@sq_title$[.@i] + ": " + $@sqs_title$[.@s] + " done. Next: " + $@sqs_now$[.@s + 1], 0xE5A15E;
+	dispbottom "@@event chronicle refresh";
+	return;
+}
+
+// Side Quest getarg(0) is done: its costume, a small reward, a Passport stamp.
+function	script	F_ChronSideDone	{
+	.@i = getarg(0);
+	CHRON_SQ[.@i] = 100;
+	.@cost = (@chr_pick == 2 ? $@sq_cost2[.@i] : $@sq_cost[.@i]);
+	@chr_pick = 0;
+	getitem .@cost, 1;
+	explode(.@it$, $@sq_gift$[.@i], ";");
+	for (.@j = 0; .@j < getarraysize(.@it$); .@j++) {
+		explode(.@p$, .@it$[.@j], ",");
+		getitem atoi(.@p$[0]), atoi(.@p$[1]);
+	}
+	Zeny += $@sq_zeny[.@i];
+	callfunc "F_ChronReward", 0;	// a quarter of a level, and some job EXP
+	if ($@chr_share)
+		callfunc "F_ChronShare", 0;
+	specialeffect2 EF_ANGEL2;
+	dispbottom "[Chronicle] Side Quest complete: " + $@sq_title$[.@i] + ". You received " + getitemname(.@cost) + ", " + $@sq_zeny[.@i] + " zeny and a Passport stamp.", 0xFFDD66;
+	for (.@j = 1; .@j <= $@sq_n; .@j++)
+		if (CHRON_SQ[.@j] == 100)
+			.@stamps++;
+	for (.@r = 1; .@r <= $@pp_n; .@r++) {
+		if (.@stamps < $@pp_need[.@r] || (CHRON_PASS & (1 << .@r)))
+			continue;
+		CHRON_PASS = CHRON_PASS | (1 << .@r);
+		getitem $@pp_item[.@r], 1;
+		dispbottom "[Chronicle] Passport rank " + $@pp_name$[.@r] + "! You received " + getitemname($@pp_item[.@r]) + ".", 0xFFDD66;
+	}
+	dispbottom "@@event chronicle refresh";
+	return;
+}
+
+// Talking to the giver of Side Quest getarg(0).
+function	script	F_ChronSideTalk	{
+	.@i = getarg(0);
+	.@n$ = "[" + $@sq_npc$[.@i] + "]";
+	if ($@sq_npc$[.@i] == "")
+		.@n$ = "[" + $@chr_npc$[$@sq_ch[.@i]] + "]";
+	.@k = CHRON_SQ[.@i];
+	if (.@k == 100) {
+		mes .@n$;
+		mes ($@sq_after$[.@i] != "" ? $@sq_after$[.@i] : "Thank you again, friend.");
+		// Once, you can trade the keepsake you chose for the other one.
+		if (CHRON_SQSW & (1 << .@i))
+			close;
+		.@a = $@sq_cost[.@i];
+		.@b = $@sq_cost2[.@i];
+		if (!countitem(.@a) && !countitem(.@b))
+			close;
+		next;
+		.@have = (countitem(.@a) ? .@a : .@b);
+		.@other = (.@have == .@a ? .@b : .@a);
+		mes .@n$;
+		mes "Not sure about your " + getitemname(.@have) + "? I can trade it for the " + getitemname(.@other) + ", once.";
+		if (select("Trade it:Keep it") == 2)
+			close;
+		delitem .@have, 1;
+		getitem .@other, 1;
+		CHRON_SQSW = CHRON_SQSW | (1 << .@i);
+		mes "There you are.";
+		close;
+	}
+	if (.@k < 1) {
+		mes .@n$;
+		mes ($@sq_idle$[.@i] != "" ? $@sq_idle$[.@i] : "Not now, friend.");
+		close;
+	}
+	.@s = .@i * 10 + .@k;
+	.@t = $@sqs_type[.@s];
+	if (.@t == 1) {
+		callfunc "F_ChronSay", .@n$, $@sqs_say$[.@s];
+		close2;
+		if ($@sq_kitk[.@i] == .@k && !(CHRON_SQKIT & (1 << .@i))) {
+			CHRON_SQKIT = CHRON_SQKIT | (1 << .@i);
+			explode(.@it$, $@sq_kit$[.@i], ";");
+			for (.@j = 0; .@j < getarraysize(.@it$); .@j++) {
+				explode(.@p$, .@it$[.@j], ",");
+				getitem atoi(.@p$[0]), atoi(.@p$[1]);
+				.@got$ += (.@j ? ", " : "") + .@p$[1] + " " + getitemname(atoi(.@p$[0]));
+			}
+			dispbottom "[Chronicle] " + $@sq_npc$[.@i] + " handed you a pouch: " + .@got$ + ". Keep these, the quest asks for them. Don't sell them!", 0xE5A15E;
+		}
+		callfunc "F_ChronSideAdvance", .@i;
+		end;
+	}
+	if (.@t == 5) {
+		// The last line offers the two keepsakes; the choice comes right under it.
+		callfunc "F_ChronSay", .@n$, $@sqs_say$[.@s];
+		@chr_pick = select(getitemname($@sq_cost[.@i]) + ":" + getitemname($@sq_cost2[.@i]));
+		close2;
+		callfunc "F_ChronSideAdvance", .@i;
+		end;
+	}
+	// Too strong for RO's own part of this step (Orc's Memory admits Lv 30-80):
+	// the giver tells it instead, and the step counts as done.
+	if ($@sqs_maxlv[.@s] && BaseLevel > $@sqs_maxlv[.@s]) {
+		mes .@n$;
+		mes $@sqs_altask$[.@s];
+		next;
+		if (select("Read the notes:Not now") == 2) {
+			mes .@n$;
+			mes "Come back whenever you like.";
+			close;
+		}
+		callfunc "F_ChronSay", .@n$, $@sqs_alt$[.@s];
+		close2;
+		callfunc "F_ChronSideAdvance", .@i;
+		end;
+	}
+	// Lost or sold the pouch? The giver replaces what is left of it for the
+	// current step: the kit minus what earlier steps used up. Once per step
+	// (CHRON_SQKRS[n] = the step it was last replaced at). A step the pouch
+	// never covered gets the giver's "find it yourself" lines ($@sq_nokit$).
+	if ($@sq_kitk[.@i] && .@k > $@sq_kitk[.@i] && (CHRON_SQKIT & (1 << .@i)) && $@sqs_items$[.@s] != "") {
+		explode(.@kit$, $@sq_kit$[.@i], ";");
+		.@cnt = 0;
+		.@covers = 0;
+		for (.@j = 0; .@j < getarraysize(.@kit$); .@j++) {
+			explode(.@p$, .@kit$[.@j], ",");
+			.@id = atoi(.@p$[0]);
+			.@left = atoi(.@p$[1]);
+			for (.@e = $@sq_kitk[.@i] + 1; .@e < .@k; .@e++)
+				.@left -= callfunc("F_ChronItemNeed", $@sqs_items$[.@i * 10 + .@e], .@id);
+			.@want = callfunc("F_ChronItemNeed", $@sqs_items$[.@s], .@id);
+			if (.@want > .@left)
+				.@want = .@left;
+			if (.@want > 0)
+				.@covers = 1;
+			.@give = .@want - countitem(.@id);
+			if (.@give > 0) {
+				.@gid[.@cnt] = .@id;
+				.@gamt[.@cnt] = .@give;
+				.@cnt++;
+			}
+		}
+		if (.@cnt && CHRON_SQKRS[.@i] != .@k) {
+			mes .@n$;
+			mes "Wait, where is Nafisa's pouch? Lost it? Sold it?!";
+			mes "...Lucky for you, she packed spares. She always does.";
+			next;
+			for (.@j = 0; .@j < .@cnt; .@j++) {
+				getitem .@gid[.@j], .@gamt[.@j];
+				.@got$ += (.@j ? ", " : "") + .@gamt[.@j] + " " + getitemname(.@gid[.@j]);
+			}
+			CHRON_SQKRS[.@i] = .@k;
+			mes .@n$;
+			mes "Here: " + .@got$ + ".";
+			mes "Keep these this time, and don't sell them!";
+			dispbottom "[Chronicle] " + $@sq_npc$[.@i] + " replaced the pouch: " + .@got$ + ".", 0xE5A15E;
+			close;
+		}
+		if (!.@covers && $@sq_nokit$[.@i] != "") {
+			callfunc "F_ChronSay", .@n$, $@sq_nokit$[.@i];
+			close;
+		}
+	}
+	mes .@n$;
+	mes $@sqs_now$[.@s];
+	close;
+}
+
+// Every tick: hunts counted, maps reached, RO quests moved on, bosses risen.
+function	script	F_ChronSideTick	{
+	.@map$ = getarg(0);
+	for (.@i = 1; .@i <= $@sq_n; .@i++) {
+		.@k = CHRON_SQ[.@i];
+		if (.@k < 1 || .@k > $@sq_steps[.@i])
+			continue;
+		.@s = .@i * 10 + .@k;
+		.@t = $@sqs_type[.@s];
+		if (.@t == 2) {
+			if (checkquest(77100 + .@s, HUNTING) == 2)
+				callfunc "F_ChronSideAdvance", .@i;
+		} else if (.@t == 6) {
+			if (.@map$ == $@sqs_map$[.@s])
+				callfunc "F_ChronSideAdvance", .@i;
+		} else if (.@t == 7) {
+			// RO's own quest moved on inside this step (a slate read, a talk
+			// done): say which part, and refresh the Journal. The first look
+			// after login or a new step only notes the value.
+			.@v = getd($@sqs_var$[.@s]);
+			if (@chr_sqs[.@i] != .@s) {
+				@chr_sqs[.@i] = .@s;
+				@chr_sqv[.@i] = .@v;
+			} else if (@chr_sqv[.@i] != .@v) {
+				@chr_sqv[.@i] = .@v;
+				if (!callfunc("F_ChronRoCond", .@s))
+					callfunc "F_ChronSidePart", .@s, .@v;
+				dispbottom "@@event chronicle refresh";
+			}
+			// RO's own quest: steps done before (or several at once) move on now.
+			for (.@n = 0; .@n < 10; .@n++) {
+				.@k = CHRON_SQ[.@i];
+				if (.@k < 1 || .@k > $@sq_steps[.@i])
+					break;
+				.@s = .@i * 10 + .@k;
+				if ($@sqs_type[.@s] != 7 || !callfunc("F_ChronRoCond", .@s))
+					break;
+				callfunc "F_ChronSideAdvance", .@i;
+			}
+		} else if (.@t == 4) {
+			callfunc "F_ChronSideBoss", .@s, .@map$;
+		}
+	}
+	return;
+}
+
+// How many of item getarg(1) an item list ("id,count,name;...") asks for.
+function	script	F_ChronItemNeed	{
+	explode(.@l$, getarg(0), ";");
+	for (.@j = 0; .@j < getarraysize(.@l$); .@j++) {
+		explode(.@q$, .@l$[.@j], ",");
+		if (atoi(.@q$[0]) == getarg(1))
+			return atoi(.@q$[1]);
+	}
+	return 0;
+}
+
+// Side Quest step getarg(0): RO's quest variable is now getarg(1). Name the
+// part just done and the next one ($@sqs_parts$ "at|name;...").
+function	script	F_ChronSidePart	{
+	.@s = getarg(0);
+	.@v = getarg(1);
+	if ($@sqs_parts$[.@s] == "")
+		return;
+	explode(.@pt$, $@sqs_parts$[.@s], ";");
+	.@done$ = "";
+	.@next$ = "";
+	for (.@j = 0; .@j < getarraysize(.@pt$); .@j++) {
+		explode(.@p$, .@pt$[.@j], "|");
+		.@at = atoi(.@p$[0]);
+		if (.@at == .@v)
+			.@done$ = .@p$[1];
+		else if (.@at > .@v && .@next$ == "")
+			.@next$ = .@p$[1];
+	}
+	if (.@done$ == "")
+		return;
+	dispbottom "[Chronicle] " + $@sq_title$[.@s / 10] + ": done, " + .@done$ + "." + (.@next$ != "" ? " Next: " + .@next$ + "." : ""), 0xE5A15E;
+	return;
+}
+
+// A Side Quest boss (step getarg(0)) rising where you stand on its map: one
+// per arrival, like the chapter bosses (see OnTick).
+function	script	F_ChronSideBoss	{
+	.@s = getarg(0);
+	.@map$ = getarg(1);
+	if (.@map$ != $@sqs_map$[.@s] || gettimetick(2) < @chr_mapat + 3)
+		return;
+	.@ev$ = "ChronicleCore::OnSideBossDead";
+	if (@chr_sbat == @chr_mapat && @chr_sbs == .@s && mobcount(.@map$, .@ev$) < 1) {
+		// slain while you were here, but the kill never reached you
+		@chr_sbat = 0;
+		@chr_sb = 0;
+		callfunc "F_ChronSideAdvance", .@s / 10;
+		return;
+	}
+	if (@chr_sbat != @chr_mapat || @chr_sbs != .@s) {
+		killmonster .@map$, .@ev$;
+		@chr_sbat = @chr_mapat;
+		@chr_sbs = .@s;
+		getmapxy(.@m$, .@x, .@y);
+		monster .@map$, .@x, .@y, $@sqs_bname$[.@s], $@sqs_bmob[.@s], 1, .@ev$, Size_Large;
+		@chr_sb = $@mobid[0];
+		getunitdata @chr_sb, .@d;
+		setunitdata @chr_sb, UMOB_MAXHP, .@d[UMOB_MAXHP] * $@sqs_bhp[.@s];
+		setunitdata @chr_sb, UMOB_HP, .@d[UMOB_MAXHP] * $@sqs_bhp[.@s];
+		setunitdata @chr_sb, UMOB_ATKMIN, .@d[UMOB_ATKMIN] * 13 / 10;
+		setunitdata @chr_sb, UMOB_ATKMAX, .@d[UMOB_ATKMAX] * 13 / 10;
+		dispbottom "[Chronicle] " + $@sqs_bname$[.@s] + " appears! Look for the giant one, marked red on your minimap.", 0xFF7766;
+	}
+	if (@chr_sb && unitexists(@chr_sb)) {
+		getunitdata @chr_sb, .@b;
+		if (.@b[UMOB_CLASS] == $@sqs_bmob[.@s] && (.@b[UMOB_X] != @chr_sbmx || .@b[UMOB_Y] != @chr_sbmy)) {
+			@chr_sbmx = .@b[UMOB_X];
+			@chr_sbmy = .@b[UMOB_Y];
+			viewpoint 1, @chr_sbmx, @chr_sbmy, 78, 0xFF3333;
+		}
+	}
+	return;
+}
+
+// Take the Side Quest boss's red minimap mark away.
+function	script	F_ChronSideMark	{
+	if (@chr_sbmx || @chr_sbmy)
+		viewpoint 2, @chr_sbmx, @chr_sbmy, 78, 0xFF3333;
+	@chr_sbmx = 0;
+	@chr_sbmy = 0;
+	return;
+}
+
+// Arriving on a map one of your Side Quests cares about.
+function	script	F_ChronSideArrive	{
+	.@m$ = getarg(0);
+	for (.@i = 1; .@i <= $@sq_n; .@i++) {
+		.@k = CHRON_SQ[.@i];
+		if (.@k < 1 || .@k > $@sq_steps[.@i])
+			continue;
+		.@s = .@i * 10 + .@k;
+		if (.@m$ != $@sqs_map$[.@s])
+			continue;
+		if ($@sqs_type[.@s] == 2)
+			dispbottom "[Chronicle] Side Quest hunting ground: " + $@sqs_now$[.@s], 0xE5A15E;
+		else if ($@sqs_type[.@s] == 4)
+			dispbottom "[Chronicle] Something here has been waiting for you...", 0xFF9977;
+	}
+	return;
+}
+
+// How far along RO's Broken Sword quest (b_sword) is, as one rising number:
+// its values jump around (dead ends 11, 12, 13 and 15; 16 = sent to help Han
+// Ran Jiao first; 25 = a wrong diagnosis, back to 24).
+function	script	F_ChronKunlun	{
+	.@b = b_sword;
+	if (.@b == 11 || .@b == 12 || .@b == 13 || .@b == 15)
+		return -1;
+	if (.@b <= 10)
+		return .@b;
+	if (.@b == 14)
+		return 11;
+	if (.@b <= 23)
+		return .@b - 4;	// 16 -> 12 ... 23 -> 19
+	if (.@b <= 25)
+		return 20;
+	return .@b - 5;	// 26 -> 21 ... 33 -> 28
 }
 
 //@@NPCS@@

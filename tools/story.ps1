@@ -39,7 +39,7 @@ $chapters = @(
           items = @(@(909, 'Jellopy', 10), @(705, 'Clover', 5))
           now = 'Leonhart needs proof for the Knight Captain. Bring him 10 Jellopy and 5 Clover in Prontera (157, 190).'
           done = 'You brought Leonhart his proof. He confided that the monsters are not only multiplying: they are coming up from below the city, out of the Culvert.'
-          say = @('Good work. This will quiet the Captain for a while.', 'But listen. The guards found Thief Bugs in the cellars near the walls, far too many of them. They are coming up from the Culvert, the old waterways under the city.', 'The Culvert is sealed by royal decree. Sign up with the Recruiter in the north-west of the city, then go down to its second level and find out what is breeding them.') }
+          say = @('Good work. This will quiet the Captain for a while.', 'But listen. The guards found Thief Bugs in the cellars near the walls, far too many of them. They are coming up from the Culvert, the old waterways under the city.', 'The Culvert is sealed by royal decree. Sign up with the Recruiter in the north-west of the city, then go down to its second level and find out what is breeding them.', 'One warning. The old guards speak of a golden beetle, far larger than any Thief Bug, on the fourth and deepest level of the Culvert. The Golden Thief Bug. Do not go looking for it. Not yet.') }
        # The Culvert Guardian only lets in volunteers (rAthena quests_prontera.txt,
        # MISC_QUEST & 8), so the route leads to the Recruiter first.
        @{ type = 'boss'; lv = 10; title = 'Into the Culvert'; map = 'prt_sewb2'; mob = 1054; boss = 'Culvert Brood Lord'; hp = 8
@@ -61,7 +61,7 @@ $chapters = @(
        @{ type = 'report'; lv = 13; title = 'Report to Leonhart'
           now = 'Tell Sir Leonhart in Prontera (157, 190) what you found in the Culvert.'
           done = 'Leonhart listened in silence. Reports like yours are arriving from all over Rune-Midgard: monsters stirring where they slept for centuries. He sent you south to Payon, whose archers asked the crown for help.'
-          say = @('A Brood Lord... beneath the capital. I would not have believed it from anyone else.', 'You are not the first to bring such news. From every corner of the kingdom, monsters are waking where they have slept for centuries.', 'The archers of Payon have asked the crown for help. Their cave of the dead is restless. Go south, my friend. Captain Hwarang will be waiting.') }
+          say = @('A Brood Lord... beneath the capital. I would not have believed it from anyone else.', 'You are not the first to bring such news. From every corner of the kingdom, monsters are waking where they have slept for centuries.', 'The archers of Payon have asked the crown for help. Their cave of the dead is restless. Go south, my friend. Captain Hwarang will be waiting.', 'One more thing, if you have a day to spare before Payon. The Culvert drains into the sea at Izlude, and the harbour master there writes that sea creatures have been attacking boats near Byalan Island since the same week the bugs appeared. He could use a sword.') }
      ) }
 
   @{ n = 2; title = 'Whispers of Payon'; range = '15-30'
@@ -72,7 +72,7 @@ $chapters = @(
        @{ type = 'talk'; lv = 15; title = 'The Archer Captain'
           now = 'Travel south to Payon, the mountain village of archers, and find Captain Hwarang (154, 182).'
           done = 'Captain Hwarang told you of the Payon Cave, a sacred burial ground. For weeks the dead have been walking out of it at night.'
-          say = @('So the knights sent you. Good. My archers cannot be everywhere at once.', 'North of the Archer Village lies the Payon Cave, where our ancestors rest. For weeks now, they have not been resting.', 'The dead walk out of it at night. Thin their numbers on the first level, and I will tell the elders the crown keeps its word.') }
+          say = @('So the knights sent you. Good. My archers cannot be everywhere at once.', 'North of the Archer Village lies the Payon Cave, where our ancestors rest. For weeks now, they have not been resting.', 'The dead walk out of it at night. Thin their numbers on the first level, and I will tell the elders the crown keeps its word.', 'Two warnings I give every newcomer. The deepest level of the cave belongs to the Moonlight Flower, a fox spirit who plays cruel tricks on the living. And in the forest south of the village hunts Eddga, a great tiger. Leave both alone until you have grown.') }
        @{ type = 'hunt'; lv = 16; title = 'The Restless Dead'; where = 'pay_dun00'
           mobs = @(@(1015, 'Zombie', 25), @(1076, 'Skeleton', 20))
           now = 'Hunt 25 Zombies and 20 Skeletons on the first level of the Payon Cave (pay_dun00), north of the Archer Village.'
@@ -81,7 +81,7 @@ $chapters = @(
           items = @(@(957, 'Decayed Nail', 10), @(932, 'Skel-Bone', 5))
           now = 'The village shaman wants to study what raises the dead. Bring Captain Hwarang 10 Decayed Nails and 5 Skel-Bones in Payon (154, 182).'
           done = 'The shaman found traces of an old binding on the bones: a seal laid long ago to keep the cave''s spirits asleep. It is fraying.'
-          say = @('The shaman will want these. Wait here.', '...She says there was a binding on these bones. An old seal, laid by our ancestors to keep the cave asleep. It is coming apart.', 'Our soldiers of old were buried on the second level, with their captain. If he has risen, he must fall again. Go carefully.') }
+          say = @('The shaman will want these. Wait here.', '...She says there was a binding on these bones. An old seal, laid by our ancestors to keep the cave asleep. It is coming apart.', 'Our soldiers of old were buried on the second level, with their captain. If he has risen, he must fall again. Go carefully.', 'The shaman needs time to prepare her wards before anyone goes down to the captain, so go when you are ready. Strange... a merchant from Alberta came begging this morning. The old wreck off his coast walks at night, drowned sailors on its deck. It sounds like our sickness.') }
        @{ type = 'boss'; lv = 24; title = 'The Captain Below'; map = 'pay_dun01'; mob = 1028; boss = 'Restless Cave Captain'; hp = 8
           now = 'Descend to the second level of the Payon Cave (pay_dun01). The soldiers buried there once had a commander; if he has risen, he must fall again.'
           done = 'You defeated the Restless Cave Captain, an ancient soldier still loyal to a war long forgotten. As he crumbled, he whispered of the seals breaking in the desert.' }
@@ -129,14 +129,14 @@ $chapters = @(
           items = @(@(1056, 'Grit', 10), @(1055, 'Earthworm Peeling', 10))
           now = 'Nafisa reads omens in sand. Bring her 10 Grit and 10 Earthworm Peelings in Morroc (156, 286).'
           done = 'The sand spoke of the Pyramids, the tomb of Osiris, whose priests sealed the desert''s evils. The priests are awake again.'
-          say = @('Let me pour these out... yes. Yes, I see it.', 'The Pyramids, northwest of the city. The priests of Osiris sealed the evils of the desert there long ago.', 'They are awake again, and they chant a ritual that no longer works. Go to the third level and silence them.') }
+          say = @('Let me pour these out... yes. Yes, I see it.', 'The Pyramids, northwest of the city. The priests of Osiris sealed the evils of the desert there long ago.', 'They are awake again, and they chant a ritual that no longer works. Go to the third level and silence them. No deeper: Osiris himself sleeps on the fourth, and he does not forgive those who wake him.', 'The sands show me something else too. A face of stone, west of the city. The same hands that built the Pyramids built the Sphinx, and whatever wakes in one stirs the other.') }
        @{ type = 'boss'; lv = 38; title = 'The Pyramid''s Priest'; map = 'moc_pryd03'; mob = 1041; boss = 'Bound Priest of Osiris'; hp = 9
           now = 'Enter the Pyramids northwest of Morroc and reach the third level (moc_pryd03).'
           done = 'You struck down the Bound Priest of Osiris, a mummy still chanting the ritual of a seal it could no longer hold.' }
        @{ type = 'report'; lv = 42; title = 'The Seer''s Warning'
           now = 'Return to Nafisa in Morroc (156, 286) and tell her about the priest.'
           done = 'Nafisa confirmed it: the seals across Rune-Midgard are weakening together. The oldest of them stands beneath the tower of Geffen, the city of magic. She sent you there with a letter for the magisters.'
-          say = @('So the priests failed. Then it is as I feared.', 'Not one seal is weakening. All of them are, together, as if something is pulling at every knot at once.', 'The oldest seal of all lies beneath the tower of Geffen. Take this letter to the magisters there. Our Kafra can send you to Prontera; Geffen is a short walk west from there.', 'And adventurer... the sands say your road has only begun.') }
+          say = @('So the priests failed. Then it is as I feared.', 'Not one seal is weakening. All of them are, together, as if something is pulling at every knot at once.', 'The oldest seal of all lies beneath the tower of Geffen. Take this letter to the magisters there. Our Kafra can send you to Prontera; Geffen is a short walk west from there.', 'And adventurer... the sands say your road has only begun. Beneath the Pyramids lies an older tomb still, where Amon Ra waits. That is a road for another year.', 'One more vision before you go. Across the sea, in a land of temples, a tiger spirit stirs in an old shrine. It guarded a seal like ours, and the shrine has an older keeper still, Lady Tanee. My courier sails ahead of you with a pouch: the sands show me a shaman asking for what is in it.') }
      ) }
 
   @{ n = 4; title = 'Tower of Geffen'; range = '45-60'
@@ -160,7 +160,7 @@ $chapters = @(
             'From Prontera, the Route link leads west to Geffen. Magister Ivo stands near the east gate (206, 116) and is marked on your minimap when you arrive.'
           )
           done = 'Ivo read the letter twice. Beneath Geffen''s tower lies the gate to Geffenia, the sealed realm of demons. The orcs to the west have grown savage, and Ivo suspects why.'
-          say = @('A letter from the desert seer? She never writes. ...Oh. Oh, dear.', 'What I tell you now, few outside the Magic Academy know. Beneath our tower lies the gate to Geffenia, the realm where demons were sealed away.', 'The orcs to the west have turned savage, and their shamans draw power from the ground. Break their warband and bring me proof.') }
+          say = @('A letter from the desert seer? She never writes. ...Oh. Oh, dear.', 'What I tell you now, few outside the Magic Academy know. Beneath our tower lies the gate to Geffenia, the realm where demons were sealed away.', 'The orcs to the west have turned savage, and their shamans draw power from the ground. Break their warband and bring me proof.', 'And mind the Orc Hero. He walks those lands now and then, and he is no common orc. If you see him, go around.') }
        @{ type = 'hunt'; lv = 46; title = 'The Orc Warband'; where = 'gef_fild14'
           mobs = @(@(1213, 'High Orc', 30), @(1189, 'Orc Archer', 20))
           now = 'Hunt 30 High Orcs and 20 Orc Archers in the orc lands west of Geffen (gef_fild14).'
@@ -169,14 +169,14 @@ $chapters = @(
           items = @(@(7002, 'Ogre Tooth', 10), @(1063, 'Fang', 10))
           now = 'Bring Magister Ivo 10 Ogre Teeth and 10 Fangs from the orcs, in Geffen (206, 116).'
           done = 'The trophies hummed with dark mana, the same mana that leaks from Geffenia. The seal under the tower is cracking.'
-          say = @('Let me feel... yes. Dark mana, soaked into the bone.', 'It is the same mana that leaks from Geffenia. The seal under the tower is cracking, and the orcs drink from the cracks.', 'Something has already slipped through. Go down into the Geffen Dungeon, to its second level, and stop it before it reaches the city.') }
+          say = @('Let me feel... yes. Dark mana, soaked into the bone.', 'It is the same mana that leaks from Geffenia. The seal under the tower is cracking, and the orcs drink from the cracks.', 'One more thing about the orcs. A man we expelled from the Academy lives in their village, with a machine he swears shows the past. My scholar Wendel watches him. If you pass that way, help Wendel.', 'Something has already slipped through. Go down into the Geffen Dungeon, to its second level, and stop it before it reaches the city.', 'Dracula himself is said to haunt that same level, and the Doppelganger the one below. The Nightmare is your quarry, not them.') }
        @{ type = 'boss'; lv = 54; title = 'Beneath the Tower'; map = 'gef_dun01'; mob = 1061; boss = 'Nightmare of the Tower'; hp = 10
           now = 'Enter the Geffen Dungeon beneath the tower and reach its second level (gef_dun01).'
           done = 'You defeated the Nightmare of the Tower, a demon-touched steed that had slipped through the cracks of the seal.' }
        @{ type = 'report'; lv = 57; title = 'The Fallen Kingdom'
           now = 'Report to Magister Ivo in Geffen (206, 116).'
           done = 'Ivo will reinforce the seal, but he warned that Geffen''s wards were built with knowledge from Glast Heim, the fallen kingdom. He sent you to the knights of Al De Baran to learn what happened there.'
-          say = @('You did it. The Academy will reinforce the seal tonight.', 'But I must confess something. Our wards were built with knowledge taken from Glast Heim, the kingdom that fell into darkness.', 'If the wards fail, the answer is there. A knight in Al De Baran still guards its memory. Find Sir Aldric.') }
+          say = @('You did it. The Academy will reinforce the seal tonight.', 'Two letters came this week, from opposite ends of the sea. In Amatsu, a fox spirit haunts the lord''s mother. In Kunlun, the chief''s ancestral sword was stolen. I sent Lise to Amatsu, and Kunlun''s scribe waits for you. If you have time to sail, go.', 'But I must confess something. Our wards were built with knowledge taken from Glast Heim, the kingdom that fell into darkness.', 'If the wards fail, the answer is there. A knight in Al De Baran still guards its memory. Find Sir Aldric.') }
      ) }
 
   @{ n = 5; title = 'Ghosts of Glast Heim'; range = '60-75'
@@ -187,7 +187,7 @@ $chapters = @(
        @{ type = 'talk'; lv = 60; title = 'The Last Knight'
           now = 'Go to Al De Baran, the city of the Clock Tower, and find Sir Aldric near the south gate (142, 63).'
           done = 'Sir Aldric is the last of an order that once guarded Glast Heim. He told you how the kingdom fell: its king bargained with darkness, and the Dark Lord answered.'
-          say = @('Ivo sent you? Then you already know more than most.', 'I am the last of the order that guarded Glast Heim. Our king bargained with darkness for power, and the Dark Lord answered. The kingdom fell in a single night.', 'Lately the Clock Tower here has been wrong. It was built to keep time with the old seals. Clear its first floor and we will see.') }
+          say = @('Ivo sent you? Then you already know more than most.', 'I am the last of the order that guarded Glast Heim. Our king bargained with darkness for power, and the Dark Lord answered. The kingdom fell in a single night.', 'Lately the Clock Tower here has been wrong. It was built to keep time with the old seals. Clear its first floor and we will see.', 'The great gears above and below are slipping too. The fourth floor and the fourth basement are sealed by the old alchemists'' gates, and their Gatekeepers want a key. That can wait until you are ready.') }
        @{ type = 'hunt'; lv = 61; title = 'Time Out of Joint'; where = 'c_tower1'
           mobs = @(@(1195, 'Rideword', 30), @(1199, 'Punk', 30))
           now = 'Strange things walk the Clock Tower. Hunt 30 Ridewords and 30 Punks on its first floor (c_tower1).'
@@ -196,7 +196,7 @@ $chapters = @(
           items = @(@(1097, 'Worn Out Page', 10), @(7001, 'Mould Powder', 10))
           now = 'Bring Sir Aldric 10 Worn Out Pages and 10 Mould Powder in Al De Baran (142, 63); he can piece together the old records.'
           done = 'The pages spoke of Glast Heim''s knights, cursed to guard their ruined halls forever.'
-          say = @('These pages... I know this hand. These are records from Glast Heim.', 'My brothers of the order. Cursed to guard the ruined halls forever, the records say. Even in death they keep their posts.', 'One of them walks the churchyard. If anyone can tell us what is happening to the seals, it is him. Go to Glast Heim, west of Geffen.') }
+          say = @('These pages... I know this hand. These are records from Glast Heim.', 'My brothers of the order. Cursed to guard the ruined halls forever, the records say. Even in death they keep their posts.', 'And this one is no Glast Heim page. A ship''s voyage log, about an island where turtles march like soldiers under a general. The old sailors of Alberta still tell of it.', 'One of them walks the churchyard. If anyone can tell us what is happening to the seals, it is him. Go to Glast Heim, west of Geffen.', 'Beware: the Dark Lord himself walks that churchyard at times. If the air turns cold and the dead start to gather, leave.') }
        @{ type = 'boss'; lv = 68; title = 'The Churchyard'; map = 'gl_chyard'; mob = 1192; boss = 'Wraith of the Fallen Order'; hp = 10
           now = 'Travel to Glast Heim, west of Geffen, and enter its churchyard (gl_chyard).'
           done = 'You laid to rest the Wraith of the Fallen Order, once a knight of Aldric''s own order. Before it faded, it spoke of the machines beneath the floating city.' }

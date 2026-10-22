@@ -1,4 +1,4 @@
-THE ADVENTURER'S CHRONICLE  v1.2.7 (BETA)  by Always
+THE ADVENTURER'S CHRONICLE  v1.4.0 (BETA)  by Always
 For Ragnarok Offline 1.4.8 or newer. Pre-renewal.
 
 A story-driven main quest that walks you across Rune-Midgard at the right
@@ -39,6 +39,27 @@ years and wondering where to go next.
   Quest window
     Each quest is in Alt+U too, with live kill counts and a Route link.
 
+  Side Quests (optional)
+    Chapter NPCs mention famous places on the way, and each becomes an
+    optional Side Quest: the sea caves of Byalan Island, the Sunken Ship,
+    the Sphinx, the Clock Tower's sealed floors, and RO's own quests in
+    Ayothaya, the Orc's Memory, Amatsu, Kunlun and Turtle Island, guided
+    step by step: every right answer named, every dead end warned about,
+    every item counted.
+    They never block the next chapter. Each teaches a new way to travel
+    (your first boat, the port of Alberta, a ship overseas) and gives a
+    choice of two costumes tied to its place, a small reward and a Passport
+    stamp. Changed your mind? The giver trades your costume for the other
+    one, once.
+    3 stamps earn the first Passport rank, 6 the second: costumes with a
+    bonus.
+
+  MVP Ledger
+    A Journal tab that fills in as people on your road mention the MVPs
+    near them (the Golden Thief Bug, Moonlight Flower, Eddga, Drake...),
+    with their level and where they sleep. It ticks itself when you or
+    your party defeat one. Nothing on it is required.
+
   Veterans welcome
     A character already past Chapter 1's levels can have the story told in
     brief and start at the chapter for their level.
@@ -72,7 +93,15 @@ years and wondering where to go next.
     teleports you in and out), Juperos Core (the elevator puzzle) and
     Odin's Temple (the Boatman in Hugel). See "How to get there" in the
     Journal and the quest window.
-  - Uses item IDs 50100-50124 and quest IDs 77001-77040.
+  - Uses item IDs 50100-50144 and quest IDs 77001-77040 and 77111-77199.
+  - The Ayothaya Side Quest is RO's own quest. Nafisa's courier hands you a pouch
+    with most of what its shaman asks for (some of it is very rare at
+    that level); you still gather 2 Fabric and 2 Nine Tails yourself.
+  - The Orc's Memory is an instance: it needs a party of 2 or more, all
+    online and Lv 30-80 (companions count).
+  - Kunlun's Broken Sword is RO's longest quest, with a few answers that
+    end it for good. The Journal names the right ones, and warns you if an
+    earlier wrong answer already closed it.
   - Once the Chronicle is complete, it points you to Rune-Midgard's own
     legends: The Sign, Thanatos Tower, the Abyss Lakes, the Endless Tower.
 
