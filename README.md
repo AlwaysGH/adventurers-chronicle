@@ -10,7 +10,15 @@ Are you new to Ragnarok, or coming back after years and not sure where to go nex
 - **Hunts, gathering and a named boss** in every region.
 - **Quest EXP** carries you to the next quest's level. You can change the amount in the settings.
 - **A costume of your choice** at the end of each chapter.
-- **A journal** (Alt+B, or the button under the minimap). It recaps everything you've done and shows what to do next. Its Route link opens Navigation to the exact spot.
+- **9 optional Side Quests** that branch off the road to famous places: Byalan Island, the Sunken Ship, the Sphinx, Ayothaya, the Orc's Memory, Amatsu, Kunlun, the Clock Tower and Turtle Island. Several are Ragnarok's own hidden quests, guided step by step: every right answer named, every item counted, a warning before every dead end. Each one ends with a choice of two costumes tied to its place.
+- **The Adventurer's Passport:** every finished Side Quest stamps it, and stamps earn costumes with small stat bonuses.
+- **The MVP Ledger:** the MVPs people mention on your road are written in, and tick themselves when you or your party beat them.
+- **A journal** (Alt+B, or the button under the minimap) with Story, Side Quests and MVP Ledger tabs. It recaps everything you've done and shows what to do next:
+  - The current quest folds into its chapter: click it for the whole card.
+  - Route links draw the way on the ground, and a green "Following" bar shows where you're headed.
+  - Every leg of a trip has a working route, including after boats and ships.
+  - Fold away what you don't need and the journal remembers. A folded quest also leaves the game's quest tracker, so the tracker only shows what you're working on.
+  - Drag the corner to resize it.
 - **Veterans can skip ahead** to their level.
 - **Waykeepers** in every town. Once you set foot on a town, field or dungeon, any Waykeeper can send you back there.
 
@@ -19,6 +27,8 @@ Are you new to Ragnarok, or coming back after years and not sure where to go nex
 In Ragnarok Offline, open **Mods → Find Mods** and install **adventurers-chronicle**. Updates show up there too.
 
 To install by hand, download the zip from [Releases](../../releases), then install it from the Mods tab.
+
+If Find Mods can't install it, it can't reach GitHub's downloads. That can happen on some networks, or after more than 60 lookups an hour from one network. Download the zip from Releases on that computer and install it from the Mods tab.
 
 ## Requirements
 
@@ -31,6 +41,7 @@ To install by hand, download the zip from [Releases](../../releases), then insta
 - **Companions share quest EXP**: every companion in your party gets the same quest EXP as you.
 - **Waykeepers**: on by default. Switch off if you use another warper.
 - **Show the Journal button**: Alt+B works either way.
+- **Test tools**: leave off for normal play.
 
 ## Author
 
